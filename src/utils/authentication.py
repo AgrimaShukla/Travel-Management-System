@@ -35,7 +35,7 @@ class Authentication:
             password = hashlib.md5(password).hexdigest()
             data = (username, )
             user_data = single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, data)
-
+    
             # to check if username matches
             if user_data is None:
                 self.invalid_username_password()
