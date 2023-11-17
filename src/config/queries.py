@@ -37,6 +37,10 @@ class Query:
                 (?, ?, ?, ?, ?, ?)
     '''
 
+    SELECT_CUSTOMER = 'SELECT name, mobile_number, gender, age, email from customer WHERE customer_id = ?'
+   
+    UPDATE_CUSTOMER = 'UPDATE customer SET {} = ? WHERE customer_id = ?'
+
     # ADMIN TABLE
     CREATE_ADMIN = ''' CREATE TABLE IF NOT EXISTS admin(
                 admin_id TEXT PRIMARY KEY,
@@ -66,23 +70,23 @@ class Query:
                 duration TEXT,
                 category TEXT,
                 price INTEGER,
-                lmt INTEGER,
                 status TEXT
     )
     '''
-    INSERT_PACKAGE_QUERY = '''INSERT INTO package VALUES(?, ?, ?, ?, ?, ?, ?)'''
+
+    CHANGE_STATUS_QUERY = 'UPDATE package SET status = ? WHERE package_id = ?'
+    
+    INSERT_PACKAGE_QUERY = '''INSERT INTO package VALUES(?, ?, ?, ?, ?, ?)'''
 
     SELECT_ADMIN = 'SELECT * FROM credentials WHERE role = ?'
     
-    SELECT_PRICE = 'SELECT price FROM package WHERE package_name = ? AND category = ? AND duration = ? AND status = ?'
+    SELECT_PRICE = 'SELECT package_id, price, duration FROM package WHERE package_name = ? AND category = ? AND duration = ? AND status = ?'
 
     CHECK_PACKAGE_QUERY = 'SELECT * FROM package WHERE package_id = ?'
 
     SELECT_PACKAGE_QUERY = 'SELECT * FROM package WHERE status != ?'
 
     SELECT_PACKAGE = 'SELECT * FROM package'
-
-    CHANGE_STATUS_QUERY = 'UPDATE package SET status = ? WHERE package_id = ?'
 
     UPDATE_PACKAGE_QUERY = 'UPDATE package SET {} = ? WHERE package_id = ?'
 
@@ -108,15 +112,13 @@ class Query:
     ) VALUES (?, ?, ?, ?, ?)
     '''
 
-    SELECT_ITINERARY = '''SELECT package.package_id, package.duration, itinerary.day, itinerary.city, itinerary.desc
-                FROM package
-                INNER JOIN itinerary ON package.package_id = itinerary.package_id
+    SELECT_ITINERARY = '''SELECT itinerary.day, itinerary.city, itinerary.desc
+                FROM itinerary
+                INNER JOIN package ON package.package_id = itinerary.package_id
                 WHERE package.package_name = ?
                 AND package.category = ?
                 AND package.duration = ?
                 AND package.status = ?
-                AND package.lmt > 0
-
     '''
 
     SHOW_ITINERARY_QUERY = 'SELECT * FROM itinerary'
@@ -149,7 +151,8 @@ class Query:
                 trip_status TEXT,
                 FOREIGN KEY (package_id) REFERENCES PACKAGE (package_id),
                 FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id),
-                FOREIGN KEY (booking_id) REFERENCES BOOKING(booking_id)
+                FOREIGN KEY (booking_id) REFERENCES BOOKING(booking_id),
+                PRIMARY KEY (package_id, customer_id, booking_id)
     )
     '''
 
@@ -170,12 +173,39 @@ class Query:
                     booking.no_of_people, booking.email, booking.booking_date, booking_package.trip_status 
                     FROM booking
                     INNER JOIN booking_package ON booking_package.booking_id = booking.booking_id
-                    WHERE booking_package.customer_id = ? AND booking_package.trip_status = ?
+                    WHERE booking_package.customer_id = ? AND booking_package.trip_status = ? AND booking.start_date >= ?
                     '''
     PACKAGE_FROM_BOOKING = '''SELECT day, city, desc FROM itinerary WHERE package_id IN (SELECT package_id FROM booking_package WHERE booking_id = ?)'''
 
+    SELECT_FOR_REVIEW = '''SELECT booking.booking_id, booking_package.package_id, booking.start_date, booking.end_date 
+                    FROM booking
+                    INNER JOIN booking_package ON booking.booking_id = booking_package.booking_id 
+                    WHERE booking_package.customer_id = ? AND booking_package.trip_status = ? AND booking.end_date <= ?'''
+
+    SELECT_PACKAGE_REVIEW = 'SELECT package_id FROM booking_package WHERE booking_id = ?'
+
+    # REVIEW TABLE
+    CREATE_REVIEW = ''' CREATE TABLE IF NOT EXISTS review(
+                    review_id TEXT PRIMARY KEY,
+                    booking_id TEXT,
+                    package_id TEXT,
+                    name TEXT,
+                    comment TEXT,
+                    date TEXT,
+                    FOREIGN KEY (booking_id) REFERENCES booking(booking_id) ON DELETE CASCADE,
+                    FOREIGN KEY (package_id) REFERENCES package(package_id) ON DELETE CASCADE
+    )
+'''
+
+    INSERT_REVIEW = '''INSERT INTO review
+                    VALUES
+                    (?, ?, ?, ?, ?, ?)
+    '''
+
+    SELECT_REVIEW = 'SELECT name, comment, date FROM review WHERE package_id = ?'
+
 class DatabaseConfig:
     '''Database path'''
-    
+
     DB_PATH = 'src\\database\\travelmanagementsystem.db'
     

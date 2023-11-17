@@ -3,11 +3,12 @@
 import time
 import hashlib
 import logging
-import maskpass
 
 from src.database.database_access import single_data_returning_query
-from src.config.prompt import PrintPrompts
+from src.utils import validation
 from src.config.queries import Query 
+from src.config.prompt import PrintPrompts, InputPrompts
+from src.config.regex_value import RegularExp
 
 logger = logging.getLogger(__name__)
 
@@ -29,8 +30,8 @@ class Authentication:
     def user_authentication(self) -> tuple:
         '''Function to authenticate use'''
         while self.attempts > 0: 
-            username = input("Enter your username: ")
-            password = maskpass.advpass().encode()
+            username = validation.validate(InputPrompts.INPUT.format("username"), RegularExp.USERNAME)
+            password = validation.validate_password(RegularExp.PASSWORD).encode()
             password = hashlib.md5(password).hexdigest()
             data = (username, )
             user_data = single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, data)

@@ -39,7 +39,7 @@ def validate(prompts: str, regular_exp: str) -> str:
 def validate_password(regex_exp: str) -> str:
     '''validating password should be minimum of length'''
     while True:
-        password = maskpass.advpass()
+        password = maskpass.askpass()
         result = input_validation(regex_exp, password)
         if result == True:
             return password
@@ -51,3 +51,4 @@ def validate_uuid(prompts: str, regex_exp: str) -> str:
         result = input_validation(regex_exp, uuid)
         if result == True:
             return uuid
+            

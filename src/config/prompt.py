@@ -19,9 +19,12 @@ class PrintPrompts:
       BOOKING = '''
             SELECT ANY OPTION:
             1) PROCEED WITH BOOKING
-            2) EXIT
+            2) SHOW REVIEWS
+            3) EXIT
       '''
 
+      BOOKING_ID = "BOOKIND ID {} DOES NOT EXIST. ENTER AGAIN"
+      
       BOOKED_SUCCESSFULLY = "Booked successfully!\nPrice: {}\nBooking id: {}"
 
       CANCELLED = 'CANCELLED'
@@ -36,8 +39,17 @@ class PrintPrompts:
             Enter any option
       '''
 
-      
       CHANGED = 'STATUS CHANGED'
+
+      CUSTOMER_DETAILS = '''
+            SELECT ANY OPTION:
+            1) NAME
+            2) MOBILE NUMBER
+            3) GENDER
+            4) AGE
+            5) EMAIL
+            6) EXIT
+      '''
 
       DATE = " ENTER A DATE (YYYY-MM-DD)"
 
@@ -68,7 +80,10 @@ class PrintPrompts:
             1) REGISTER
             2) LOGIN
       '''
-      
+      INVALID_BOOKING = '''
+            INVALID BOOKING ID.
+            ENTER AGAIN.
+      '''
       INVALID_CREDENTIALS = '''INVALID USERNAME OR PASSWORD! ENTER AGAIN'''
       
       INVALID_DATE_FORMAT = "INVALID DATE FORMAT. PLEASE USE 'YYYY-MM-DD'."
@@ -105,27 +120,31 @@ class PrintPrompts:
       PACKAGE_NOT_FOUND = 'PACKAGE DOES NOT EXIST. FIRST ADD PACKAGE TO ADD AN ITINERARY.'
 
       PASSWORD = '''
-      PASSWORD SHOULD BE BETWEEN LENGTH 5 AND 20
-      '''
+            Password should contain:
+            1) Minimum 8 characters in length.
+            2) At least one uppercase English letter. 
+            3) At least one lowercase English letter. 
+            4) At least one digit. 
+            5) At least one special character.      '''
 
       PRICE = "Price: {}"
 
       SUCCESFULLY = "Successfully registered"
 
+      
       UPDATE_PACKAGE = '''
             SELECT ANY OPTION:
-            1) UPDATE PACKAGE NAME
-            2) UPDATE DURATION
-            3) UPDATE CATEGORY
-            4) UPDATE PRICE
-            5) UPDATE LIMIT
+            1) PACKAGE NAME
+            2) DURATION
+            3) CATEGORY
+            4) PRICE
       '''
 
       UPDATE_ITINERARY = '''
             SELECT ANY OPTION:
-            1) UPDATE DAY
-            2) UPDATE CITY
-            3) UPDATE DESCRIPTION
+            1) DAY
+            2) CITY
+            3) DESCRIPTION
       '''
       UPDATED = "UPDATED"
 
@@ -138,14 +157,21 @@ class PrintPrompts:
             1) BOOK PACKAGE
             2) CANCEL BOOKING
             3) VIEW BOOKINGS
-            4) EXIT
+            4) SHOW MY DETAILS
+            5) UPDATE MY DETAILS
+            6) ADD REVIEW
+            7) EXIT
       '''
 
 class InputPrompts:
       '''All the prompts used when taking input'''
       INPUT = "Enter {}: "
+      
+      EMAIL = '''ENTER EMAIL ID: '''
 
       ENTER = "ENTER: "
+
+      ENTER_DETAIL = 'ENTER {}: '
 
       ITINERARY_ID = "ITINERARY ID: "
 
@@ -172,15 +198,25 @@ class LoggingPrompt:
 
       BOOKED = "BOOKED SUCCESSFULLY"
 
+      REGISTERED = 'USER REGISTERED'
+
 class TabulateHeader:
       '''Prompts for Tabulate'''
 
+      AGE ="AGE"
+      
       BOOKING_DATE = "BOOKING DATE"
+
+      BOOKING_ID = "BOOKING ID"
 
       CATEGORY = "CATEGORY"
 
       CITY = "CITY"
 
+      COMMENT = 'COMMENT'
+
+      DATE = 'DATE'
+      
       DAY = "DAY"
 
       DESC = "DESCRIPTION"
@@ -190,6 +226,8 @@ class TabulateHeader:
       EMAIL = "EMAIL"
 
       END_DATE = "END DATE"
+
+      GENDER = "GENDER"
 
       ITINERARY_ID = "ITINERARY ID"
 

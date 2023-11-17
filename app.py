@@ -8,7 +8,7 @@ from src.config.prompt import PrintPrompts, InputPrompts
 from src.menus import user, admin
 from src.controllers.registration import Registration
 from src.utils.authentication import Authentication
-from src.utils import initialize_app
+import src.utils.initialize_app as initialize_app
 
 
 logging.basicConfig(format = '%(asctime)s - %(message)s', 
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     # all the tables will be created
     initialize_app.create_tables()
-    # initialize_app.create_admin()
+    initialize_app.create_admin()
     main()
 
 else:

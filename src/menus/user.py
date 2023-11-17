@@ -1,7 +1,9 @@
 '''This module handles user preference for the packages'''
 
 from src.config.prompt import PrintPrompts, InputPrompts
-from src.controllers.customer_controller import view_package, BookPackage
+from src.controllers.customer_controller.booking_module import view_package, show_itinerary_package, cancel_booking
+from src.controllers.customer_controller.customer_info import show_details, update_details
+from src.controllers.customer_controller.review_module import show_data
 
 def day_menu(dest_option: str, category_option: str, customer_id: str) -> None:
     '''User can choose days'''
@@ -46,8 +48,11 @@ def user_menu(customer_id: str) -> None:
         parameter = input(InputPrompts.ENTER)
         match parameter:
             case '1': destination_menu(customer_id)
-            case '2': BookPackage.cancel_booking(customer_id)
-            case '3': BookPackage.show_booking_package(customer_id)
-            case '4': break
+            case '2': cancel_booking(customer_id)
+            case '3': show_itinerary_package(customer_id)
+            case '4': show_details(customer_id)
+            case '5': update_details(customer_id)
+            case '6': show_data(customer_id)
+            case '7': break
             case _: print(PrintPrompts.INVALID_PROMPT)
             

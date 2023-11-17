@@ -35,3 +35,11 @@ UPDATE_ITINERARY = {
     '2': 'CITY',
     '3': 'DESC'
 }
+
+CUSTOMER_DETAILS = {
+    '1': 'name',
+    '2': 'mobile_number',
+    '3': 'gender',
+    '4': 'age',
+    '5': 'email'
+}

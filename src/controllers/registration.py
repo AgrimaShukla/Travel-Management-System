@@ -6,7 +6,7 @@ import shortuuid
 
 from src.config.queries import Query
 from src.utils import validation
-from src.config.prompt import PrintPrompts, InputPrompts
+from src.config.prompt import PrintPrompts, InputPrompts, LoggingPrompt
 from src.config.regex_value import RegularExp
 from src.database.database_access import insert_table
 
@@ -35,4 +35,7 @@ class Registration:
         insert_credentials_query = Query.INSERT_CREDENTIALS
         customer_credentials = (self.user_id, self.username, self.password, 'user')
         customer_data = (self.user_id, self.name, self.mobile_no, self.gender, self.age, self.email)
-        insert_table(insert_credentials_query, customer_credentials, insert_customer_query, customer_data, PrintPrompts.SUCCESFULLY)
+        value = insert_table(insert_credentials_query, customer_credentials, insert_customer_query, customer_data)
+        if value == True:
+            print(PrintPrompts.SUCCESFULLY)
+            logger.info(LoggingPrompt.REGISTERED)

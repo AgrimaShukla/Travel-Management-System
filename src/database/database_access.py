@@ -9,7 +9,7 @@ from src.database.context_manager import DatabaseConnection
 
 logger = logging.getLogger(__name__)
 
-def insert_table(table_1: str, data_table1: tuple, table_2: str, data_table2: tuple, prompt: str) -> None:
+def insert_table(table_1: str, data_table1: tuple, table_2: str, data_table2: tuple) -> None:
     '''Inserting customer data into database'''
     try:
         with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
@@ -17,7 +17,7 @@ def insert_table(table_1: str, data_table1: tuple, table_2: str, data_table2: tu
             cursor.execute(table_1, data_table1)
             cursor.execute(Query.ENABLE_FOREIGN_KEY)
             cursor.execute(table_2, data_table2)
-            print(prompt)
+            return True
     except sqlite3.IntegrityError as er:
         logger.exception(er)
         print(PrintPrompts.USER_EXISTS)
@@ -27,7 +27,6 @@ def insert_table(table_1: str, data_table1: tuple, table_2: str, data_table2: tu
     except sqlite3.Error as er:
         logger.exception(er)
         print(PrintPrompts.UNEXPECTED_ISSUE)
-
 
 def returning_query(query_to_show: str, params = None) -> list:
     '''This function will execute returning queries and return multiple rows'''
@@ -54,6 +53,9 @@ def non_returning_query(query_update: str, params: tuple, prompts: str) -> None:
             cursor = connection.cursor()
             cursor.execute(query_update, params)
             print(prompts)
+    except sqlite3.IntegrityError as er:
+        logger.exception(er)
+        print(PrintPrompts.USER_EXISTS)
     except sqlite3.OperationalError as er:
         logger.exception(er)
         print(PrintPrompts.UNEXPECTED_ISSUE)
