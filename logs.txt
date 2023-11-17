@@ -1,0 +1,1578 @@
+30-10-2023 21:09:10 - Invalid login attempt
+30-10-2023 21:24:49 - Invalid login attempt
+30-10-2023 21:25:00 - Invalid login attempt
+30-10-2023 21:42:59 - Invalid login attempt
+30-10-2023 21:43:04 - Invalid login attempt
+30-10-2023 21:49:51 - Added package
+30-10-2023 21:56:03 - Invalid login attempt
+30-10-2023 21:56:11 - Invalid login attempt
+30-10-2023 21:56:16 - Invalid login attempt
+30-10-2023 21:58:16 - Invalid login attempt
+30-10-2023 21:58:20 - Invalid login attempt
+30-10-2023 21:58:23 - Invalid login attempt
+31-10-2023 16:03:16 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+31-10-2023 16:07:28 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+31-10-2023 16:10:32 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+31-10-2023 16:41:54 - Invalid login attempt
+31-10-2023 17:18:14 - Invalid login attempt
+31-10-2023 17:18:23 - Invalid login attempt
+01-11-2023 13:50:43 - Invalid login attempt
+01-11-2023 13:50:47 - Invalid login attempt
+01-11-2023 13:50:52 - Invalid login attempt
+01-11-2023 13:51:51 - Invalid login attempt
+01-11-2023 13:51:56 - Invalid login attempt
+01-11-2023 13:51:59 - Invalid login attempt
+01-11-2023 13:54:43 - Invalid login attempt
+01-11-2023 13:54:51 - Invalid login attempt
+01-11-2023 13:54:56 - Invalid login attempt
+01-11-2023 13:57:31 - Invalid login attempt
+01-11-2023 13:57:35 - Invalid login attempt
+01-11-2023 13:57:40 - Invalid login attempt
+01-11-2023 13:59:28 - Invalid login attempt
+01-11-2023 13:59:32 - Invalid login attempt
+01-11-2023 13:59:38 - Invalid login attempt
+01-11-2023 14:00:30 - Invalid login attempt
+01-11-2023 14:00:38 - Invalid login attempt
+01-11-2023 14:00:43 - Invalid login attempt
+01-11-2023 14:01:14 - Invalid login attempt
+01-11-2023 14:02:51 - Invalid login attempt
+01-11-2023 14:02:56 - Invalid login attempt
+01-11-2023 14:03:02 - Invalid login attempt
+01-11-2023 14:08:03 - Invalid login attempt
+01-11-2023 14:26:56 - Cannot add package
+01-11-2023 14:30:27 - Cannot add package
+01-11-2023 14:31:09 - Added package
+01-11-2023 15:11:30 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:13:34 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:14:54 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:17:49 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:21:58 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:27:27 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:28:37 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:32:43 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:33:25 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 15:46:53 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+01-11-2023 16:14:33 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.OperationalError: incomplete input
+01-11-2023 16:18:48 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 14, in insert_customer
+    cursor.execute(insert_credentials, (user_id, username, password, 'user'))
+sqlite3.OperationalError: incomplete input
+01-11-2023 22:41:06 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.OperationalError: incomplete input
+01-11-2023 22:41:18 - Invalid login attempt
+01-11-2023 22:41:28 - Invalid login attempt
+01-11-2023 23:08:36 - near "AND": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 35, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: near "AND": syntax error
+01-11-2023 23:12:52 - near "AND": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 35, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: near "AND": syntax error
+01-11-2023 23:13:31 - near "AND": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 35, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: near "AND": syntax error
+01-11-2023 23:20:07 - NO PACKAGE FOUND
+01-11-2023 23:21:21 - NO PACKAGE FOUND
+01-11-2023 23:31:04 - NO PACKAGE FOUND
+01-11-2023 23:32:19 - NO PACKAGE FOUND
+01-11-2023 23:33:48 - NO PACKAGE FOUND
+01-11-2023 23:35:12 - NO PACKAGE FOUND
+01-11-2023 23:40:56 - unrecognized token: "{"
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 49, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: unrecognized token: "{"
+01-11-2023 23:50:29 - Added package
+02-11-2023 09:17:28 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:17:38 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 11, in wrapper
+    matched = func(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+TypeError: input_validation() missing 1 required positional argument: 'value'
+02-11-2023 09:18:03 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 11, in wrapper
+    matched = func(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 25, in input_validation
+    matched = re.fullmatch(regex_exp, value)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\re\__init__.py", line 171, in fullmatch
+    return _compile(pattern, flags).fullmatch(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot use a string pattern on a bytes-like object
+02-11-2023 09:19:37 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 11, in wrapper
+    matched = func(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 25, in input_validation
+    matched = re.fullmatch(regex_exp, value)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\re\__init__.py", line 171, in fullmatch
+    return _compile(pattern, flags).fullmatch(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot use a string pattern on a bytes-like object
+02-11-2023 09:20:53 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:22:05 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:22:19 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:23:06 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:23:15 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.OperationalError: incomplete input
+02-11-2023 09:25:03 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.OperationalError: incomplete input
+02-11-2023 09:27:12 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.OperationalError: incomplete input
+02-11-2023 09:29:39 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.OperationalError: incomplete input
+02-11-2023 09:34:36 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:35:17 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:38:55 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+02-11-2023 09:39:52 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:39:58 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:40:25 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:40:26 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:40:29 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:41:26 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:41:45 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:41:55 - Added package
+02-11-2023 09:50:03 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:51:04 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 13, in wrapper
+    raise Exception
+Exception
+02-11-2023 09:51:26 - Invalid login attempt
+02-11-2023 09:51:29 - Invalid login attempt
+02-11-2023 09:51:31 - Invalid login attempt
+02-11-2023 10:56:31 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 12, in wraps
+    result = func(connection, cursor, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 30, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+02-11-2023 11:00:10 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 12, in wraps
+    return func(connection, cursor, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 28, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+02-11-2023 11:07:20 - near ",": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 11, in wraps
+    return func(connection, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 41, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: near ",": syntax error
+02-11-2023 11:07:20 - NO PACKAGE FOUND
+02-11-2023 11:08:42 - near ",": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 12, in wraps
+    return func(connection, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: near ",": syntax error
+02-11-2023 11:08:42 - NO PACKAGE FOUND
+02-11-2023 11:23:49 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 12, in wraps
+    return func(connection, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 29, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+02-11-2023 11:24:12 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 11:24:22 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 11:24:30 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 11:25:57 - Booked successfully
+02-11-2023 13:58:32 - Invalid login attempt
+02-11-2023 13:58:55 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 13:59:26 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 13:59:33 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 13:59:40 - Booked successfully
+02-11-2023 14:00:21 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:00:42 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:01:26 - Added package
+02-11-2023 14:03:25 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:04:03 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:04:28 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:06:38 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:08:03 - UNIQUE constraint failed: CREDENTIALS.USERNAME
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 12, in wraps
+    return func(connection, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 29, in insert_customer
+    cursor.execute(credentials_query, customer_credentials)
+sqlite3.IntegrityError: UNIQUE constraint failed: CREDENTIALS.USERNAME
+02-11-2023 14:15:30 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:15:51 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+02-11-2023 14:18:22 - Invalid login attempt
+02-11-2023 14:24:56 - Booked successfully
+02-11-2023 17:10:06 - Cannot operate on a closed database.
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 12, in wraps
+    return func(connection, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 57, in single_data_returning_query
+    cursor = connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+02-11-2023 17:10:06 - Invalid login attempt
+02-11-2023 17:10:28 - Cannot operate on a closed database.
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 12, in wraps
+    return func(connection, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 57, in single_data_returning_query
+    cursor = connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+02-11-2023 17:10:28 - Invalid login attempt
+02-11-2023 17:14:03 - Booked successfully
+03-11-2023 00:57:39 - Invalid login attempt
+03-11-2023 00:57:49 - Invalid login attempt
+03-11-2023 01:01:21 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:01:29 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:01:48 - Added package
+03-11-2023 01:03:36 - Incorrect number of bindings supplied. The current statement uses 1, and there are 6 supplied.
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 59, in single_data_returning_query
+    data = cursor.execute(query_to_check, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 6 supplied.
+03-11-2023 01:06:07 - Incorrect number of bindings supplied. The current statement uses 1, and there are 7 supplied.
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 59, in single_data_returning_query
+    data = cursor.execute(query_to_check, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 7 supplied.
+03-11-2023 01:10:35 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:10:51 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:10:53 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:39:04 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:39:11 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:39:24 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:39:55 - no such table: customer
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 32, in insert_customer
+    cursor.execute(customer_query, customer_data)
+sqlite3.OperationalError: no such table: customer
+03-11-2023 01:41:07 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:43:34 - no such column: packag.package_name
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: packag.package_name
+03-11-2023 01:46:40 - Booked successfully
+03-11-2023 01:46:53 - no such column: boooking_package.trip_status
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: boooking_package.trip_status
+03-11-2023 01:47:25 - no such column: boooking_package.trip_status
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: boooking_package.trip_status
+03-11-2023 01:52:03 - no such column: boooking_package.trip_status
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: boooking_package.trip_status
+03-11-2023 01:53:54 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 01:54:17 - Booked successfully
+03-11-2023 01:54:35 - no such column: booking.booking.name
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: booking.booking.name
+03-11-2023 01:55:37 - no such column: booking.booking_name
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: booking.booking_name
+03-11-2023 01:56:35 - no such column: booking.end_time
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: booking.end_time
+03-11-2023 01:57:25 - no such column: booking_pacakge.customer_id
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 13, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\database\database_access.py", line 42, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: booking_pacakge.customer_id
+03-11-2023 09:55:36 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 09:56:01 - Booked successfully
+03-11-2023 09:57:53 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 09:59:01 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 09:59:06 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 09:59:35 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 10:00:58 - UNIQUE constraint failed: customer.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 15, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 34, in insert_customer
+    cursor.execute(customer_query, customer_data)
+sqlite3.IntegrityError: UNIQUE constraint failed: customer.email
+03-11-2023 10:04:02 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 15, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 46, in returning_query
+    data = cursor.execute(query_to_show).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: incomplete input
+03-11-2023 10:04:02 - NO PACKAGE FOUND
+03-11-2023 10:06:03 - incomplete input
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 15, in wraps
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 46, in returning_query
+    data = cursor.execute(query_to_show).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: incomplete input
+03-11-2023 10:06:03 - NO PACKAGE FOUND
+03-11-2023 12:34:05 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 12:35:20 - UNIQUE constraint failed: credentials.username
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 17, in insert_table
+    cursor.execute(table_1, data_table1)
+sqlite3.IntegrityError: UNIQUE constraint failed: credentials.username
+03-11-2023 12:36:31 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 12:36:40 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 12:36:47 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller.py", line 21, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'gyy87w8w' does not match format '%Y-%m-%d'
+03-11-2023 12:37:15 - BOOKED SUCCESSFULLY
+03-11-2023 12:39:23 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 12:39:34 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 12:39:44 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 12:39:59 - ADDED PACKAGE
+03-11-2023 12:48:49 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 16:22:53 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 16:23:13 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller.py", line 21, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '287e8' does not match format '%Y-%m-%d'
+03-11-2023 16:23:47 - BOOKED SUCCESSFULLY
+03-11-2023 16:28:25 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+03-11-2023 16:28:53 - ADDED PACKAGE
+06-11-2023 14:23:49 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:24:10 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:24:19 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:24:30 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:25:34 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:26:00 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:26:38 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:26:45 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:26:55 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:27:00 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:27:13 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:27:16 - ADDED PACKAGE
+06-11-2023 14:27:48 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:28:46 - Invalid login attempt
+06-11-2023 14:32:06 - Invalid login attempt
+06-11-2023 14:32:51 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:32:59 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:33:03 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+06-11-2023 14:33:09 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller.py", line 22, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'hsi239' does not match format '%Y-%m-%d'
+06-11-2023 14:33:28 - BOOKED SUCCESSFULLY
+07-11-2023 12:01:06 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 15:12:18 - Invalid login attempt
+07-11-2023 22:03:36 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:04:31 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:04:39 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:04:48 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:05:04 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller.py", line 22, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '82920' does not match format '%Y-%m-%d'
+07-11-2023 22:05:06 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller.py", line 22, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'hxihasj' does not match format '%Y-%m-%d'
+07-11-2023 22:05:23 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:05:24 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:05:41 - BOOKED SUCCESSFULLY
+07-11-2023 22:08:32 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:09:00 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:09:28 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:09:38 - ADDED PACKAGE
+07-11-2023 22:21:18 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:23:06 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:23:13 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:23:19 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:23:28 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:23:45 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:25:17 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:33:40 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:33:43 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:33:48 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:34:53 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:35:40 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:35:48 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:41:41 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:42:01 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller.py", line 22, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2023-12=03' does not match format '%Y-%m-%d'
+07-11-2023 22:42:15 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 22:42:24 - BOOKED SUCCESSFULLY
+07-11-2023 23:20:43 - Invalid login attempt
+07-11-2023 23:21:13 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 23:21:35 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 23:22:19 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 23:22:36 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 23:23:03 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+07-11-2023 23:23:15 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+08-11-2023 08:51:19 - Invalid login attempt
+08-11-2023 08:51:52 - ADDED PACKAGE
+08-11-2023 09:15:46 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+08-11-2023 09:16:21 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+08-11-2023 09:16:30 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+08-11-2023 09:18:20 - Invalid login attempt
+13-11-2023 09:43:09 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 09:44:37 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 09:44:42 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 09:45:03 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 09:46:20 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 09:46:31 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 09:58:29 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller\booking_module.py", line 22, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'nswjk' does not match format '%Y-%m-%d'
+13-11-2023 09:58:52 - BOOKED SUCCESSFULLY
+13-11-2023 10:00:10 - BOOKED SUCCESSFULLY
+13-11-2023 10:01:05 - no such column: start_date
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: no such column: start_date
+13-11-2023 11:19:37 - BOOKED SUCCESSFULLY
+13-11-2023 11:20:36 - BOOKED SUCCESSFULLY
+13-11-2023 11:42:13 - no such column: package_id
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 69, in single_data_returning_query
+    data = cursor.execute(query_to_check, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: package_id
+13-11-2023 11:43:40 - no such column: package_id
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 69, in single_data_returning_query
+    data = cursor.execute(query_to_check, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: package_id
+13-11-2023 11:47:12 - Error binding parameter 3: type 'tuple' is not supported
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.ProgrammingError: Error binding parameter 3: type 'tuple' is not supported
+13-11-2023 11:51:11 - Error binding parameter 3: type 'tuple' is not supported
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.ProgrammingError: Error binding parameter 3: type 'tuple' is not supported
+13-11-2023 11:53:04 - Error binding parameter 3: type 'tuple' is not supported
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.ProgrammingError: Error binding parameter 3: type 'tuple' is not supported
+13-11-2023 11:53:56 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 12:06:25 - no such column: package_id
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 69, in single_data_returning_query
+    data = cursor.execute(query_to_check, params).fetchone()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: package_id
+13-11-2023 12:07:11 - Error binding parameter 1: type 'tuple' is not supported
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 39, in returning_query
+    data = cursor.execute(query_to_show, params).fetchall()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.ProgrammingError: Error binding parameter 1: type 'tuple' is not supported
+13-11-2023 12:13:46 - near "FOREIGN": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 45, in create_tables
+    cursor.execute(Query.CREATE_REVIEW)
+sqlite3.OperationalError: near "FOREIGN": syntax error
+13-11-2023 12:14:15 - table review has 4 columns but 5 values were supplied
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: table review has 4 columns but 5 values were supplied
+13-11-2023 12:14:40 - near "FOREIGN": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 45, in create_tables
+    cursor.execute(Query.CREATE_REVIEW)
+sqlite3.OperationalError: near "FOREIGN": syntax error
+13-11-2023 12:14:52 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 12:15:11 - table review has 4 columns but 6 values were supplied
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: table review has 4 columns but 6 values were supplied
+13-11-2023 13:21:49 - near "FOREIGN": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 45, in create_tables
+    cursor.execute(Query.CREATE_REVIEW)
+sqlite3.OperationalError: near "FOREIGN": syntax error
+13-11-2023 13:22:40 - table review has 4 columns but 6 values were supplied
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: table review has 4 columns but 6 values were supplied
+13-11-2023 13:23:20 - near "FOREIGN": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 45, in create_tables
+    cursor.execute(Query.CREATE_REVIEW)
+sqlite3.OperationalError: near "FOREIGN": syntax error
+13-11-2023 13:23:45 - no such table: review
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: no such table: review
+13-11-2023 13:24:33 - near "FOREIGN": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 45, in create_tables
+    cursor.execute(Query.CREATE_REVIEW)
+sqlite3.OperationalError: near "FOREIGN": syntax error
+13-11-2023 13:24:54 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 13:25:07 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+13-11-2023 13:25:50 - no such table: review
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 55, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: no such table: review
+13-11-2023 13:26:23 - near "FOREIGN": syntax error
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 46, in create_tables
+    cursor.execute(Query.CREATE_REVIEW)
+sqlite3.OperationalError: near "FOREIGN": syntax error
+15-11-2023 11:42:48 - database is locked
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 54, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: database is locked
+15-11-2023 11:44:44 - database is locked
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 54, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.OperationalError: database is locked
+15-11-2023 11:46:30 - BOOKED SUCCESSFULLY
+15-11-2023 11:47:45 - Invalid login attempt
+15-11-2023 11:49:50 - ADDED PACKAGE
+15-11-2023 11:52:44 - Invalid login attempt
+16-11-2023 21:25:31 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 21:25:52 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller\booking_module.py", line 23, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '19-12-2023' does not match format '%Y-%m-%d'
+16-11-2023 21:26:08 - BOOKED SUCCESSFULLY
+16-11-2023 21:58:54 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 22:00:31 - UNIQUE constraint failed: credentials.username
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 17, in insert_table
+    cursor.execute(table_1, data_table1)
+sqlite3.IntegrityError: UNIQUE constraint failed: credentials.username
+16-11-2023 22:01:23 - UNIQUE constraint failed: credentials.username
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 17, in insert_table
+    cursor.execute(table_1, data_table1)
+sqlite3.IntegrityError: UNIQUE constraint failed: credentials.username
+16-11-2023 22:02:11 - UNIQUE constraint failed: customer.mobile_number
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 19, in insert_table
+    cursor.execute(table_2, data_table2)
+sqlite3.IntegrityError: UNIQUE constraint failed: customer.mobile_number
+16-11-2023 22:03:03 - UNIQUE constraint failed: customer.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 19, in insert_table
+    cursor.execute(table_2, data_table2)
+sqlite3.IntegrityError: UNIQUE constraint failed: customer.email
+16-11-2023 22:03:35 - USER REGISTERED
+16-11-2023 22:03:54 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 22:04:20 - BOOKED SUCCESSFULLY
+16-11-2023 22:04:53 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 22:05:13 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 22:05:40 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 22:05:58 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 22:08:55 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 22:09:19 - BOOKED SUCCESSFULLY
+16-11-2023 23:31:32 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+16-11-2023 23:40:49 - Error binding parameter 2: type 'tuple' is not supported
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 54, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.ProgrammingError: Error binding parameter 2: type 'tuple' is not supported
+16-11-2023 23:48:52 - UNIQUE constraint failed: customer.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\database\database_access.py", line 54, in non_returning_query
+    cursor.execute(query_update, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: customer.email
+16-11-2023 23:54:00 - Invalid login attempt
+17-11-2023 10:11:26 - UNIQUE constraint failed: credentials.username
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 33, in create_admin
+    cursor.execute(Query.INSERT_CREDENTIALS, admin_credentials)
+sqlite3.IntegrityError: UNIQUE constraint failed: credentials.username
+17-11-2023 10:16:03 - UNIQUE constraint failed: credentials.username
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 33, in create_admin
+    cursor.execute(Query.INSERT_CREDENTIALS, admin_credentials)
+sqlite3.IntegrityError: UNIQUE constraint failed: credentials.username
+17-11-2023 10:16:32 - <class 'ValueError'>
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\controllers\customer_controller\booking_module.py", line 23, in check_date
+    start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\_strptime.py", line 534, in _strptime
+    julian = datetime_date(year, month, day).toordinal() - \
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: day is out of range for month
+17-11-2023 11:07:56 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:09:33 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:10:05 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:10:25 - BOOKED SUCCESSFULLY
+17-11-2023 11:12:31 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:12:53 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:13:00 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:13:13 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:13:20 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:13:26 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:13:32 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:15:33 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:15:51 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:16:00 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:16:20 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:16:30 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:16:37 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:16:43 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:16:50 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:16:59 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:18:07 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:18:37 - ADDED PACKAGE
+17-11-2023 11:22:08 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:22:45 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:23:49 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:23:57 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:25:53 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:28:23 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:28:38 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:29:13 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:29:22 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:29:37 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:30:18 - not validated
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:30:56 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:32:02 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 11:32:06 - USER REGISTERED
+17-11-2023 11:32:17 - Invalid login attempt
+17-11-2023 11:32:29 - Invalid login attempt
+17-11-2023 11:32:35 - Invalid login attempt
+17-11-2023 11:32:52 - Invalid login attempt
+17-11-2023 11:33:00 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "C:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:33:39 - USER REGISTERED
+17-11-2023 11:33:57 - Invalid login attempt
+17-11-2023 11:34:17 - Invalid login attempt
+17-11-2023 11:35:08 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:40:18 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:58:51 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 11:59:36 - BOOKED SUCCESSFULLY
+17-11-2023 12:01:27 - USER REGISTERED
+17-11-2023 12:01:39 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 13:52:22 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 14:02:35 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 14:34:09 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 14:34:49 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 14:35:30 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 14:36:29 - USER REGISTERED
+17-11-2023 14:36:36 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 14:36:42 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 14:39:33 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 14:39:40 - Invalid login attempt
+17-11-2023 14:41:24 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 14:41:31 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\validation.py", line 14, in wrapper
+    raise Exception
+Exception
+17-11-2023 14:42:30 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 14:43:00 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 14:51:48 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\minor_project\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
+17-11-2023 16:24:11 - UNIQUE constraint failed: admin.email
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 41, in create_admin
+    cursor.execute(Query.INSERT_ADMIN, admin_info)
+sqlite3.IntegrityError: UNIQUE constraint failed: admin.email
