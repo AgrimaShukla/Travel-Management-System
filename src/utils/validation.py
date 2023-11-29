@@ -3,6 +3,9 @@ import re
 import logging
 import maskpass
 
+from datetime import datetime
+from config.prompt import PrintPrompts, InputPrompts
+
 logger = logging.getLogger(__name__)
 
 def error_handling(func):
@@ -18,7 +21,6 @@ def error_handling(func):
         finally:
             return value
     return wrapper
-        
 
 @error_handling
 def input_validation(regex_exp: str, value: str) -> bool:
@@ -51,4 +53,21 @@ def validate_uuid(prompts: str, regex_exp: str) -> str:
         result = input_validation(regex_exp, uuid)
         if result == True:
             return uuid
-            
+
+def validate_date() -> None:
+    '''Checking date if valid or not'''
+    print(PrintPrompts.DATE)
+    while True:
+        date_str = input(InputPrompts.ENTER)
+        try:
+            start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+            if start_date > datetime.now().date():
+                return start_date
+            elif start_date <= datetime.now().date():
+                print(PrintPrompts.INVALID_DATE)
+            else: 
+                print(PrintPrompts.INVALID_DATE_FORMAT)
+        except ValueError:
+            logger.exception(ValueError)
+            print(PrintPrompts.INVALID_DATE) 
+                      

@@ -4,12 +4,12 @@
 import logging
 import sys
 
-from src.config.prompt import PrintPrompts, InputPrompts 
-from src.menus import user, admin
-from src.controllers.registration import Registration
-from src.utils.authentication import Authentication
-import src.utils.initialize_app as initialize_app
-
+from config.prompt import PrintPrompts, InputPrompts 
+from menus.admin import AdminMenu
+from menus.user import UserMenu
+from controllers.registration import Registration
+from utils.authentication import Authentication
+import utils.initialize_app as initialize_app
 
 logging.basicConfig(format = '%(asctime)s - %(message)s', 
                     datefmt = '%d-%m-%Y %H:%M:%S',
@@ -27,17 +27,17 @@ def main() -> None:
         parameter = input(InputPrompts.ENTER)
         match parameter:
             case '1':
-                Registration()
-                continue
+                obj_register = Registration()
+                obj_register.save_customer()
             case '2':
                 obj_authenticate = Authentication()
                 role = obj_authenticate.user_authentication()
                 if role is not None and role[0] == 'user':
-                    user.user_menu(role[1])
+                    obj_user = UserMenu(role[1])
+                    obj_user.user_menu()
                 elif role is not None and role[0] == 'admin':
-                    admin.admin_menu()
-                else:
-                    continue
+                    obj_admin = AdminMenu()
+                    obj_admin.admin_menu()
             case _: print(PrintPrompts.INVALID_PROMPT)
 
 if __name__ == "__main__":

@@ -4,10 +4,10 @@ from sqlite3 import Connection
 class DatabaseConnection:
     ''' Implements Singleton Design Pattern for sql connection'''
 
-    def __new__(cls, *args, **kwargs) -> 'DatabaseConnection':
-        if not hasattr(cls, 'instance') or not cls.instance:
-            cls.instance = super().__new__(cls)
-        return cls.instance
+    # def __new__(cls, *args, **kwargs) -> 'DatabaseConnection':
+    #     if not hasattr(cls, 'instance') or not cls.instance:
+    #         cls.instance = super().__new__(cls)
+    #     return cls.instance
 
     def __init__(self, host: str) -> None:
         self.connection = None

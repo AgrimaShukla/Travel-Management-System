@@ -4,11 +4,11 @@ import time
 import hashlib
 import logging
 
-from src.database.database_access import single_data_returning_query
-from src.utils import validation
-from src.config.queries import Query 
-from src.config.prompt import PrintPrompts, InputPrompts
-from src.config.regex_value import RegularExp
+from database.database_access import QueryExecutor
+from utils import validation
+from config.queries import Query 
+from config.prompt import PrintPrompts, InputPrompts
+from config.regex_value import RegularExp
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +18,7 @@ class Authentication:
     def __init__(self) -> None:
         # no of attempts given to user
         self.attempts = 3
+        self.db_access = QueryExecutor()
     
 
     def invalid_username_password(self) -> None:
@@ -34,7 +35,7 @@ class Authentication:
             password = validation.validate_password(RegularExp.PASSWORD).encode()
             password = hashlib.md5(password).hexdigest()
             data = (username, )
-            user_data = single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, data)
+            user_data = self.db_access.single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, data)
     
             # to check if username matches
             if user_data is None:
@@ -44,7 +45,7 @@ class Authentication:
             # to check if password matches
             elif user_data[0] == password:
                 data = (username, password)
-                role = single_data_returning_query(Query.SELECT_CREDENTIALS_PASSWORD, data)
+                role = self.db_access.single_data_returning_query(Query.SELECT_CREDENTIALS_PASSWORD, data)
                 return role
             else:
                 self.invalid_username_password()

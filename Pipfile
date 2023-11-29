@@ -8,6 +8,10 @@ python-dotenv = "*"
 shortuuid = "*"
 tabulate = "*"
 maskpass = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+pytest-order = "*"
 
 [dev-packages]
 
