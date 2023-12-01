@@ -51,6 +51,6 @@ class Authentication:
                 self.invalid_username_password()
                 continue
 
-        print("Attempts exhausted")
+        print(PrintPrompts.ATTEMPTS)
         time.sleep(3)      
                

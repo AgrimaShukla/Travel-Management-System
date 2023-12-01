@@ -67,7 +67,7 @@ def test_show_package_true(package_fixture):
     value = package_fixture.show_package('123', 'active')
     assert value == True
 
-def test_show_package_print(mocker, package_fixture, capsys):
+def test_show_package_print(package_fixture, capsys):
     package_fixture.db_access.returning_query.return_value = [('P_123', 'beaches', '2 days 1 nights', 'luxury', '19000', 'active')]
     package_fixture.show_package('123', 'active')
     captured = capsys.readouterr()

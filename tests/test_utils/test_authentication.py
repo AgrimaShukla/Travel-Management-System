@@ -1,5 +1,6 @@
 import pytest
 from utils.authentication import Authentication
+from config.prompt import PrintPrompts
 import hashlib
 
 
@@ -20,10 +21,12 @@ def test_user_authentication(mocker, auth_fixture):
     mocker.patch('utils.authentication.validation.validate_password', lambda a: 'Agrima@18')
     assert auth_fixture.user_authentication()[0] == 'user'
 
-def test_user_authentication_invalid(mocker, auth_fixture):
+def test_user_authentication_invalid(mocker, auth_fixture, capsys):
     ls = iter([(None,),('user',) ])
     auth_fixture.db_access.single_data_returning_query.return_value = next(ls)
     mocker.patch('utils.authentication.validation.validate', lambda a, b: 'agrima_19')
     mocker.patch('utils.authentication.validation.validate_password', lambda a: 'Agrima18')
     auth_fixture.user_authentication()
+    captured = capsys.readouterr()
+    assert f'{PrintPrompts.INVALID_CREDENTIALS}\n{PrintPrompts.ATTEMPTS}' in captured.out
     assert  auth_fixture.attempts == 0

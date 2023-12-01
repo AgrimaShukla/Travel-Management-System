@@ -40,6 +40,7 @@ class Review:
                 if enter_booking_id in booking_id:
                     package_id = self.db_access.single_data_returning_query(Query.SELECT_PACKAGE_REVIEW, (enter_booking_id, ))
                     self.add_review(enter_booking_id, package_id[0])
+                    print(PrintPrompts.REVIEW)
                     break
                 else:
                     print(PrintPrompts.INVALID_BOOKING)

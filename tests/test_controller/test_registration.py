@@ -12,7 +12,7 @@ def registration_fixture(mocker):
 
 def test_save_customer(mocker, registration_fixture, capsys):
     lst = ['agrima_17', 'Agrima', '9093839939', 'female', '21', 'agrima@gmail.com']
-    mocker.patch('controllers.registration.validation.validate', lambda a, b: lst.pop(0))
+    mocker.patch('controllers.registration.validation.validate', side_effect = lst)
     mocker.patch('controllers.registration.validation.validate_password', lambda a: 'Agrima@17')
     registration_fixture.db_access.insert_table.return_value = True
     registration_fixture.save_customer()

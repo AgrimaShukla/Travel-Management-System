@@ -16,6 +16,8 @@ class PrintPrompts:
             7) EXIT
       '''
 
+      ATTEMPTS = "Attempts exhausted"
+      
       BOOKING = '''
             SELECT ANY OPTION:
             1) PROCEED WITH BOOKING
@@ -23,7 +25,7 @@ class PrintPrompts:
             3) EXIT
       '''
 
-      BOOKING_ID = "BOOKIND ID {} DOES NOT EXIST. ENTER AGAIN"
+      BOOKING_ID = "BOOKING ID {} DOES NOT EXIST. ENTER AGAIN"
       
       BOOKED_SUCCESSFULLY = "Booked successfully!\nPrice: {}\nBooking id: {}"
 
@@ -129,6 +131,8 @@ class PrintPrompts:
 
       PRICE = "Price: {}"
 
+      REVIEW = 'REVIEW ADDED'
+      
       SUCCESFULLY = "Successfully registered"
 
       
