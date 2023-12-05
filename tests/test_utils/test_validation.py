@@ -38,49 +38,50 @@ data = [(InputPrompts.INPUT.format("name"), RegularExp)
 def mock_error_handling():
     return False
 
-@pytest.mark.parametrize("regex_exp, value", valid_data)
-def test_valid_data(regex_exp, value):
-    '''Test for validating input'''
-    assert input_validation(regex_exp, value)
+class TestValidation:
 
-@pytest.mark.parametrize("regex_exp, value", invalid_data)
-def test_invalid_data(regex_exp, value):
-    '''Test for validating input'''
-    assert not input_validation(regex_exp, value)
 
-# @pytest.mark.parametrize("prompts, regular_exp", data)
-# def test_validate_function(prompts, regular_exp):
-    
-@pytest.mark.parametrize("data", [(("@123", "agrima_18"), (False, True))])
-def test_validate(monkeypatch, data):
-    test_username = iter(data[0])
-    result = iter(data[1])
-    monkeypatch.setattr("builtins.input", lambda _: next(test_username))
-    monkeypatch.setattr('utils.validation.input_validation', lambda a, b: next(result))
-    assert validate(InputPrompts.INPUT.format("username"), RegularExp.USERNAME) == data[0][-1]
-    
-@pytest.mark.parametrize("data", [(("@123", "P_124567"), (False, True))])
-def test_validate_uuid(monkeypatch, data):
-    test_username = iter(data[0])
-    result = iter(data[1])
-    monkeypatch.setattr("builtins.input", lambda _: next(test_username))
-    monkeypatch.setattr('utils.validation.input_validation', lambda a, b: next(result))
-    assert validate_uuid(InputPrompts.INPUT.format("username"), RegularExp.USERNAME) == data[0][-1]
+    @pytest.mark.parametrize("regex_exp, value", valid_data)
+    def test_valid_data(self, regex_exp, value):
+        '''Test for validating input'''
+        assert input_validation(regex_exp, value)
 
-def test_validate_password(monkeypatch):
-    data = ['123', 'vsjvs', 'Agrima@18']
-    monkeypatch.setattr("utils.validation.maskpass.askpass", lambda **kwargs: data.pop(0))
-    result = validate_password(RegularExp.PASSWORD) 
-    assert result == 'Agrima@18'
+    @pytest.mark.parametrize("regex_exp, value", invalid_data)
+    def test_invalid_data(self, regex_exp, value):
+        '''Test for validating input'''
+        assert not input_validation(regex_exp, value)
+        
+    @pytest.mark.parametrize("data", [(("@123", "agrima_18"), (False, True))])
+    def test_validate(self, monkeypatch, data):
+        test_username = iter(data[0])
+        result = iter(data[1])
+        monkeypatch.setattr("builtins.input", lambda _: next(test_username))
+        monkeypatch.setattr('utils.validation.input_validation', lambda a, b: next(result))
+        assert validate(InputPrompts.INPUT.format("username"), RegularExp.USERNAME) == data[0][-1]
+        
+    @pytest.mark.parametrize("data", [(("@123", "P_124567"), (False, True))])
+    def test_validate_uuid(self, monkeypatch, data):
+        test_username = iter(data[0])
+        result = iter(data[1])
+        monkeypatch.setattr("builtins.input", lambda _: next(test_username))
+        monkeypatch.setattr('utils.validation.input_validation', lambda a, b: next(result))
+        assert validate_uuid(InputPrompts.INPUT.format("username"), RegularExp.USERNAME) == data[0][-1]
 
-def test_error_handling(capsys):
-    error_handling(mock_error_handling)()
-    captured = capsys.readouterr()
-    assert "Wrong input! Enter again." in captured.out
+    def test_validate_password(self, monkeypatch):
+        data = ['123', 'vsjvs', 'Agrima@18']
+        monkeypatch.setattr("utils.validation.maskpass.askpass", lambda **kwargs: data.pop(0))
+        result = validate_password(RegularExp.PASSWORD) 
+        assert result == 'Agrima@18'
 
-def test_validate_date(monkeypatch):
-    data = ['2020-12-01', '2023-11-31', '2023-12-03']
-    monkeypatch.setattr('builtins.input', lambda _: data.pop(0))
-    start_date = validate_date()
-    assert start_date ==  datetime.date(2023, 12, 3)
-    
+    def test_error_handling(self, capsys):
+        error_handling(mock_error_handling)()
+        captured = capsys.readouterr()
+        assert "Wrong input! Enter again." in captured.out
+
+    def test_validate_date(self, monkeypatch, capsys):
+        data = ['2020-12-01', '2023-11-31', '2040-12-03']
+        monkeypatch.setattr('builtins.input', lambda _: data.pop(0))
+        start_date = validate_date()
+        captured = capsys.readouterr()
+        assert start_date ==  datetime.date(2040, 12, 3)
+        assert 'INVALID DATE' in captured.out

@@ -40,7 +40,7 @@ def create_admin() -> None:
 def create_tables() -> None:
         '''Creating all tables'''
         try:
-             with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
+            with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
                 cursor = connection.cursor()
                 cursor.execute(Query.CREATE_CREDENTIALS)
                 cursor.execute(Query.CREATE_ADMIN)
@@ -50,10 +50,6 @@ def create_tables() -> None:
                 cursor.execute(Query.CREATE_BOOKING)
                 cursor.execute(Query.CREATE_BOOKING_PACKAGE)
                 cursor.execute(Query.CREATE_REVIEW)
-        except sqlite3.IntegrityError as er:
-            logger.exception(er)
-        except sqlite3.OperationalError as er:
-            logger.exception(er)
         except sqlite3.Error as er:
             logger.exception(er)
         

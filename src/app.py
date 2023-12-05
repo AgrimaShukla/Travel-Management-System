@@ -38,6 +38,7 @@ def main() -> None:
                 elif role is not None and role[0] == 'admin':
                     obj_admin = AdminMenu()
                     obj_admin.admin_menu()
+            case '3': break
             case _: print(PrintPrompts.INVALID_PROMPT)
 
 if __name__ == "__main__":
@@ -46,7 +47,3 @@ if __name__ == "__main__":
     initialize_app.create_tables()
     initialize_app.create_admin()
     main()
-
-else:
-    sys.exit()
-    

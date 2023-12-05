@@ -81,6 +81,7 @@ class PrintPrompts:
             SELECT ONE OPTION:
             1) REGISTER
             2) LOGIN
+            3) EXIT
       '''
       INVALID_BOOKING = '''
             INVALID BOOKING ID.
@@ -90,7 +91,7 @@ class PrintPrompts:
       
       INVALID_DATE_FORMAT = "INVALID DATE FORMAT. PLEASE USE 'YYYY-MM-DD'."
 
-      INVALID_DATE = "INVVALID DATE"
+      INVALID_DATE = "INVALID DATE"
 
       INVALID_PROMPT = '''
       INVALID OPTION

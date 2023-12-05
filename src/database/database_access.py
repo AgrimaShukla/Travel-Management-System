@@ -26,9 +26,6 @@ class QueryExecutor:
         except sqlite3.IntegrityError as er:
             logger.exception(er)
             print(PrintPrompts.USER_EXISTS)
-        except sqlite3.OperationalError as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
         except sqlite3.Error as er:
             logger.exception(er)
             print(PrintPrompts.UNEXPECTED_ISSUE)
@@ -44,9 +41,6 @@ class QueryExecutor:
                     return data
                 data = cursor.execute(query_to_show).fetchall()
                 return data
-        except sqlite3.OperationalError as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
         except sqlite3.Error as er:
             logger.exception(er)
             print(PrintPrompts.UNEXPECTED_ISSUE)
@@ -61,9 +55,6 @@ class QueryExecutor:
         except sqlite3.IntegrityError as er:
             logger.exception(er)
             print(PrintPrompts.USER_EXISTS)
-        except sqlite3.OperationalError as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
         except sqlite3.Error as er:
             logger.exception(er)
             print(PrintPrompts.UNEXPECTED_ISSUE)
@@ -75,9 +66,6 @@ class QueryExecutor:
                 cursor = connection.cursor()
                 data = cursor.execute(query_to_check, params).fetchone()
                 return data
-        except sqlite3.OperationalError as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
         except sqlite3.Error as er:
             logger.exception(er)
             print(PrintPrompts.UNEXPECTED_ISSUE)

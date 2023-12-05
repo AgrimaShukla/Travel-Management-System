@@ -10,11 +10,13 @@ def registration_fixture(mocker):
     mocker.patch.object(reg, 'db_access', obj_mock)
     return reg
 
-def test_save_customer(mocker, registration_fixture, capsys):
-    lst = ['agrima_17', 'Agrima', '9093839939', 'female', '21', 'agrima@gmail.com']
-    mocker.patch('controllers.registration.validation.validate', side_effect = lst)
-    mocker.patch('controllers.registration.validation.validate_password', lambda a: 'Agrima@17')
-    registration_fixture.db_access.insert_table.return_value = True
-    registration_fixture.save_customer()
-    captured = capsys.readouterr()
-    assert f"{PrintPrompts.SUCCESFULLY}" in captured.out
+class TestRegistration:
+    
+    def test_save_customer(self, mocker, registration_fixture, capsys):
+        lst = ['agrima_17', 'Agrima', '9093839939', 'female', '21', 'agrima@gmail.com']
+        mocker.patch('controllers.registration.validation.validate', side_effect = lst)
+        mocker.patch('controllers.registration.validation.validate_password', lambda a: 'Agrima@17')
+        registration_fixture.db_access.insert_table.return_value = True
+        registration_fixture.save_customer()
+        captured = capsys.readouterr()
+        assert f"{PrintPrompts.SUCCESFULLY}" in captured.out
