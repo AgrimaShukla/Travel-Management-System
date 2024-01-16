@@ -1,19 +1,19 @@
 '''This module handles user preference for the packages'''
 
 from config.prompt import PrintPrompts, InputPrompts
-from controllers.customer_controller.booking.booking_module import BookPackage
-from controllers.customer_controller.booking.booking_package import view_package
-from controllers.customer_controller.customer_info import CustomerDetails
-from controllers.customer_controller.review_module import Review
+from view.customer_view.booking_view.booking_module_view import BookingPackageView
+from view.customer_view.customer_info import CustomerDetails
+from view.customer_view.review_module import ReviewViews
+from view.customer_view.booking_view.view_package import view_package
 
 class UserMenu:
     '''Displaying user menu'''
 
     def __init__(self, customer_id: str) -> None:
         self.customer_id = customer_id
-        self.obj_booking = BookPackage()
+        self.obj_booking = BookingPackageView()
         self.obj_customer = CustomerDetails(self.customer_id)
-        self.obj_review = Review()
+        self.obj_review = ReviewViews()
 
     def category_menu(self, dest_option: str) -> None:
         '''User can choose category'''
@@ -49,7 +49,7 @@ class UserMenu:
                 case '2': self.obj_booking.cancel_booking(self.customer_id)
                 case '3': self.obj_booking.show_itinerary_package(self.customer_id)
                 case '4': self.obj_customer.show_details()
-                case '5': self.obj_customer.update_details()
+                case '5': self.obj_customer.enter_details()
                 case '6': self.obj_review.show_data(self.customer_id)
                 case '7': break
                 case _: print(PrintPrompts.INVALID_PROMPT)

@@ -2,13 +2,12 @@
     This module is entry point
 '''
 import logging
-import sys
 
 from config.prompt import PrintPrompts, InputPrompts 
-from menus.admin import AdminMenu
-from menus.user import UserMenu
-from controllers.registration import Registration
-from utils.authentication import Authentication
+from view.menus.admin import AdminMenu
+from view.menus.user import UserMenu
+from view.registration import RegistrationViews
+from view.authentication import Authentication
 import utils.initialize_app as initialize_app
 
 logging.basicConfig(format = '%(asctime)s - %(message)s', 
@@ -22,13 +21,12 @@ def main() -> None:
     '''Main function to check if user or admin and show corresponding menu'''
     while True:
         print(PrintPrompts.NAME)
-        print(PrintPrompts.LOGIN_ATTEMPTS)
         print(PrintPrompts.ENTRY)
         parameter = input(InputPrompts.ENTER)
         match parameter:
             case '1':
-                obj_register = Registration()
-                obj_register.save_customer()
+                obj_register = RegistrationViews()
+                obj_register.enter_customer_details()
             case '2':
                 obj_authenticate = Authentication()
                 role = obj_authenticate.user_authentication()
@@ -44,6 +42,6 @@ def main() -> None:
 if __name__ == "__main__":
 
     # all the tables will be created
-    initialize_app.create_tables()
-    initialize_app.create_admin()
+    # initialize_app.create_tables()
+    # initialize_app.create_admin()
     main()

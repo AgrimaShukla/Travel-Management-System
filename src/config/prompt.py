@@ -27,7 +27,7 @@ class PrintPrompts:
 
       BOOKING_ID = "BOOKING ID {} DOES NOT EXIST. ENTER AGAIN"
       
-      BOOKED_SUCCESSFULLY = "Booked successfully!\nPrice: {}\nBooking id: {}"
+      BOOKED_SUCCESSFULLY = "Booked successfully!\nPrice: {}\n"
 
       CANCELLED = 'CANCELLED'
 
@@ -83,6 +83,9 @@ class PrintPrompts:
             2) LOGIN
             3) EXIT
       '''
+
+      INSERTED = 'INSERTED'
+
       INVALID_BOOKING = '''
             INVALID BOOKING ID.
             ENTER AGAIN.

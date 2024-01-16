@@ -40,7 +40,6 @@ class TestQueryExecutor:
         mock_cursor.execute.assert_called()
         assert result == self.mock_fetchall_result
 
-
     def test_non_returning_query_params(self, mock_database_connection, query_executor_fixture, capsys):
         mock_cursor = mock_database_connection
         query_executor_fixture.non_returning_query(self.non_returning_query, self.data, "Done")

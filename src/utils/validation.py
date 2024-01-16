@@ -11,15 +11,12 @@ logger = logging.getLogger(__name__)
 def error_handling(func):
     '''Decorator for handling errors'''
     def wrapper(*args, **kwargs):
-        try: 
-            value = func(*args, **kwargs)
-            if value == False:
-                raise Exception
-        except:
+        value = func(*args, **kwargs)
+        if value == True:
+            return value
+        else: 
             logger.exception("not validated")
             print("Wrong input! Enter again.")
-        finally:
-            return value
     return wrapper
 
 @error_handling
@@ -30,7 +27,7 @@ def input_validation(regex_exp: str, value: str) -> bool:
         return True
     return False
 
-def validate(prompts: str, regular_exp: str) -> str:
+def validate(regular_exp: str, prompts: str) -> str:
     '''taking input and passing to input validation'''
     while True:
         value = input(prompts).lower()

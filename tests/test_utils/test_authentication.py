@@ -1,5 +1,5 @@
 import pytest
-from utils.authentication import Authentication
+from view.authentication import Authentication
 from config.prompt import PrintPrompts
 import hashlib
 

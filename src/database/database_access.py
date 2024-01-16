@@ -36,7 +36,6 @@ class QueryExecutor:
             with DatabaseConnection(self.path) as connection:
                 cursor = connection.cursor()
                 if params:
-                    cursor = connection.cursor()
                     data = cursor.execute(query_to_show, params).fetchall()
                     return data
                 data = cursor.execute(query_to_show).fetchall()
@@ -45,13 +44,13 @@ class QueryExecutor:
             logger.exception(er)
             print(PrintPrompts.UNEXPECTED_ISSUE)
 
-    def non_returning_query(self, query_update: str, params: tuple, prompts: str) -> None:
+    def non_returning_query(self, query_update: str, params: tuple) -> None:
         '''This function will execute non returning queries'''
         try:
             with DatabaseConnection(self.path) as connection:
                 cursor = connection.cursor()
                 cursor.execute(query_update, params)
-                print(prompts)
+                return True
         except sqlite3.IntegrityError as er:
             logger.exception(er)
             print(PrintPrompts.USER_EXISTS)
