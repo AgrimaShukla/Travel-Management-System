@@ -17,12 +17,13 @@ class RegistrationViews:
     def enter_customer_details(self) -> None:
         '''Saving the customer'''   
         username = validate(RegularExp.USERNAME, InputPrompts.INPUT.format("username"))
-        password = validate_password().encode()
+        password = validate_password(RegularExp.PASSWORD).encode()
         password = hashlib.md5(password).hexdigest()
         name = validate(RegularExp.NAME, InputPrompts.INPUT.format("name"))
         mobile_no = validate(RegularExp.MOBILE_NUMBER, InputPrompts.INPUT.format("mobile no"))
         gender = validate(RegularExp.GENDER, InputPrompts.GENDER)
         age = validate(RegularExp.AGE, InputPrompts.INPUT.format("age"))
+        # age = int(input("Enter age: "))
         email = validate(RegularExp.EMAIL, InputPrompts.EMAIL)
         if_registered = self.register.save_customer(username, password, name, mobile_no, gender, age, email)
         if if_registered == True:

@@ -48,7 +48,7 @@ class CustomerDetails:
 
             column = CUSTOMER_DETAILS[value]
             # entered_value = input(InputPrompts.INPUT.format(column))
-            updated = self.cust.update_details(value, column, entered_value)
+            updated = self.cust.update_details(column, entered_value)
             if updated == True:
                 print(PrintPrompts.UPDATED)
             else:

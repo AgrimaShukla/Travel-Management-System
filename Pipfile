@@ -12,6 +12,13 @@ pytest = "*"
 pytest-cov = "*"
 pytest-mock = "*"
 pytest-order = "*"
+flask = "*"
+marshmallow = "*"
+flask-smorest = "*"
+flask-jwt-extended = "*"
+mysql = "*"
+mysqlx-connector = "*"
+mysql-connector-python = "*"
 
 [dev-packages]
 

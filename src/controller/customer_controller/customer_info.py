@@ -19,7 +19,7 @@ class CustomerController:
         customer_details = self.db_access.single_data_returning_query(Query.SELECT_CUSTOMER, (self.customer_id, ))
         return customer_details 
 
-    def update_details(self, value, column, entered_value) -> None:
+    def update_details(self, column, entered_value) -> None:
         '''update details of customer'''
         result = self.db_access.non_returning_query(Query.UPDATE_CUSTOMER.format(column), (entered_value, self.customer_id))
         return result

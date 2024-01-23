@@ -1,10 +1,10 @@
 import pytest
-from controllers.admin_controller.itinerary_module import Itinerary
+from controller.admin_controller.itinerary import ItineraryController
 from config.prompt import PrintPrompts
 
 @pytest.fixture
 def itinerary_fixture(mocker):
-    obj_itinerary = Itinerary()
+    obj_itinerary = ItineraryController()
     mocker_obj = mocker.Mock()
     mocker.patch.object(obj_itinerary, 'db_access', mocker_obj)
     return obj_itinerary

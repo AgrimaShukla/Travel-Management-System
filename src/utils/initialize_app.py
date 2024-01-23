@@ -2,7 +2,7 @@
 
 import shortuuid
 import hashlib
-import sqlite3
+import mysql.connector
 import logging
 import os 
 from os.path import join, dirname
@@ -26,7 +26,7 @@ def create_admin() -> None:
     GENDER = os.getenv('GENDER')
     AGE = os.getenv('AGE')
     EMAIL = os.getenv('EMAIL')
-
+    # print(type(USERNAME), type(PASSWORD), type(NAME), type(MOBILE_NUMBER), type(GENDER), type(AGE), type(EMAIL))
     obj_query_executor = QueryExecutor()
     if_admin_exists = obj_query_executor.single_data_returning_query(Query.SELECT_ADMIN, ('admin', ))
     if if_admin_exists == None:
@@ -40,7 +40,7 @@ def create_admin() -> None:
 def create_tables() -> None:
         '''Creating all tables'''
         try:
-            with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
+            with DatabaseConnection() as connection:
                 cursor = connection.cursor()
                 cursor.execute(Query.CREATE_CREDENTIALS)
                 cursor.execute(Query.CREATE_ADMIN)
@@ -50,6 +50,6 @@ def create_tables() -> None:
                 cursor.execute(Query.CREATE_BOOKING)
                 cursor.execute(Query.CREATE_BOOKING_PACKAGE)
                 cursor.execute(Query.CREATE_REVIEW)
-        except sqlite3.Error as er:
+        except mysql.connector.Error as er:
             logger.exception(er)
         

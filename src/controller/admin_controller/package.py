@@ -18,8 +18,8 @@ class PackageController:
         inserted = self.db_access.non_returning_query(Query.INSERT_PACKAGE_QUERY, data)
         return inserted
 
-    def fetch_package(self, query_to_execute, status):
-        data = self.db_access.returning_query(query_to_execute, status)
+    def fetch_package(self):
+        data = self.db_access.returning_query(Query.SELECT_PACKAGE)
         return data
     
     def check_package(self, package_data: tuple) -> list:
