@@ -16,3 +16,4 @@ class PackageController:
     def create_package(self, user_data):
         self.pack_handler.add_package(user_data["package_name"], user_data["duration"], user_data["category"], user_data["price"], user_data["status"])
         return {"message": "Package created"}, 201
+    
