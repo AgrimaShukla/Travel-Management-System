@@ -15,7 +15,7 @@ def exception_handler(func):
             func(*args, **kwargs)
         except sqlite3.OperationalError as err:
             logger.exception(err)
-            print(f"{PrintPrompts.UNEXPECTED_ISSUE}")
+            print(PrintPrompts.UNEXPECTED_ISSUE)
         except sqlite3.IntegrityError as err:
             logger.exception(err)
             print(PrintPrompts.USER_EXISTS)
