@@ -73,7 +73,12 @@ class Query:
                 status TEXT
     )
     '''
+    SELECT_NAMES = 'SELECT package_name FROM package group by package_name'
 
+    SELECT_DURATION = 'SELECT duration FROM package group by duration'
+
+    SELECT_CATEGORY = 'SELECT category FROM package group by category'
+    
     CHANGE_STATUS_QUERY = 'UPDATE package SET status = ? WHERE package_id = ?'
     
     INSERT_PACKAGE_QUERY = '''INSERT INTO package VALUES(?, ?, ?, ?, ?, ?)'''

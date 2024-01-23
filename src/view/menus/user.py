@@ -30,6 +30,7 @@ class UserMenu:
     def destination_menu(self) -> None:
         '''User can choose destination'''
         while True:
+            
             print(PrintPrompts.DESTINATION_PROMPT)
             option = input(InputPrompts.ENTER)
             if option in ('1', '2', '3', '4', '5'):
