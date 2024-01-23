@@ -3,7 +3,7 @@ from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from schemas.customer_schema import ProfileSchema
 from flask_jwt_extended import get_jwt
-from controller.customer_controller.customer_info import CustomerController
+# from controller.customer_controller.customer_info import CustomerController
 from utils.role_based_access import role_based_access
 from utils.role_mapping import Role
 

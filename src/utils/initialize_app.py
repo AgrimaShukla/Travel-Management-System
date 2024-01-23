@@ -34,7 +34,7 @@ def create_admin() -> None:
         password = hashlib.md5(PASSWORD.encode()).hexdigest()
         admin_credentials = (user_id, USERNAME, password, 'admin')
         admin_info = (user_id, NAME, MOBILE_NUMBER, GENDER, AGE, EMAIL)
-        obj_query_executor.insert_table(Query.INSERT_CREDENTIALS, admin_credentials, Query.INSERT_ADMIN, admin_info)
+        obj_query_executor.insert_table(Query.INSERT_CREDENTIALS, admin_credentials, Query.INSERT_USER, admin_info)
         
    
 def create_tables() -> None:
@@ -43,7 +43,6 @@ def create_tables() -> None:
             with DatabaseConnection() as connection:
                 cursor = connection.cursor()
                 cursor.execute(Query.CREATE_CREDENTIALS)
-                cursor.execute(Query.CREATE_ADMIN)
                 cursor.execute(Query.CREATE_CUSTOMER)
                 cursor.execute(Query.CREATE_PACKAGE)
                 cursor.execute(Query.CREATE_ITINERARY)

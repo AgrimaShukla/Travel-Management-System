@@ -13,10 +13,10 @@ from routes.auth_routes.authorization import blp_auth
 from routes.admin_routes.package import blp_package
 from routes.admin_routes.itinerary import blp_itinerary
 from routes.customer_routes.profile import blp_profile
-from view.menus.admin import AdminMenu
-from view.menus.user import UserMenu
-from view.registration import RegistrationViews
-from view.authentication import Authentication
+# from view.menus.admin import AdminMenu
+# from view.menus.user import UserMenu
+# from view.registration import RegistrationViews
+# from view.authentication import Authentication
 import utils.initialize_app as initialize_app
 from blocklist import BLOCKLIST
 

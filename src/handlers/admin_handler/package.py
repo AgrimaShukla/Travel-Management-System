@@ -4,23 +4,25 @@ import shortuuid
 from database.database_access import QueryExecutor
 from config.regex_value import RegularExp
 from config.prompt_values import UPDATE_PACKAGE
+from utils.exception import DataNotFound
 
-
-class PackageController:
+class PackageHandler:
 
     def __init__(self):
         self.db_access = QueryExecutor()
     
     def add_package(self, package_name, duration, category, price, status):
         package_id = 'P_' + shortuuid.ShortUUID().random(length = 8)
-        
         data = (package_id, package_name, duration, category, price, status)
-        inserted = self.db_access.non_returning_query(Query.INSERT_PACKAGE_QUERY, data)
-        return inserted
+        self.db_access.non_returning_query(Query.INSERT_PACKAGE_QUERY, data)
 
     def fetch_package(self):
         data = self.db_access.returning_query(Query.SELECT_PACKAGE)
-        return data
+        if data:
+            return data
+        else: 
+            raise DataNotFound
+
     
     def check_package(self, package_data: tuple) -> list:
         '''To check package if it exists or not'''

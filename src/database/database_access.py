@@ -20,15 +20,10 @@ class QueryExecutor:
             with DatabaseConnection() as connection:
                 cursor = connection.cursor()
                 cursor.execute(table_1, data_table1)
-                # cursor.execute(table_2, data_table2)
-                return True
-        except mysql.connector.IntegrityError as er:
-            logger.exception(er)
-            print(PrintPrompts.USER_EXISTS)
+                cursor.execute(table_2, data_table2)
         except mysql.connector.Error as er:
             logger.exception(er)
             print(PrintPrompts.UNEXPECTED_ISSUE)
-
     def returning_query(self, query_to_show: str, params = None) -> list:
         '''This function will execute returning queries and return multiple rows'''
         try:
@@ -51,7 +46,7 @@ class QueryExecutor:
             with DatabaseConnection() as connection:
                 cursor = connection.cursor()
                 cursor.execute(query_update, params)
-                return True
+            
         except mysql.connector.IntegrityError as er:
             logger.exception(er)
             print(PrintPrompts.USER_EXISTS)
@@ -63,7 +58,7 @@ class QueryExecutor:
         '''This function will returning queries and return single row'''
         try:
             with DatabaseConnection() as connection:
-                cursor = connection.cursor(dictionary=True)
+                cursor = connection.cursor()
                 cursor.execute(query_to_check, params)
                 data = cursor.fetchone()
                 return data

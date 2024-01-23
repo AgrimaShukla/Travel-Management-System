@@ -34,7 +34,7 @@ class Query:
                 FOREIGN KEY (customer_id) REFERENCES credentials(user_id) ON DELETE CASCADE
         )
     '''
-    INSERT_CUSTOMER = 'INSERT INTO customer VALUES(%s, %s, %s, %s, %s, %s)'
+    INSERT_USER = 'INSERT INTO customer VALUES(%s, %s, %s, %s, %s, %s)'
 
     SELECT_CUSTOMER = 'SELECT name, mobile_number, gender, age, email from customer WHERE customer_id = %s'
    

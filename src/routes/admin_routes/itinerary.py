@@ -2,7 +2,7 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from schemas.admin_schema import ItinerarySchema
-from controller.admin_controller.itinerary import ItineraryController
+# from controller.admin_controller.itinerary import ItineraryController
 from utils.role_based_access import role_based_access
 from utils.role_mapping import Role
 
