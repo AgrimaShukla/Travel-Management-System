@@ -1,19 +1,17 @@
 ''' This module is for registering user'''
 
-
-import logging
 import shortuuid
 
 from config.queries import Query
 from database.database_access import QueryExecutor
-
-logger = logging.getLogger(__name__)
+from utils.exception import exception_handler
 
 class Registration:
     '''Registering the customer'''
     def __init__(self) -> None:
         self.db_access = QueryExecutor()
 
+    @exception_handler
     def save_customer(self, username, password, name, mobile_no, gender, age, email) -> None:
         '''Saving the customer'''  
         user_id = "U" + shortuuid.ShortUUID().random(length = 10)

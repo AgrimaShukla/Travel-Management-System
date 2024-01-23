@@ -45,7 +45,6 @@ class Itinerary:
         not_exist_ititnerary = self.show_itinerary()
         while True:
             itinerary_id = validate_uuid(InputPrompts.ITINERARY_ID, RegularExp.UUID)
-            # itinerary_id = validate_uuid(InputPrompts.ITINERARY_ID, RegularExp.UUID)
             return_value = self.iti_controller.check_itinerary(itinerary_id)
             if not return_value:
                 print(PrintPrompts.NO_ITINERARY.format(itinerary_id))

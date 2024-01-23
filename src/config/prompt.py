@@ -33,9 +33,9 @@ class PrintPrompts:
 
       CATEGORY_PROMPT = '''
             SELCT ANY OPTION:
-            1) LUXURY
-            2) MID-RANGE
-            3) BUDGET
+            1) {}
+            2) {}
+            3) {}
             4) EXIT
 
             Enter any option
@@ -57,9 +57,9 @@ class PrintPrompts:
 
       DAY_PROMPT= '''
             SELECT ANY OPTION:
-            1) 2 days 1 night
-            2) 3 days 2 night
-            3) 4 days 3 night
+            1) {}
+            2) {}
+            3) {}
             4) EXIT
 
             Enter any option
@@ -67,11 +67,11 @@ class PrintPrompts:
 
       DESTINATION_PROMPT = '''
             SELECT ANY OPTION:
-            1) Beaches
-            2) Monuments
-            3) Hill stations
-            4) Religious
-            5) Wild life
+            1) {}
+            2) {}
+            3) {}
+            4) {}
+            5) {}
             6) Exit
 
             Enter any option

@@ -16,33 +16,24 @@ class QueryExecutor:
 
     def insert_table(self, table_1: str, data_table1: tuple, table_2: str, data_table2: tuple) -> None:
         '''Inserting customer data into database'''
-        try:
-            with DatabaseConnection(self.path) as connection:
-                cursor = connection.cursor()
-                cursor.execute(table_1, data_table1)
-                cursor.execute(Query.ENABLE_FOREIGN_KEY)
-                cursor.execute(table_2, data_table2)
-                return True
-        except sqlite3.IntegrityError as er:
-            logger.exception(er)
-            print(PrintPrompts.USER_EXISTS)
-        except sqlite3.Error as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
-
+        
+        with DatabaseConnection(self.path) as connection:
+            cursor = connection.cursor()
+            cursor.execute(table_1, data_table1)
+            cursor.execute(Query.ENABLE_FOREIGN_KEY)
+            cursor.execute(table_2, data_table2)
+            return True
+     
     def returning_query(self, query_to_show: str, params = None) -> list:
         '''This function will execute returning queries and return multiple rows'''
-        try:
-            with DatabaseConnection(self.path) as connection:
-                cursor = connection.cursor()
-                if params:
-                    data = cursor.execute(query_to_show, params).fetchall()
-                    return data
-                data = cursor.execute(query_to_show).fetchall()
+        with DatabaseConnection(self.path) as connection:
+            cursor = connection.cursor()
+            if params:
+                data = cursor.execute(query_to_show, params).fetchall()
                 return data
-        except sqlite3.Error as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
+            data = cursor.execute(query_to_show).fetchall()
+            return data
+       
 
     def non_returning_query(self, query_update: str, params: tuple) -> None:
         '''This function will execute non returning queries'''
@@ -68,4 +59,19 @@ class QueryExecutor:
         except sqlite3.Error as er:
             logger.exception(er)
             print(PrintPrompts.UNEXPECTED_ISSUE)
-                
+
+    def create_tables(self) -> None:
+        '''Creating all tables'''
+        try:
+            with DatabaseConnection(self.path) as connection:
+                cursor = connection.cursor()
+                cursor.execute(Query.CREATE_CREDENTIALS)
+                cursor.execute(Query.CREATE_ADMIN)
+                cursor.execute(Query.CREATE_CUSTOMER)
+                cursor.execute(Query.CREATE_PACKAGE)
+                cursor.execute(Query.CREATE_ITINERARY)
+                cursor.execute(Query.CREATE_BOOKING)
+                cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+                cursor.execute(Query.CREATE_REVIEW)
+        except sqlite3.Error as er:
+            logger.exception(er)            

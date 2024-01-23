@@ -3,18 +3,16 @@
 from config.prompt_values import DESTINATION_DICT, CATEGORY_DICT, DAY_DICT
 from database.database_access import QueryExecutor
 from config.queries import Query 
+from utils.exception import exception_handler
 
+@exception_handler
 def get_package(destination: str, category: str, days_night: str) -> None:
         '''To view the package after user preferences'''
-
-        dest_value = DESTINATION_DICT[destination]
-        category_value = CATEGORY_DICT[category]
-        day_value = DAY_DICT[days_night]
         
         obj_query_executor = QueryExecutor()
-        data = (dest_value, category_value, day_value, 'active')
+        data = (destination[0], category[0], days_night[0], 'active')
+
         itinerary = obj_query_executor.returning_query(Query.SELECT_ITINERARY, data)
         package_data = obj_query_executor.single_data_returning_query(Query.SELECT_PRICE, data)
         return itinerary, package_data
-        # data_tabulate(itinerary, (TabulateHeader.DAY, TabulateHeader.CITY, TabulateHeader.DESC))
- 
+       

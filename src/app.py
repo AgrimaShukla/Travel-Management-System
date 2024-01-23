@@ -41,7 +41,5 @@ def main() -> None:
 
 if __name__ == "__main__":
 
-    # all the tables will be created
-    # initialize_app.create_tables()
-    # initialize_app.create_admin()
+    initialize_app.create_admin()
     main()

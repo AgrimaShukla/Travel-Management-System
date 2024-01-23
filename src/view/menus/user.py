@@ -5,7 +5,7 @@ from view.customer_view.booking_view.booking_module_view import BookingPackageVi
 from view.customer_view.customer_info import CustomerDetails
 from view.customer_view.review_module import ReviewViews
 from view.customer_view.booking_view.view_package import view_package
-
+from controller.customer_controller.menu_controller import MenuController
 class UserMenu:
     '''Displaying user menu'''
 
@@ -14,15 +14,20 @@ class UserMenu:
         self.obj_booking = BookingPackageView()
         self.obj_customer = CustomerDetails(self.customer_id)
         self.obj_review = ReviewViews()
+        self.menu_cont = MenuController()
 
-    def category_menu(self, dest_option: str) -> None:
+    def category_menu(self, destination: str) -> None:
         '''User can choose category'''
         while True:
-            print(PrintPrompts.CATEGORY_PROMPT)
-            option = input(InputPrompts.ENTER)
-            if option in ('1', '2', '3'):
-                self.day_menu(dest_option, option, self.customer_id)
-            elif option == '4':
+            value = self.menu_cont.get_category()
+            my_dict = {i + 1: value for i, value in enumerate(value)}
+            tuple_of_values = tuple(value[0] for value in my_dict.values())
+            print(PrintPrompts.CATEGORY_PROMPT.format(*tuple_of_values))
+            option = int(input(InputPrompts.ENTER))
+            
+            if option in tuple(my_dict.keys()):
+                self.day_menu(destination, my_dict[option], self.customer_id)
+            elif option == 4:
                 break
             else:
                 print(PrintPrompts.INVALID_PROMPT)
@@ -31,11 +36,15 @@ class UserMenu:
         '''User can choose destination'''
         while True:
             
-            print(PrintPrompts.DESTINATION_PROMPT)
-            option = input(InputPrompts.ENTER)
-            if option in ('1', '2', '3', '4', '5'):
-                self.category_menu(option)
-            elif option == '6':
+
+            value = self.menu_cont.get_package_name()
+            my_dict = {i + 1: value for i, value in enumerate(value)}
+            tuple_of_values = tuple(value[0] for value in my_dict.values())
+            print(PrintPrompts.DESTINATION_PROMPT.format(*tuple_of_values))
+            option = int(input(InputPrompts.ENTER))
+            if option in tuple(my_dict.keys()):
+                self.category_menu(my_dict[option])
+            elif option == 6:
                 break
             else:
                 print(PrintPrompts.INVALID_PROMPT)
@@ -55,15 +64,17 @@ class UserMenu:
                 case '7': break
                 case _: print(PrintPrompts.INVALID_PROMPT)
                 
-    @staticmethod
-    def day_menu(dest_option: str, category_option: str, customer_id: str) -> None:
+    def day_menu(self, dest_option: str, category_option: str, customer_id: str) -> None:
         '''User can choose days'''
         while True:
-            print(PrintPrompts.DAY_PROMPT)
-            option = input(InputPrompts.ENTER)
-            if option in ('1', '2', '3'):
-                view_package(dest_option, category_option, option, customer_id)
-            elif option == '4':
+            value = self.menu_cont.get_duration()
+            my_dict = {i + 1: value for i, value in enumerate(value)}
+            tuple_of_values = tuple(value[0] for value in my_dict.values())
+            print(PrintPrompts.DAY_PROMPT.format(*tuple_of_values))
+            option = int(input(InputPrompts.ENTER))
+            if option in tuple(my_dict.keys()):
+                view_package(dest_option, category_option, my_dict[option], customer_id)
+            elif option == 4:
                 break
             else:
                 print(PrintPrompts.INVALID_PROMPT)

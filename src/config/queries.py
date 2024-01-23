@@ -38,30 +38,9 @@ class Query:
     '''
 
     SELECT_CUSTOMER = 'SELECT name, mobile_number, gender, age, email from customer WHERE customer_id = ?'
-   
+    
     UPDATE_CUSTOMER = 'UPDATE customer SET {} = ? WHERE customer_id = ?'
 
-    # ADMIN TABLE
-    CREATE_ADMIN = ''' CREATE TABLE IF NOT EXISTS admin(
-                admin_id TEXT PRIMARY KEY,
-                name TEXT,
-                mobile_number INTEGER,
-                gender TEXT,
-                age INTEGER,
-                email TEXT UNIQUE,
-                FOREIGN KEY (admin_id) REFERENCES credentials(user_id) ON DELETE CASCADE
-    )
-    ''' 
-
-    INSERT_ADMIN = '''INSERT INTO admin(
-                    admin_id,
-                    name, 
-                    mobile_number,
-                    gender,
-                    age,
-                    email
-    ) VALUES (?, ?, ?, ?, ?, ?)
-    '''
 
     # PACKAGE TABLE 
     CREATE_PACKAGE = ''' CREATE TABLE IF NOT EXISTS package(
@@ -78,7 +57,7 @@ class Query:
     SELECT_DURATION = 'SELECT duration FROM package group by duration'
 
     SELECT_CATEGORY = 'SELECT category FROM package group by category'
-    
+
     CHANGE_STATUS_QUERY = 'UPDATE package SET status = ? WHERE package_id = ?'
     
     INSERT_PACKAGE_QUERY = '''INSERT INTO package VALUES(?, ?, ?, ?, ?, ?)'''
@@ -90,6 +69,12 @@ class Query:
     CHECK_PACKAGE_QUERY = 'SELECT * FROM package WHERE package_id = ?'
 
     SELECT_PACKAGE_QUERY = 'SELECT * FROM package WHERE status != ?'
+
+    SELECT_PACKAGE_NAME = 'SELECT package_name FROM package group by package_name'
+
+    SELECT_PACKAGE_DURATION = 'SELECT duration FROM package group by duration'
+
+    SELECT_PACKAGE_CATEGORY = 'SELECT category FROM package group by category'
 
     SELECT_PACKAGE = 'SELECT * FROM package'
 
@@ -212,5 +197,5 @@ class Query:
 class DatabaseConfig:
     '''Database path'''
 
-    DB_PATH = 'database\\travelmanagementsystem.db'
+    DB_PATH = 'src/travelmanagementsystem.db'
     

@@ -34,16 +34,12 @@ class Authentication:
             username = validation.validate(RegularExp.USERNAME, InputPrompts.INPUT.format("username"))
             password = validation.validate_password(RegularExp.PASSWORD).encode()
             password = hashlib.md5(password).hexdigest()
-            # data = (username, )
             user_data = self.auth_cont.user_authentication(username)
-            # user_data = self.db_access.single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, data)
 
-            # to check if username matches
             if user_data is None:
                 self.invalid_username_password()
                 continue
 
-            # to check if password matches
             elif user_data[0] == password:
                 data = (username, password)
                 role = self.auth_cont.get_role(data)

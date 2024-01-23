@@ -26,7 +26,6 @@ class ReviewViews:
     def show_review(self, package_id: str) -> None:
         '''Showing review to customer'''
         comment = self.review_obj.get_reviews(package_id)
-        # comment = self.db_access.returning_query(Query.SELECT_REVIEW, (package_id, ))
         data_tabulate(comment, (TabulateHeader.NAME, TabulateHeader.COMMENT, TabulateHeader.DATE))
 
 
