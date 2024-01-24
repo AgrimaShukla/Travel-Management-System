@@ -36,7 +36,6 @@ class UserMenu:
         '''User can choose destination'''
         while True:
             
-
             value = self.menu_cont.get_package_name()
             my_dict = {i + 1: value for i, value in enumerate(value)}
             tuple_of_values = tuple(value[0] for value in my_dict.values())
@@ -44,7 +43,7 @@ class UserMenu:
             option = int(input(InputPrompts.ENTER))
             if option in tuple(my_dict.keys()):
                 self.category_menu(my_dict[option])
-            elif option == 6:
+            elif option == 7:
                 break
             else:
                 print(PrintPrompts.INVALID_PROMPT)

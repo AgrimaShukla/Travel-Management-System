@@ -3,7 +3,12 @@
 class PrintPrompts:
       '''One liner and multi liner prompts for displaying to user'''
 
+
+      ACTIVE = 'active'
+
       ADDED = 'ADDED'
+
+      ADMIN = 'admin'
 
       ADMIN_MENU = '''
             SELECT ANY OPTION:
@@ -72,7 +77,8 @@ class PrintPrompts:
             3) {}
             4) {}
             5) {}
-            6) Exit
+            6) {}
+            7) Exit
 
             Enter any option
       '''
@@ -123,6 +129,8 @@ class PrintPrompts:
 
       NO_BOOKINGS = "NO BOOKINGS"
 
+      ONGOING = "ONGOING"
+
       PACKAGE_NOT_FOUND = 'PACKAGE DOES NOT EXIST. FIRST ADD PACKAGE TO ADD AN ITINERARY.'
 
       PASSWORD = '''
@@ -157,6 +165,8 @@ class PrintPrompts:
       UPDATED = "UPDATED"
 
       UNEXPECTED_ISSUE = "UNEXPECTED ISSUE OCCURRED. PLEASE TRY AGAIN LATER."
+
+      USER = 'user'
 
       USER_EXISTS = "USER ALREADY EXISTS"
 

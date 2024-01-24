@@ -36,11 +36,8 @@ class Authentication:
             if user_data is None:
                 self.invalid_username_password()
                 continue
-
-            elif user_data[0] == password:
-                data = (username, password)
-                role = self.auth_cont.get_role(data)
-                return role
+            elif user_data[1] == password:
+                return user_data
             else:
                 self.invalid_username_password()
                 continue

@@ -16,7 +16,7 @@ class Query:
                 VALUES
                 (?, ? ,?, ?)
     '''
-    SELECT_CREDENTIALS_USERNAME = 'SELECT password FROM credentials WHERE username = ?'
+    SELECT_CREDENTIALS_USERNAME = 'SELECT user_id, password, role FROM credentials WHERE username = ?'
 
     SELECT_CREDENTIALS_PASSWORD = 'SELECT role, user_id FROM credentials WHERE username = ? AND password = ?'
 

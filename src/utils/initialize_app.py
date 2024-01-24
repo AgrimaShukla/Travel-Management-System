@@ -2,18 +2,20 @@
 
 import shortuuid
 import hashlib
-import sqlite3
 import logging
 import os 
 from os.path import join, dirname
 from config.queries import Query
 from dotenv import load_dotenv
 from database.database_access import QueryExecutor
+from utils.exception import exception_handler
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 logger = logging.getLogger(__name__)
+
+@exception_handler
 def create_admin() -> None:
     '''To add admin in the table if non present'''
     obj_query_executor = QueryExecutor()

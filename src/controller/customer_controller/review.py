@@ -3,6 +3,7 @@ import shortuuid
 from datetime import datetime
 from database.database_access import QueryExecutor
 from config.queries import Query
+from config.prompt import PrintPrompts
 from utils.exception import exception_handler
 
 
@@ -29,7 +30,7 @@ class Review:
     @exception_handler
     def get_bookings(self, customer_id):
         '''Get bookings for adding review'''
-        data = self.db_access.returning_query(Query.SELECT_FOR_REVIEW, (customer_id, 'ongoing', datetime.now().date()))
+        data = self.db_access.returning_query(Query.SELECT_FOR_REVIEW, (customer_id, PrintPrompts.ONGOING, datetime.now().date()))
         return data
     
     @exception_handler

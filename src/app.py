@@ -29,11 +29,11 @@ def main() -> None:
                 obj_register.enter_customer_details()
             case '2':
                 obj_authenticate = Authentication()
-                role = obj_authenticate.user_authentication()
-                if role is not None and role[0] == 'user':
-                    obj_user = UserMenu(role[1])
+                user_data = obj_authenticate.user_authentication()
+                if user_data[2] == PrintPrompts.USER:
+                    obj_user = UserMenu(user_data[0])
                     obj_user.user_menu()
-                elif role is not None and role[0] == 'admin':
+                elif user_data[2] == PrintPrompts.ADMIN:
                     obj_admin = AdminMenu()
                     obj_admin.admin_menu()
             case '3': break

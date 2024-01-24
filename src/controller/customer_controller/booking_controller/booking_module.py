@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 
 from database.database_access import QueryExecutor
 from config.queries import Query 
+from config.prompt import PrintPrompts
 from utils.exception import exception_handler
 
 logger = logging.getLogger(__name__)
@@ -22,7 +23,7 @@ class BookPackage:
         end_date = start_date + timedelta(days = days_night)
         data_booking = (booking_id, name, mobile_no, start_date, end_date, number_of_people, email, booking_date)
         total_price = int(number_of_people) * price
-        data_package = (package_id, customer_id, booking_id, total_price, 'ongoing')
+        data_package = (package_id, customer_id, booking_id, total_price, PrintPrompts.ONGOING)
         value = self.db_access.insert_table(Query.INSERT_BOOKING, data_booking, Query.INSERT_BOOKING_PACKAGE, data_package)
         return value
 
@@ -35,5 +36,5 @@ class BookPackage:
     @exception_handler
     def cancel_booking(self, booking_id: str) -> None:
         '''To cancel the booking'''
-        result = self.db_access.non_returning_query(Query.UPDATE_BOOKING, ('cancelled', booking_id))
+        result = self.db_access.non_returning_query(Query.UPDATE_BOOKING, (PrintPrompts.CANCELLED, booking_id))
         return result
