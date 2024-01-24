@@ -9,10 +9,10 @@ from flask_jwt_extended import JWTManager
 from flask import Flask, jsonify
 from flask_smorest import Api
 from config.prompt import PrintPrompts, InputPrompts 
-from routes.auth_routes.authorization import blp_auth
-from routes.admin_routes.package import blp_package
-from routes.admin_routes.itinerary import blp_itinerary
-from routes.customer_routes.profile import blp_profile
+from routes.auth.authorization import blp_auth
+from routes.admin.package import blp_package
+from routes.admin.itinerary import blp_itinerary
+from routes.customer.profile import blp_profile
 # from view.menus.admin import AdminMenu
 # from view.menus.user import UserMenu
 # from view.registration import RegistrationViews

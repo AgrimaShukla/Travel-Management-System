@@ -34,13 +34,11 @@ class PackageHandler:
         if_changed = self.db_access.non_returning_query(Query.CHANGE_STATUS_QUERY, data)
         return if_changed
     
-    def update_in_package(self, package_id, value, updated_value) -> None:
+    def update_in_package(self, package_info) -> None:
         '''To update the itineraries'''
-        package = self.check_package((package_id, ))
+        package = self.check_package((package_info[5], ))
         if not package:
-            return -1
-        column_name = UPDATE_PACKAGE[value]
-        data = (updated_value, package_id)
-        if_updated = self.db_access.non_returning_query(Query.UPDATE_PACKAGE_QUERY.format(column_name), data)    
-        return if_updated
+            raise DataNotFound
+        self.db_access.non_returning_query(Query.UPDATE_PACKAGE_QUERY, package_info)    
+        
             

@@ -3,7 +3,7 @@ from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from schemas.customer_schema import ProfileSchema
 from flask_jwt_extended import get_jwt
-# from controller.customer_controller.customer_info import CustomerController
+from controllers.customer.profile import CustomerController
 from utils.role_based_access import role_based_access
 from utils.role_mapping import Role
 
@@ -20,9 +20,7 @@ class Profile(MethodView):
         jwt = get_jwt()
         customer_id = jwt.get('sub')
         obj_customer = CustomerController(customer_id)
-        customer_details = obj_customer.display_details()
-        if customer_details:
-            return customer_details
-        else:
-            abort(500, message = "Internal server error")
+        customer_details = obj_customer.get_details()
+        return customer_details
 
+    

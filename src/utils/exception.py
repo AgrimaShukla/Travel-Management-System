@@ -9,3 +9,6 @@ class IDdoesnotexist(Exception):
 
 class DataNotFound(Exception):
     pass
+
+class PackageDoesNotExist(Exception):
+    pass

@@ -1,13 +1,8 @@
 from database.database_access import QueryExecutor
-from utils.pretty_print import data_tabulate
-from config.prompt import TabulateHeader
 from config.queries import Query
-from utils.validation import validate
-from config.prompt import InputPrompts, PrintPrompts
 
-from config.prompt_values import CUSTOMER_DETAILS
 
-class CustomerController:
+class ProfileHandler:
 
     '''Managing customer details'''
     def __init__(self, customer_id: str) -> None:

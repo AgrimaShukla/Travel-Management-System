@@ -3,8 +3,8 @@ from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from schemas.auth_schema import LoginSchema, LoginSuccessSchema, RegisterSchema
 from flask_jwt_extended import create_access_token, create_refresh_token
-from controllers.auth_controller.signin import LoginController
-from controllers.auth_controller.signup import RegistrationController
+from controllers.auth.signin import LoginController
+from controllers.auth.signup import RegistrationController
 from flask_jwt_extended import get_jwt, jwt_required
 from utils.role_mapping import Role
 from blocklist import BLOCKLIST

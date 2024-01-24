@@ -30,7 +30,7 @@ class QueryExecutor:
             with DatabaseConnection() as connection:
                 cursor = connection.cursor(dictionary=True)
                 if params:
-                    cursor.execute(query_to_show, params).fetchall()
+                    cursor.execute(query_to_show, params)
                     data = cursor.fetchall()
                     return data
                 cursor.execute(query_to_show)
@@ -58,7 +58,7 @@ class QueryExecutor:
         '''This function will returning queries and return single row'''
         try:
             with DatabaseConnection() as connection:
-                cursor = connection.cursor()
+                cursor = connection.cursor(dictionary=True)
                 cursor.execute(query_to_check, params)
                 data = cursor.fetchone()
                 return data

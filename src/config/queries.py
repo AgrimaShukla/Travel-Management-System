@@ -52,15 +52,7 @@ class Query:
     )
     ''' 
 
-    INSERT_ADMIN = '''INSERT INTO admin(
-                    admin_id,
-                    name, 
-                    mobile_number,
-                    gender,
-                    age,
-                    email
-    ) VALUES (%s, %s, %s, %s, %d, %s)
-    '''
+    
 
     # PACKAGE TABLE 
     CREATE_PACKAGE = ''' CREATE TABLE IF NOT EXISTS package(
@@ -87,7 +79,7 @@ class Query:
 
     SELECT_PACKAGE = 'SELECT * FROM package'
 
-    UPDATE_PACKAGE_QUERY = 'UPDATE package SET {} = %s WHERE package_id = %s'
+    UPDATE_PACKAGE_QUERY = 'UPDATE package SET package_name = %s, duration = %s, category = %s, price = %s, status = %s WHERE package_id = %s'
 
     # ITINERARY TABLE
     CREATE_ITINERARY = ''' CREATE TABLE IF NOT EXISTS itinerary(
@@ -100,7 +92,7 @@ class Query:
     )
     '''
 
-    UPDATE_ITINERARY_QUERY = 'UPDATE itinerary SET {} = %s WHERE itinerary_id = %s'
+    UPDATE_ITINERARY_QUERY = 'UPDATE itinerary SET day = %s, city = %s, description = %s WHERE itinerary_id = %s'
 
     INSERT_ITINERARY_QUERY = '''INSERT INTO itinerary(
                 itinerary_id,
