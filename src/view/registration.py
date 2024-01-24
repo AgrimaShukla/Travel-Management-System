@@ -1,7 +1,6 @@
 ''' This module is for registering user'''
 
 import logging
-import maskpass
 from utils.validation import validate, validate_password
 from config.regex_value import RegularExp
 import hashlib
@@ -17,7 +16,7 @@ class RegistrationViews:
     def enter_customer_details(self) -> None:
         '''Saving the customer'''   
         username = validate(RegularExp.USERNAME, InputPrompts.INPUT.format("username"))
-        password = validate_password().encode()
+        password = validate_password(RegularExp.PASSWORD).encode()
         password = hashlib.md5(password).hexdigest()
         name = validate(RegularExp.NAME, InputPrompts.INPUT.format("name"))
         mobile_no = validate(RegularExp.MOBILE_NUMBER, InputPrompts.INPUT.format("mobile no"))

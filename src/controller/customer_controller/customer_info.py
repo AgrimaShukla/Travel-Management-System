@@ -2,9 +2,9 @@ from database.database_access import QueryExecutor
 from config.queries import Query
 from utils.exception import exception_handler
 
-class CustomerController:
-
+class CustomerInfoController:
     '''Managing customer details'''
+
     def __init__(self, customer_id: str) -> None:
         self.customer_id = customer_id
         self.db_access = QueryExecutor()

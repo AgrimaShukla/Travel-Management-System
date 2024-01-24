@@ -42,6 +42,7 @@ class Itinerary:
             return True 
 
     def update_itinerary(self):
+        '''Displaying all values that can be updated in itinerary'''
         not_exist_ititnerary = self.show_itinerary()
         while True:
             itinerary_id = validate_uuid(InputPrompts.ITINERARY_ID, RegularExp.UUID)

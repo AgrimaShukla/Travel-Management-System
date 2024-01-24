@@ -2,8 +2,6 @@ from shortuuid import ShortUUID
 import logging
 from datetime import datetime, timedelta
 
-from utils.pretty_print import data_tabulate
-from config.prompt import PrintPrompts, InputPrompts, LoggingPrompt, TabulateHeader
 from database.database_access import QueryExecutor
 from config.queries import Query 
 from utils.exception import exception_handler

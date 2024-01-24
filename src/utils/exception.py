@@ -12,7 +12,7 @@ def exception_handler(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         try:
-            func(*args, **kwargs)
+            return func(*args, **kwargs)
         except sqlite3.OperationalError as err:
             logger.exception(err)
             print(PrintPrompts.UNEXPECTED_ISSUE)

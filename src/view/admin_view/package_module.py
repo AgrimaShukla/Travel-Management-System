@@ -69,6 +69,7 @@ class Package:
         
 
     def update_package(self):
+        '''Displaying all values that can be updated in itinerary'''
         not_exist_package = self.show_package(Query.SELECT_PACKAGE, None)
         if not_exist_package == False:
             print(PrintPrompts.NO_PACKAGE_FOUND)

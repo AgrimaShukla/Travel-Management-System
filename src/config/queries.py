@@ -197,5 +197,5 @@ class Query:
 class DatabaseConfig:
     '''Database path'''
 
-    DB_PATH = 'src/travelmanagementsystem.db'
+    DB_PATH = 'src/database/travelmanagementsystem.db'
     

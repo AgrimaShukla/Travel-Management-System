@@ -6,12 +6,14 @@ from config.prompt_values import UPDATE_PACKAGE
 from utils.exception import exception_handler
 
 class PackageController:
+    '''Controller for Package related admin functionalities'''
 
     def __init__(self):
         self.db_access = QueryExecutor()
     
     @exception_handler
     def add_package(self, package_name, duration, category, price, status):
+        '''Adding new package'''
         package_id = 'P_' + shortuuid.ShortUUID().random(length = 8)
         
         data = (package_id, package_name, duration, category, price, status)
@@ -20,6 +22,7 @@ class PackageController:
 
     @exception_handler
     def fetch_package(self, query_to_execute, status):
+        '''Fetching all packages from table'''
         data = self.db_access.returning_query(query_to_execute, status)
         return data
     

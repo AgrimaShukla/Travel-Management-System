@@ -6,12 +6,14 @@ from config.prompt_values import UPDATE_ITINERARY
 from utils.exception import exception_handler
 
 class ItineraryController:
+    '''Controller for Itinerary related admin functionalities'''
 
     def __init__(self):
         self.db_access = QueryExecutor()
     
     @exception_handler
     def add_itinerary(self, day, city, desc, package_id):
+        '''Adding a new itinerary'''
         itinerary_id = "I_" + shortuuid.ShortUUID().random(length = 8)
         data = (itinerary_id, package_id, day, city, desc)
         inserted = self.db_access.non_returning_query(Query.INSERT_ITINERARY_QUERY, data)
@@ -19,6 +21,7 @@ class ItineraryController:
     
     @exception_handler
     def fetch_itinerary(self):
+        '''Fetching all itineraries from the table'''
         data = self.db_access.returning_query(Query.SHOW_ITINERARY_QUERY)
         return data
 

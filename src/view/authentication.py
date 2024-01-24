@@ -1,9 +1,9 @@
 ''' Authenticating the user at the time of login '''
 
-import time
+
 import hashlib
 import logging
-import maskpass
+
 
 from utils import validation
 
@@ -17,8 +17,6 @@ class Authentication:
     
     ''' class for authenticating user'''
     def __init__(self) -> None:
-        # no of attempts given to user
-        self.attempts = 3
         self.auth_cont = AuthenticationController()
     
 
@@ -35,7 +33,6 @@ class Authentication:
             password = validation.validate_password(RegularExp.PASSWORD).encode()
             password = hashlib.md5(password).hexdigest()
             user_data = self.auth_cont.user_authentication(username)
-
             if user_data is None:
                 self.invalid_username_password()
                 continue

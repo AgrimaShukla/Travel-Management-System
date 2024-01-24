@@ -4,7 +4,7 @@ from utils.pretty_print import data_tabulate
 from config.prompt import InputPrompts, PrintPrompts, TabulateHeader
 from config.regex_value import RegularExp
 from controller.customer_controller.review import Review
-from utils.validation import validate, validate_uuid
+from utils.validation import validate
 
 class ReviewViews:
     '''Review added by customer for a package'''

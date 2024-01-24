@@ -12,6 +12,9 @@ pytest = "*"
 pytest-cov = "*"
 pytest-mock = "*"
 pytest-order = "*"
+pandas = "*"
+openpyxl = "*"
+pyarrow = "*"
 
 [dev-packages]
 

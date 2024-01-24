@@ -4,7 +4,7 @@ from utils.pretty_print import data_tabulate
 from config.prompt import TabulateHeader
 from config.prompt import InputPrompts, PrintPrompts
 from config.prompt_values import CUSTOMER_DETAILS
-from controller.customer_controller.customer_info import CustomerController
+from controller.customer_controller.customer_info import CustomerInfoController
 from utils.validation import validate
 from config.regex_value import RegularExp
 
@@ -13,7 +13,7 @@ class CustomerDetails:
     '''Managing customer details'''
     def __init__(self, customer_id: str) -> None:
         self.customer_id = customer_id
-        self.cust = CustomerController(self.customer_id)
+        self.cust = CustomerInfoController(self.customer_id)
 
 
     def show_details(self) -> None:

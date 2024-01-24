@@ -28,10 +28,12 @@ class Review:
 
     @exception_handler
     def get_bookings(self, customer_id):
+        '''Get bookings for adding review'''
         data = self.db_access.returning_query(Query.SELECT_FOR_REVIEW, (customer_id, 'ongoing', datetime.now().date()))
         return data
     
     @exception_handler
     def get_package_id(self, booking_id):
+        '''Get package_id for adding review'''
         package_id = self.db_access.single_data_returning_query(Query.SELECT_PACKAGE_REVIEW, (booking_id, ))
         return package_id

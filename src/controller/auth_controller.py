@@ -10,7 +10,6 @@ class AuthenticationController:
     
     ''' class for authenticating user'''
     def __init__(self) -> None:
-        # no of attempts given to user
         self.db_access = QueryExecutor()
     
     @exception_handler

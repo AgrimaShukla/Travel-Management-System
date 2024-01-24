@@ -11,7 +11,6 @@ def view_package(destination: str, category: str, days_night: str, customer_id: 
         itinerary, package_data = get_package(destination, category, days_night)
         data_tabulate(itinerary, (TabulateHeader.DAY, TabulateHeader.CITY, TabulateHeader.DESC))
         print(PrintPrompts.PRICE.format(package_data[1]))
-
         while True:
             print(PrintPrompts.BOOKING)
             parameter = input(InputPrompts.ENTER)
