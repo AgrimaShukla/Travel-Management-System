@@ -16,7 +16,7 @@ class CustomerInfoController:
         return customer_details 
 
     @exception_handler
-    def update_details(self, value, column, entered_value) -> None:
+    def update_details(self, column, entered_value) -> None:
         '''update details of customer'''
         result = self.db_access.non_returning_query(Query.UPDATE_CUSTOMER.format(column), (entered_value, self.customer_id))
         return result
