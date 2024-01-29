@@ -2,8 +2,7 @@ from config.queries import Query
 import shortuuid
 
 from database.database_access import QueryExecutor
-from config.regex_value import RegularExp
-from config.prompt_values import UPDATE_PACKAGE
+from config.prompt import PrintPrompts
 from utils.exception import DataNotFound
 
 class PackageHandler:
@@ -21,7 +20,7 @@ class PackageHandler:
         if data:
             return data
         else: 
-            raise DataNotFound
+            raise DataNotFound(PrintPrompts.NO_PACKAGE_FOUND)
 
     
     def check_package(self, package_data: tuple) -> list:
@@ -38,7 +37,7 @@ class PackageHandler:
         '''To update the itineraries'''
         package = self.check_package((package_info[5], ))
         if not package:
-            raise DataNotFound
+            raise DataNotFound(PrintPrompts.NO_PACKAGE_FOUND)
         self.db_access.non_returning_query(Query.UPDATE_PACKAGE_QUERY, package_info)    
         
             

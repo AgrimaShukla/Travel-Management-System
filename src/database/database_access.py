@@ -16,14 +16,12 @@ class QueryExecutor:
 
     def insert_table(self, table_1: str, data_table1: tuple, table_2: str, data_table2: tuple) -> None:
         '''Inserting customer data into database'''
-        try:
-            with DatabaseConnection() as connection:
-                cursor = connection.cursor()
-                cursor.execute(table_1, data_table1)
-                cursor.execute(table_2, data_table2)
-        except mysql.connector.Error as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
+      
+        with DatabaseConnection() as connection:
+            cursor = connection.cursor()
+            cursor.execute(table_1, data_table1)
+            cursor.execute(table_2, data_table2)
+
     def returning_query(self, query_to_show: str, params = None) -> list:
         '''This function will execute returning queries and return multiple rows'''
         try:
@@ -42,17 +40,11 @@ class QueryExecutor:
 
     def non_returning_query(self, query_update: str, params: tuple) -> None:
         '''This function will execute non returning queries'''
-        try:
-            with DatabaseConnection() as connection:
-                cursor = connection.cursor()
-                cursor.execute(query_update, params)
-            
-        except mysql.connector.IntegrityError as er:
-            logger.exception(er)
-            print(PrintPrompts.USER_EXISTS)
-        except mysql.connector.Error as er:
-            logger.exception(er)
-            print(PrintPrompts.UNEXPECTED_ISSUE)
+       
+        with DatabaseConnection() as connection:
+            cursor = connection.cursor()
+            cursor.execute(query_update, params)
+
 
     def single_data_returning_query(self, query_to_check: str, params: tuple) -> tuple:
         '''This function will returning queries and return single row'''

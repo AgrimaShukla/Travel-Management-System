@@ -23,6 +23,7 @@ class Query:
 
     SELECT_CREDENTIALS_PASSWORD = 'SELECT role, user_id FROM credentials WHERE username = %s AND password = %s'
 
+    DELETE_USER = 'DELETE FROM CREDENTIALS WHERE user_id = %s'
     # CUSTOMER TABLE
     CREATE_CUSTOMER = ''' CREATE TABLE IF NOT EXISTS customer(
                 customer_id VARCHAR(20) PRIMARY KEY,
@@ -38,8 +39,9 @@ class Query:
 
     SELECT_CUSTOMER = 'SELECT name, mobile_number, gender, age, email from customer WHERE customer_id = %s'
    
-    UPDATE_CUSTOMER = 'UPDATE customer SET {} = %s WHERE customer_id = %s'
+    UPDATE_CUSTOMER = 'UPDATE customer SET name = %s, mobile_number = %s, gender = %s, age = %s, email = %s WHERE customer_id = %s'
 
+    DELETE_CUSTOMER = 'DELETE FROM credentials WHERE user_id = %s'
     # ADMIN TABLE
     CREATE_ADMIN = ''' CREATE TABLE IF NOT EXISTS admin(
                 admin_id VARCHAR(20) PRIMARY KEY,
@@ -119,15 +121,16 @@ class Query:
     # BOOKING TABLE
     CREATE_BOOKING = ''' CREATE TABLE IF NOT EXISTS booking(
                 booking_id VARCHAR(20) PRIMARY KEY,
+                end_date VARCHAR(20),
+                booking_date VARCHAR(20)
                 name VARCHAR(20),
                 mobile_number VARCHAR(20),
                 start_date VARCHAR(20),
-                end_date VARCHAR(20),
                 no_of_people INTEGER,
                 email VARCHAR(20),
-                booking_date VARCHAR(20)
     )
     '''
+    UPDATE_BOOKING = 'UPDATE booking set name = %s, mobile_number = %s, start_date = %s, end_date = %s, no_of_people = %s, email = %s WHERE booking_id = %s'
     INSERT_BOOKING = ''' INSERT INTO booking
                 VALUES
                 (%s, %s, %s, %s, %s, %d, %s, %s)
@@ -135,22 +138,21 @@ class Query:
 
     # BOOKING PACKAGE TABLE
     CREATE_BOOKING_PACKAGE = '''CREATE TABLE IF NOT EXISTS booking_package(
-                package_id VARCHAR(20),
-                customer_id VARCHAR(20),
                 booking_id VARCHAR(20),
                 price INTEGER,
+                package_id VARCHAR(20),
+                customer_id VARCHAR(20),
                 trip_status VARCHAR(20),
                 FOREIGN KEY (package_id) REFERENCES PACKAGE (package_id),
                 FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id),
-                FOREIGN KEY (booking_id) REFERENCES BOOKING(booking_id),
+                FOREIGN KEY (booking_id) REFERENCES BOOKING(booking_id) ON DELETE CASCADE,
                 PRIMARY KEY (package_id, customer_id, booking_id)
     )
     '''
 
     INSERT_BOOKING_PACKAGE = ''' INSERT INTO booking_package VALUES (%s, %s, %s, %d, %s)'''
 
-    UPDATE_BOOKING = 'UPDATE BOOKING_PACKAGE SET trip_status = %s WHERE booking_id = %s'
-
+    UPDATE_BOOKING_STATUS = 'UPDATE BOOKING_PACKAGE SET trip_status = %s WHERE booking_id = %s'
 
     SELECT_BOOKING = '''SELECT booking.booking_id, booking.name, booking.mobile_number, booking.start_date, booking.end_date, 
                     booking.no_of_people, booking.email, booking.booking_date, booking_package.trip_status 

@@ -2,6 +2,7 @@ from config.queries import Query
 import shortuuid
 from database.database_access import QueryExecutor
 from utils.exception import DataNotFound, PackageDoesNotExist
+from config.prompt import PrintPrompts
 
 class ItineraryHandler:
 
@@ -16,14 +17,14 @@ class ItineraryHandler:
             inserted = self.db_access.non_returning_query(Query.INSERT_ITINERARY_QUERY, data)
             return inserted
         else:
-            raise PackageDoesNotExist
+            raise PackageDoesNotExist(PrintPrompts.NO_PACKAGE_FOUND)
 
     def fetch_itinerary(self):
         data = self.db_access.returning_query(Query.SHOW_ITINERARY_QUERY)
         if data:
             return data
         else:
-            raise DataNotFound
+            raise DataNotFound(PrintPrompts.NO_ITINERARY_FOUND)
 
     def check_itinerary(self, itinerary_id: str) -> tuple:
         '''To check existing itineraries'''
@@ -34,7 +35,7 @@ class ItineraryHandler:
         '''To update the itineraries'''
         package = self.check_itinerary((itinerary_info[3], ))
         if not package:
-            raise DataNotFound
+            raise DataNotFound(PrintPrompts.NO_ITINERARY_FOUND)
         self.db_access.non_returning_query(Query.UPDATE_ITINERARY_QUERY, itinerary_info)    
         
     

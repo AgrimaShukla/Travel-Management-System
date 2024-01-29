@@ -1,14 +1,17 @@
-class InvalidUsernameorPassword(Exception):
+class DBException(Exception):
     pass
 
-class UserAlreadyExists(Exception):
+class InvalidUsernameorPassword(DBException):
     pass
 
-class IDdoesnotexist(Exception):
+class UserAlreadyExists(DBException):
     pass
 
-class DataNotFound(Exception):
+class IDdoesnotexist(DBException):
     pass
 
-class PackageDoesNotExist(Exception):
+class DataNotFound(DBException):
+    pass
+
+class PackageDoesNotExist(DBException):
     pass

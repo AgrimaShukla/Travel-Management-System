@@ -8,6 +8,8 @@ import mysql.connector
 from config.queries import Query
 from database.database_access import QueryExecutor
 from utils.exception import UserAlreadyExists
+from config.prompt import PrintPrompts
+
 logger = logging.getLogger(__name__)
 
 class RegistrationHandler:
@@ -26,4 +28,4 @@ class RegistrationHandler:
             
         except mysql.connector.IntegrityError as err:
             logger.exception(err)
-            raise UserAlreadyExists
+            raise UserAlreadyExists(PrintPrompts.USER_EXISTS)

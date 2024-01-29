@@ -3,12 +3,10 @@ import shortuuid
 from datetime import datetime
 from database.database_access import QueryExecutor
 from config.queries import Query
-from utils.validation import validate, validate_uuid
-from utils.pretty_print import data_tabulate
-from config.prompt import InputPrompts, PrintPrompts, TabulateHeader
-from config.regex_value import RegularExp
+from utils.exception import DataNotFound
+from config.prompt import PrintPrompts
 
-class Review:
+class ReviewHandler:
     '''Review added by customer for a package'''
     def __init__(self) -> None:
         self.db_access = QueryExecutor()
@@ -19,20 +17,20 @@ class Review:
         
         date = datetime.now().date()
         review_id = 'R_' + shortuuid.ShortUUID().random(length = 8)
-        added = self.db_access.non_returning_query(Query.INSERT_REVIEW, (review_id, booking_id, package_id, name, comment, date))
-        return added
-
+        self.db_access.non_returning_query(Query.INSERT_REVIEW, (review_id, booking_id, package_id, name, comment, date))
+      
 
     def get_reviews(self, package_id: str) -> None:
         '''Showing review to customer'''
         comment = self.db_access.returning_query(Query.SELECT_REVIEW, (package_id, ))
-        # data_tabulate(comment, (TabulateHeader.NAME, TabulateHeader.COMMENT, TabulateHeader.DATE))
-        return comment
+        if comment:
+            return comment
+        else:
+            raise DataNotFound(PrintPrompts.NO_REVIEWS)
 
-    def get_bookings(self, customer_id):
+    def get_bookings_for_review(self, customer_id):
         data = self.db_access.returning_query(Query.SELECT_FOR_REVIEW, (customer_id, 'ongoing', datetime.now().date()))
         return data
     
-    def get_package_id(self, booking_id):
-        package_id = self.db_access.single_data_returning_query(Query.SELECT_PACKAGE_REVIEW, (booking_id, ))
-        return package_id
+    
+    

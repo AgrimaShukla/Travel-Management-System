@@ -1,13 +1,12 @@
-import hashlib
+
 from flask.views import MethodView
-from flask_smorest import Blueprint, abort
+from flask_smorest import Blueprint
 from schemas.auth_schema import LoginSchema, LoginSuccessSchema, RegisterSchema
-from flask_jwt_extended import create_access_token, create_refresh_token
 from controllers.auth.signin import LoginController
 from controllers.auth.signup import RegistrationController
 from flask_jwt_extended import get_jwt, jwt_required
-from utils.role_mapping import Role
 from blocklist import BLOCKLIST
+from utils.custom_response import CustomSuccessResponse
 
 blp_auth = Blueprint("Authentication", "authentication", description = "Authentication of users")
 
@@ -26,6 +25,7 @@ class registration(MethodView):
     @blp_auth.arguments(RegisterSchema)
     def post(self, user_data):
         reg_obj = RegistrationController()
+        # print(user_data)
         result = reg_obj.register(user_data)
         return result
         
@@ -37,6 +37,5 @@ class UserLogout(MethodView):
    def post(self):
        jot = get_jwt().get('jti')
        BLOCKLIST.add(jot)
-       return {
-           "message": "Logged out"
-       }       
+       return CustomSuccessResponse() 
+         

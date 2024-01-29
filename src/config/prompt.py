@@ -3,6 +3,8 @@
 class PrintPrompts:
       '''One liner and multi liner prompts for displaying to user'''
 
+      ACCOUNT_DELETED = 'Account deleted'
+      
       ADDED = 'ADDED'
 
       ADMIN_MENU = '''
@@ -96,6 +98,8 @@ class PrintPrompts:
 
       INVALID_DATE = "INVALID DATE"
 
+      ITINERARY_ADDED = "Itinerary added"
+      
       INVALID_PROMPT = '''
       INVALID OPTION
       ENTER AGAIN.
@@ -123,6 +127,10 @@ class PrintPrompts:
 
       NO_BOOKINGS = "NO BOOKINGS"
 
+      NO_REVIEWS = "No reviews available"
+
+      PACKAGE_ADDED = 'Package Added'
+
       PACKAGE_NOT_FOUND = 'PACKAGE DOES NOT EXIST. FIRST ADD PACKAGE TO ADD AN ITINERARY.'
 
       PASSWORD = '''
@@ -135,6 +143,8 @@ class PrintPrompts:
 
       PRICE = "Price: {}"
 
+      REGISTERED = 'User registered'
+      
       REVIEW = 'REVIEW ADDED'
       
       SUCCESFULLY = "Successfully registered"

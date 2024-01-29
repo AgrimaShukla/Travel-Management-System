@@ -9,10 +9,12 @@ from flask_jwt_extended import JWTManager
 from flask import Flask, jsonify
 from flask_smorest import Api
 from config.prompt import PrintPrompts, InputPrompts 
-from routes.auth.authorization import blp_auth
-from routes.admin.package import blp_package
-from routes.admin.itinerary import blp_itinerary
-from routes.customer.profile import blp_profile
+from routes.auth_route import blp_auth
+from routes.package_route import blp_package
+from routes.itinerary_route import blp_itinerary
+from routes.user_route import blp_profile
+from routes.review_route import blp_review
+from routes.booking_route import blp_booking
 # from view.menus.admin import AdminMenu
 # from view.menus.user import UserMenu
 # from view.registration import RegistrationViews
@@ -27,6 +29,8 @@ logging.basicConfig(format = '%(asctime)s - %(message)s',
                     level = logging.DEBUG)
 
 logging.getLogger(__name__)
+
+BASE_URL = '/travelmanagementsystem/v1'
 
 def main() -> None:
     '''Main function to check if user or admin and show corresponding menu'''
@@ -109,8 +113,10 @@ if __name__ == "__main__":
             401,
         )
 
-    api.register_blueprint(blp_auth)
-    api.register_blueprint(blp_package)
-    api.register_blueprint(blp_itinerary)
-    api.register_blueprint(blp_profile)
+    api.register_blueprint(blp_auth, url_prefix = BASE_URL)
+    api.register_blueprint(blp_package, url_prefix = BASE_URL)
+    api.register_blueprint(blp_itinerary, url_prefix = BASE_URL)
+    api.register_blueprint(blp_profile, url_prefix = BASE_URL)
+    api.register_blueprint(blp_review, url_prefix = BASE_URL)
+    api.register_blueprint(blp_booking, url_prefix = BASE_URL)
     app.run(debug=True)
