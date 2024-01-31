@@ -3,8 +3,13 @@
 class PrintPrompts:
       '''One liner and multi liner prompts for displaying to user'''
 
+      ACCESS_TOKEN = "access_token"
+      REFRESH_TOKEN = "refresh_token"
       ACCOUNT_DELETED = 'Account deleted'
-      
+      MESSAGE = "message"
+      LOGGED_IN = "You are logged in"
+      ACTIVE = 'active'
+
       ADDED = 'ADDED'
 
       ADMIN_MENU = '''
@@ -31,7 +36,7 @@ class PrintPrompts:
       
       BOOKED_SUCCESSFULLY = "Booked successfully!\nPrice: {}\n"
 
-      CANCELLED = 'CANCELLED'
+      CANCELLED = 'Cancelled'
 
       CATEGORY_PROMPT = '''
             SELCT ANY OPTION:
@@ -143,6 +148,8 @@ class PrintPrompts:
 
       PRICE = "Price: {}"
 
+      INVALID_REQUEST = 'Invalid Request'
+      
       REGISTERED = 'User registered'
       
       REVIEW = 'REVIEW ADDED'

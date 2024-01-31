@@ -1,6 +1,7 @@
 from flask import jsonify
 from dataclasses import dataclass
 from typing import NamedTuple
+
 @dataclass
 class CustomError:
     status: NamedTuple

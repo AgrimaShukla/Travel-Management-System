@@ -71,7 +71,6 @@ if __name__ == "__main__":
     api = Api(app)
     app.config["JWT_SECRET_KEY"] = os.getenv('SECRET_KEY')
     jwt = JWTManager(app)
-
     @jwt.expired_token_loader
     def expired_token_callback(jwt_header, jwt_payload):
         return (

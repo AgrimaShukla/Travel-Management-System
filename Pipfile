@@ -19,6 +19,7 @@ flask-jwt-extended = "*"
 mysql = "*"
 mysqlx-connector = "*"
 mysql-connector-python = "*"
+flask-parameter-validation = "*"
 
 [dev-packages]
 

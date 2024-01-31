@@ -5,7 +5,7 @@ class PackageUpdateSchema(Schema):
     package_name = fields.Str(required=True, validate=validate.Regexp(RegularExp.STRING_VALUE))
     duration = fields.Str(required=True, validate=validate.Regexp(RegularExp.DURATION))
     category = fields.Str(required=True, validate=validate.Regexp(RegularExp.STRING_VALUE))
-    price = fields.Str(required=True)
+    price = fields.Int(required=True)
     status = fields.Str(required=True, validate=validate.Regexp(RegularExp.STRING_VALUE))
 
 class PackageSchema(PackageUpdateSchema):

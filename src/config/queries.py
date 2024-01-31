@@ -42,19 +42,6 @@ class Query:
     UPDATE_CUSTOMER = 'UPDATE customer SET name = %s, mobile_number = %s, gender = %s, age = %s, email = %s WHERE customer_id = %s'
 
     DELETE_CUSTOMER = 'DELETE FROM credentials WHERE user_id = %s'
-    # ADMIN TABLE
-    CREATE_ADMIN = ''' CREATE TABLE IF NOT EXISTS admin(
-                admin_id VARCHAR(20) PRIMARY KEY,
-                name VARCHAR(20),
-                mobile_number VARCHAR(10),
-                gender VARCHAR(10),
-                age INTEGER,
-                email VARCHAR(40) UNIQUE,
-                FOREIGN KEY (admin_id) REFERENCES credentials(user_id) ON DELETE CASCADE
-    )
-    ''' 
-
-    
 
     # PACKAGE TABLE 
     CREATE_PACKAGE = ''' CREATE TABLE IF NOT EXISTS package(
@@ -77,6 +64,8 @@ class Query:
 
     CHECK_PACKAGE_QUERY = 'SELECT * FROM package WHERE package_id = %s'
 
+    SELECT_PRICE_PACKAGE = 'SELECT price FROM package WHERE package_id = %s'
+    
     SELECT_PACKAGE_QUERY = 'SELECT * FROM package WHERE status != %s'
 
     SELECT_PACKAGE = 'SELECT * FROM package'
@@ -105,7 +94,7 @@ class Query:
     ) VALUES (%s, %s, %s, %s, %s)
     '''
 
-    SELECT_ITINERARY = '''SELECT itinerary.day, itinerary.city, itinerary.desc
+    SELECT_ITINERARY = '''SELECT itinerary.day, itinerary.city, itinerary.description
                 FROM itinerary
                 INNER JOIN package ON package.package_id = itinerary.package_id
                 WHERE package.package_name = %s
@@ -121,19 +110,19 @@ class Query:
     # BOOKING TABLE
     CREATE_BOOKING = ''' CREATE TABLE IF NOT EXISTS booking(
                 booking_id VARCHAR(20) PRIMARY KEY,
-                end_date VARCHAR(20),
-                booking_date VARCHAR(20)
+                booking_date VARCHAR(20),
                 name VARCHAR(20),
                 mobile_number VARCHAR(20),
                 start_date VARCHAR(20),
+                end_date VARCHAR(20),
                 no_of_people INTEGER,
-                email VARCHAR(20),
+                email VARCHAR(20)
     )
     '''
     UPDATE_BOOKING = 'UPDATE booking set name = %s, mobile_number = %s, start_date = %s, end_date = %s, no_of_people = %s, email = %s WHERE booking_id = %s'
     INSERT_BOOKING = ''' INSERT INTO booking
                 VALUES
-                (%s, %s, %s, %s, %s, %d, %s, %s)
+                (%s, %s, %s, %s, %s, %s, %s, %s)
     '''
 
     # BOOKING PACKAGE TABLE
@@ -150,7 +139,9 @@ class Query:
     )
     '''
 
-    INSERT_BOOKING_PACKAGE = ''' INSERT INTO booking_package VALUES (%s, %s, %s, %d, %s)'''
+    UPDATE_BOOKING_PACKAGE = 'UPDATE booking_package SET price = %s WHERE booking_id = %s'
+
+    INSERT_BOOKING_PACKAGE = ''' INSERT INTO booking_package VALUES (%s, %s, %s, %s, %s)'''
 
     UPDATE_BOOKING_STATUS = 'UPDATE BOOKING_PACKAGE SET trip_status = %s WHERE booking_id = %s'
 
@@ -176,6 +167,7 @@ class Query:
 
     SELECT_PACKAGE_REVIEW = 'SELECT package_id FROM booking_package WHERE booking_id = %s'
 
+    SELECT_PACKAGE_FROM_BOOKING = 'SELECT package_id FROM booking_package WHERE booking_id = %s'
     # REVIEW TABLE
     CREATE_REVIEW = ''' CREATE TABLE IF NOT EXISTS review(
                     review_id VARCHAR(20) PRIMARY KEY,

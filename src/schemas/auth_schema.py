@@ -12,7 +12,7 @@ class LoginSuccessSchema(Schema):
 
 class RegisterSchema(LoginSchema):
     user_id = fields.Str(dump_only=True, validate=validate.Regexp(RegularExp.UUID))
-    name = fields.Str(required=True, validate=validate.Regexp(RegularExp.NAME))
+    name = fields.String(required=True, validate=validate.Regexp(RegularExp.NAME))
     mobile_number = fields.Str(required=True, validate=validate.Regexp(RegularExp.MOBILE_NUMBER))
     gender = fields.Str(required=True, validate=validate.Regexp(RegularExp.GENDER))
     age = fields.Str(required=True, validate=validate.Regexp(RegularExp.AGE))

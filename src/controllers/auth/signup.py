@@ -7,6 +7,7 @@ from config.status_code import StatusCodes
 from config.prompt import PrintPrompts
 
 class RegistrationController:
+    
     def __init__(self) -> None:
         self.reg_handler = RegistrationHandler()
 

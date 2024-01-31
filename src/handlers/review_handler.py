@@ -29,8 +29,6 @@ class ReviewHandler:
             raise DataNotFound(PrintPrompts.NO_REVIEWS)
 
     def get_bookings_for_review(self, customer_id):
-        data = self.db_access.returning_query(Query.SELECT_FOR_REVIEW, (customer_id, 'ongoing', datetime.now().date()))
+        data = self.db_access.returning_query(Query.SELECT_FOR_REVIEW, (customer_id, PrintPrompts.ACTIVE, datetime.now().date()))
         return data
-    
-    
-    
+      

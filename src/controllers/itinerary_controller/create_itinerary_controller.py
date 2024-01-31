@@ -14,4 +14,4 @@ class CreateItineraryController:
             self.iti_handler.add_itinerary(itinerary_data["package_id"], itinerary_data["day"], itinerary_data["city"], itinerary_data["description"])
             return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ITINERARY_ADDED).jsonify_data
         except DBException as err:
-            return CustomError(StatusCodes.NOT_FOUND, err).jsonify_data
+            return CustomError(StatusCodes.NOT_FOUND, str(err)).jsonify_data

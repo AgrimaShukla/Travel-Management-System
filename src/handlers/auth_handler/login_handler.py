@@ -22,10 +22,10 @@ class LoginHandler:
         '''Function to authenticate use'''
         
         user_info = self.db_access.single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, (user_data["username"],))
-        role = Role.get_role(user_info['role'])
-        access_token = create_access_token(identity=user_info['user_id'], fresh=True, additional_claims={"role": role})
-        refresh_token = create_refresh_token(identity=user_info['user_id'], additional_claims={"role": role})
         if user_info:
+            role = Role.get_role(user_info['role'])
+            access_token = create_access_token(identity=user_info['user_id'], fresh=True, additional_claims={"role": role})
+            refresh_token = create_refresh_token(identity=user_info['user_id'], additional_claims={"role": role})
             pw = hashlib.md5(user_data["password"].encode()).hexdigest()
             if  user_info['password'] == pw:
                 return access_token, refresh_token

@@ -25,7 +25,18 @@ class ItineraryHandler:
             return data
         else:
             raise DataNotFound(PrintPrompts.NO_ITINERARY_FOUND)
-
+        
+    def get_particular_itinerary(self, destination: str, category: str, days_night: str) -> None:
+        obj_query_executor = QueryExecutor()
+        data = (destination, category, days_night, PrintPrompts.ACTIVE)
+        itinerary = obj_query_executor.returning_query(Query.SELECT_ITINERARY, data)
+        if not itinerary:
+            raise DataNotFound
+        package_data = obj_query_executor.single_data_returning_query(Query.SELECT_PRICE, data)
+        price = {'price': package_data['price']}
+        itinerary[0].update(price)
+        return itinerary[0]
+    
     def check_itinerary(self, itinerary_id: str) -> tuple:
         '''To check existing itineraries'''
         data = self.db_access.single_data_returning_query(Query.CHECK_ITINERARY_QUERY, itinerary_id)

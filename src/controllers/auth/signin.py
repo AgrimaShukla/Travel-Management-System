@@ -1,10 +1,10 @@
 from flask_smorest import abort
 from handlers.auth_handler.login_handler import LoginHandler
 from utils.exception import DBException
-
+from config.prompt import PrintPrompts
 from utils.custom_response import CustomError
 from config.status_code import StatusCodes
-from config.prompt import PrintPrompts
+
 
 class LoginController:
 
@@ -15,12 +15,12 @@ class LoginController:
         try:
             access_token, refresh_token = self.auth_handler.user_authentication(user_data)
             return {
-                "access_token": access_token,
-                "refresh_token": refresh_token,
-                "message": "You are logged in"
+                PrintPrompts.ACCESS_TOKEN: access_token,
+                PrintPrompts.REFRESH_TOKEN: refresh_token,
+                PrintPrompts.MESSAGE: PrintPrompts.LOGGED_IN
             }
         except DBException as err:
-            return CustomError(StatusCodes.UNAUTHORIZED, err).jsonify_data
+            return CustomError(StatusCodes.UNAUTHORIZED, str(err)).jsonify_data
 
 
 

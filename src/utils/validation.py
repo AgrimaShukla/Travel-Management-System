@@ -5,6 +5,8 @@ import maskpass
 
 from datetime import datetime
 from config.prompt import PrintPrompts, InputPrompts
+from utils.custom_response import CustomError
+from config.status_code import StatusCodes
 
 logger = logging.getLogger(__name__)
 
@@ -51,20 +53,19 @@ def validate_uuid(prompts: str, regex_exp: str) -> str:
         if result == True:
             return uuid
 
-def validate_date() -> None:
+def validate_date(date_str) -> None:
     '''Checking date if valid or not'''
-    print(PrintPrompts.DATE)
-    while True:
-        date_str = input(InputPrompts.ENTER)
-        try:
-            start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
-            if start_date > datetime.now().date():
-                return start_date
-            elif start_date <= datetime.now().date():
-                print(PrintPrompts.INVALID_DATE)
-            else: 
-                print(PrintPrompts.INVALID_DATE_FORMAT)
-        except ValueError:
-            logger.exception(ValueError)
-            print(PrintPrompts.INVALID_DATE) 
+    
+    try:
+        start_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+        print(type(start_date))
+        if start_date > datetime.now().date():
+            return start_date
+        elif start_date <= datetime.now().date():
+            return CustomError(StatusCodes.UNPROCESSABLE_CONTENT, PrintPrompts.INVALID_DATE)
+        else: 
+            return CustomError(StatusCodes.UNPROCESSABLE_CONTENT, PrintPrompts.INVALID_DATE_FORMAT)
+    except ValueError:
+        return CustomError(StatusCodes.UNPROCESSABLE_CONTENT, PrintPrompts.INVALID_DATE)
+
                       

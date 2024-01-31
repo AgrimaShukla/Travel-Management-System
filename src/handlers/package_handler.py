@@ -27,7 +27,11 @@ class PackageHandler:
         '''To check package if it exists or not'''
         data = self.db_access.single_data_returning_query(Query.CHECK_PACKAGE_QUERY, package_data) 
         return data
-
+    
+    def get_price_of_package(self, package_id):
+        price = self.db_access.single_data_returning_query(Query.SELECT_PRICE_PACKAGE, package_id)
+        return price
+    
     def change_status_package(self, data) -> None:
         '''Change status of package'''
         if_changed = self.db_access.non_returning_query(Query.CHANGE_STATUS_QUERY, data)
