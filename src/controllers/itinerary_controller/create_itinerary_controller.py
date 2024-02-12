@@ -1,17 +1,24 @@
-from flask_smorest import abort
+'''Controller for adding new itinerary'''
+
+import logging
 from handlers.itinerary_handler import ItineraryHandler
-from utils.exception import DBException
-from utils.custom_response import CustomSuccessResponse, CustomError
+from utils.custom_success_response import CustomSuccessResponse
 from config.status_code import StatusCodes
+from utils.logging_request_id import get_request_id
 from config.prompt import PrintPrompts
+from utils.error_handler import handle_custom_errors
+
+logger = logging.getLogger(__name__)
 
 class CreateItineraryController:
+    '''Class for creating a new itinerary'''
     def __init__(self) -> None:
         self.iti_handler = ItineraryHandler()
 
+    @handle_custom_errors
     def create_new_itinerary(self, itinerary_data):
-        try:
-            self.iti_handler.add_itinerary(itinerary_data["package_id"], itinerary_data["day"], itinerary_data["city"], itinerary_data["description"])
-            return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ITINERARY_ADDED).jsonify_data
-        except DBException as err:
-            return CustomError(StatusCodes.NOT_FOUND, str(err)).jsonify_data
+        '''Method to add new itinerary'''
+        logger.info(f'{get_request_id()} - Adding new itinerary')
+        self.iti_handler.add_itinerary(itinerary_data)
+        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ITINERARY_ADDED).jsonify_data
+        

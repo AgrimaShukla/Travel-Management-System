@@ -29,6 +29,7 @@ class DatabaseConnection:
             self.cursor = self.connection.cursor()
             self.cursor.execute(InitializeDatabase.CREATE_DATABASE.format(DatabaseConnection.MYSQL_DB))
             self.cursor.execute(InitializeDatabase.USE_DATABASE.format(DatabaseConnection.MYSQL_DB))
+            
         except mysql.connector.Error as e:
             raise mysql.connector.Error from e
         

@@ -7,7 +7,8 @@ def role_based_access(role):
         def inner(*args, **kwargs):
             verify_jwt_in_request()
             claims = get_jwt()
-            if claims["role"] not in role:
+            print(claims)
+            if claims["game"] not in role:
                 abort(401, message = "You don't have permission to access this functionality")
             else:
                 return func(*args, **kwargs)

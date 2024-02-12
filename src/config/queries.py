@@ -37,7 +37,7 @@ class Query:
     '''
     INSERT_USER = 'INSERT INTO customer VALUES(%s, %s, %s, %s, %s, %s)'
 
-    SELECT_CUSTOMER = 'SELECT name, mobile_number, gender, age, email from customer WHERE customer_id = %s'
+    SELECT_CUSTOMER = 'SELECT customer_id, name, mobile_number, gender, age, email from customer WHERE customer_id = %s'
    
     UPDATE_CUSTOMER = 'UPDATE customer SET name = %s, mobile_number = %s, gender = %s, age = %s, email = %s WHERE customer_id = %s'
 
@@ -178,8 +178,8 @@ class Query:
                     date VARCHAR(20),
                     FOREIGN KEY (booking_id) REFERENCES booking(booking_id) ON DELETE CASCADE,
                     FOREIGN KEY (package_id) REFERENCES package(package_id) ON DELETE CASCADE
-    )
-'''
+                    )
+                    '''
 
     INSERT_REVIEW = '''INSERT INTO review
                     VALUES
@@ -188,6 +188,23 @@ class Query:
 
     SELECT_REVIEW = 'SELECT name, comment, date FROM review WHERE package_id = %s'
 
+    CREATE_TOKEN_TABLE = '''
+                    CREATE TABLE  IF NOT EXISTS token_mapping(
+                    user_id VARCHAR(20),
+                    access_token VARCHAR(256) PRIMARY KEY NOT NULL,
+                    refresh_token VARCHAR(256) UNIQUE NOT NULL,
+                    token_status VARCHAR(20) DEFAULT "issued",
+                    FOREIGN KEY(user_id) REFERENCES credentials(user_id) ON DELETE CASCADE
+                     )
+                    '''
+
+    INSERT_TOKEN = ''' INSERT INTO token_mapping (user_id, access_token, refresh_token) VALUES 
+                        (%s, %s, %s)
+            '''
+    UPDATE_TOKEN_STATUS = '''UPDATE token_mapping SET token_status = %s
+                            WHERE access_token = %s
+    '''
+    SELECT_TOKEN_IF_REVOKED = '''SELECT token_status FROM token_mapping WHERE access_token = %s'''
 class DatabaseConfig:
     '''Database path'''
 

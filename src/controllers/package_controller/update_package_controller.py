@@ -1,21 +1,23 @@
-from flask_smorest import abort
-from handlers.package_handler import PackageHandler
-from utils.exception import DBException
-from config.prompt import PrintPrompts
-from utils.custom_response import CustomSuccessResponse, CustomError
-from config.status_code import StatusCodes
+'''Controller for updating package'''
 
+import logging
+from handlers.package_handler import PackageHandler
+from config.prompt import PrintPrompts
+from utils.custom_success_response import CustomSuccessResponse
+from config.status_code import StatusCodes
+from utils.logging_request_id import get_request_id
+from utils.error_handler import handle_custom_errors
+
+logger = logging.getLogger(__name__)
 
 class UpdatePackageController:
+    '''Updating package'''
     def __init__(self) -> None:
         self.pack_handler = PackageHandler()
 
+    @handle_custom_errors
     def update_package(self, package_data, package_id):
-        try:
-            package_tuple = (package_data['package_name'], package_data['duration'], package_data['category'], package_data['price'], package_data['status'], package_id)
-            self.pack_handler.update_in_package(package_tuple)
-            return CustomSuccessResponse(StatusCodes.OK, PrintPrompts.UPDATED).jsonify_data
-
-        except DBException as err:
-            return CustomError(StatusCodes.NOT_FOUND, err).jsonify_data
-
+        '''Updating a particular package'''
+        logger.info(f'{get_request_id()} - Updating a particular package')
+        self.pack_handler.update_in_package(package_data, package_id)
+        return CustomSuccessResponse(StatusCodes.OK, PrintPrompts.UPDATED).jsonify_data

@@ -1,6 +1,6 @@
 from marshmallow import Schema, fields, validate, validates
 from config.regex_value import RegularExp
-from utils.custom_response import CustomError
+from utils.custom_error_response import CustomError
 from config.status_code import StatusCodes
 from datetime import datetime
 from config.prompt import PrintPrompts

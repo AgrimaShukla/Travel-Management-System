@@ -1,27 +1,28 @@
-from flask_jwt_extended import get_jwt
+'''Controller for adding new booking'''
+
+import logging
 from handlers.booking_handler import BookingHandler
-from utils.custom_response import CustomSuccessResponse
+from utils.custom_success_response import CustomSuccessResponse
 from config.status_code import StatusCodes
+from utils.logging_request_id import get_request_id
 from config.prompt import PrintPrompts
-from utils.validation import validate_date
+from utils.error_handler import handle_custom_errors
+
+logger = logging.getLogger(__name__)
 
 class AddBookingController:
+    '''Class for adding new booking'''
 
+    def __init__(self) -> None:
+        self.booking_handler = BookingHandler()
+
+    @handle_custom_errors
     def create_booking(self, booking_data):
-        print(booking_data)
-        jwt = get_jwt()
-        user_id = jwt.get('sub')
-        package_id = booking_data["package_id"]
-        days_night = booking_data["days_night"]
-        price = booking_data["price"]
-        name = booking_data["name"]
-        mobile_number = booking_data["mobile_number"]
-        start_date = booking_data["start_date"]
-        end_date = booking_data["end_date"]
-        number_of_people = booking_data["number_of_people"]
-        email = booking_data["email"]
-        user_details = (name, mobile_number, start_date, end_date, number_of_people, email)
-        trip_details = (package_id, user_id, PrintPrompts.ACTIVE)
-        total_price = BookingHandler().add_booking(user_details, trip_details, days_night, price)
-        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.BOOKED_SUCCESSFULLY.format(total_price)).jsonify_data
+        '''Adding new booking'''
+        logger.info(f'{get_request_id()} - Creating new booking')
+        total_price = self.booking_handler.add_booking(booking_data)
+        response = {
+            "price": total_price
+        }
+        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.BOOKED_SUCCESSFULLY, response).jsonify_data
     

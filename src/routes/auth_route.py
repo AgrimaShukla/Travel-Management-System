@@ -1,41 +1,58 @@
-
+'''Routes for login, registering and logout'''
+import logging
 from flask.views import MethodView
 from flask_smorest import Blueprint
 from schemas.auth_schema import LoginSchema, LoginSuccessSchema, RegisterSchema
-from controllers.auth.signin import LoginController
-from controllers.auth.signup import RegistrationController
-from flask_jwt_extended import get_jwt, jwt_required
-from blocklist import BLOCKLIST
-from utils.custom_response import CustomSuccessResponse
+from controllers.auth.signin_controller import LoginController
+from controllers.auth.signup_controller import RegistrationController
+from controllers.auth.logout_controller import LogoutController
+from utils.logging_request_id import get_request_id
+from flask_jwt_extended import jwt_required
+
+logger = logging.getLogger(__name__)
 
 blp_auth = Blueprint("Authentication", "authentication", description = "Authentication of users")
 
 @blp_auth.route("/signin")
 class Login(MethodView):
+    '''
+    Route for:- 
+    - Login for user
+    '''
+
     @blp_auth.arguments(LoginSchema)
     @blp_auth.response(200, LoginSuccessSchema)
     def post(self, user_data):
-        login_obj = LoginController()
-        token = login_obj.login(user_data)
-        return token
+        '''User Login'''
+        logger.info(f"{get_request_id()} -  route for login")
+        return LoginController().login(user_data)
 
 
 @blp_auth.route("/signup")
 class registration(MethodView):
+    '''
+    Route for:-
+    - Registering user
+    '''
+
     @blp_auth.arguments(RegisterSchema)
     def post(self, user_data):
-        reg_obj = RegistrationController()
-        # print(user_data)
-        result = reg_obj.register(user_data)
-        return result
+        '''Signup for user'''
+        logger.info(f"{get_request_id()} -  route for signup")
+        return RegistrationController.register(user_data)
         
 
 @blp_auth.route("/logout")
 class UserLogout(MethodView):
+   '''
+   Route for:-
+   - Logout for user
+   '''
+   
    @jwt_required()
    @blp_auth.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
    def post(self):
-       jot = get_jwt().get('jti')
-       BLOCKLIST.add(jot)
-       return CustomSuccessResponse() 
+       '''Logout user'''
+       logger.info(f"{get_request_id()} -  route for logout")
+       return LogoutController().logout()
          

@@ -5,7 +5,7 @@ import maskpass
 
 from datetime import datetime
 from config.prompt import PrintPrompts, InputPrompts
-from utils.custom_response import CustomError
+from utils.custom_error_response import CustomError
 from config.status_code import StatusCodes
 
 logger = logging.getLogger(__name__)

@@ -6,6 +6,8 @@ class PrintPrompts:
       ACCESS_TOKEN = "access_token"
       REFRESH_TOKEN = "refresh_token"
       ACCOUNT_DELETED = 'Account deleted'
+      BAD_REQUEST = 'Invalid request'
+      SERVER_ERROR = 'Internal Server Error'
       MESSAGE = "message"
       LOGGED_IN = "You are logged in"
       ACTIVE = 'active'
@@ -34,7 +36,7 @@ class PrintPrompts:
 
       BOOKING_ID = "BOOKING ID {} DOES NOT EXIST. ENTER AGAIN"
       
-      BOOKED_SUCCESSFULLY = "Booked successfully!\nPrice: {}\n"
+      BOOKED_SUCCESSFULLY = "Booked successfully"
 
       CANCELLED = 'Cancelled'
 
@@ -93,6 +95,8 @@ class PrintPrompts:
 
       INSERTED = 'INSERTED'
 
+      INTERNAL_SERVER_ERROR = 'Something Went Wrong'
+      
       INVALID_BOOKING = '''
             INVALID BOOKING ID.
             ENTER AGAIN.
@@ -156,6 +160,7 @@ class PrintPrompts:
       
       SUCCESFULLY = "Successfully registered"
 
+      SUCCESS = 'Successful response'
       
       UPDATE_PACKAGE = '''
             SELECT ANY OPTION:
@@ -188,6 +193,8 @@ class PrintPrompts:
             7) EXIT
       '''
 
+      USER_LOGOUT = 'You are successfully logged out'
+
 class InputPrompts:
       '''All the prompts used when taking input'''
       INPUT = "Enter {}: "
@@ -212,18 +219,7 @@ class InputPrompts:
 
       STATUS = "Enter status (active/inactive): "
 
-class LoggingPrompt:
-      '''Prompts for logging'''
 
-      NO_DATA = "NO DATA FOUND"
-
-      ADDED_PACKAGE = "ADDED PACKAGE"
-
-      NO_PACKAGE = "NO PACKAGE FOUND"
-
-      BOOKED = "BOOKED SUCCESSFULLY"
-
-      REGISTERED = 'USER REGISTERED'
 
 class TabulateHeader:
       '''Prompts for Tabulate'''

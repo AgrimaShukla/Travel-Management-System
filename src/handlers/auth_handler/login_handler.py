@@ -4,10 +4,12 @@ import logging
 import hashlib
 from database.database_access import QueryExecutor
 from config.queries import Query
-from utils.exception import InvalidUsernameorPassword
+from utils.custom_error_response import ApplicationException, DBException
 from config.prompt import PrintPrompts
-from flask_jwt_extended import create_access_token, create_refresh_token
-from utils.role_mapping import Role
+from utils.token import Token
+from mysql import connector
+from utils.logging_request_id import get_request_id
+from config.status_code import StatusCodes
 
 logger = logging.getLogger(__name__)
 
@@ -15,23 +17,26 @@ class LoginHandler:
     
     ''' class for authenticating user'''
     def __init__(self) -> None:
-        # no of attempts given to user
         self.db_access = QueryExecutor()
+        self.token_obj = Token()
     
     def user_authentication(self, user_data) -> tuple:
-        '''Function to authenticate use'''
-        
-        user_info = self.db_access.single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, (user_data["username"],))
-        if user_info:
-            role = Role.get_role(user_info['role'])
-            access_token = create_access_token(identity=user_info['user_id'], fresh=True, additional_claims={"role": role})
-            refresh_token = create_refresh_token(identity=user_info['user_id'], additional_claims={"role": role})
-            pw = hashlib.md5(user_data["password"].encode()).hexdigest()
-            if  user_info['password'] == pw:
-                return access_token, refresh_token
+        '''Function to authenticate user'''
+        try:
+            logger.debug(f"{get_request_id()} - User is trying to login with username {user_data['username']}")
+            user_info = self.db_access.single_data_returning_query(Query.SELECT_CREDENTIALS_USERNAME, (user_data["username"],))
+            if user_info:
+                pw = hashlib.md5(user_data["password"].encode()).hexdigest()
+                if user_info['password'] == pw:
+                    access_token, refresh_token = self.token_obj.generate_token(user_info["role"], user_info["user_id"], True)
+                    return access_token, refresh_token
+                else:
+                    logger.error(f'{get_request_id()} - Invalid attempt to login with username {user_data["username"]}')
+                    raise ApplicationException(StatusCodes.UNAUTHORIZED, PrintPrompts.INVALID_CREDENTIALS)
             else:
-                raise InvalidUsernameorPassword(PrintPrompts.INVALID_CREDENTIALS)
-        else: 
-            raise InvalidUsernameorPassword(PrintPrompts.INVALID_CREDENTIALS)
+                logger.error(f"{get_request_id()} - Username does not exist {user_data['username']}") 
+                raise ApplicationException(StatusCodes.UNAUTHORIZED, PrintPrompts.INVALID_CREDENTIALS)
+        except connector.Error:
+            raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
        
                
