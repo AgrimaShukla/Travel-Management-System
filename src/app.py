@@ -27,7 +27,7 @@ logging.basicConfig(format = '%(asctime)s - %(message)s',
 
 logger = logging.getLogger(__name__)
 
-BASE_URL = '/travelmanagementsystem/v1'
+BASE_URL = '/travelmanagementsystem'
 
 def create_app():
     app = Flask(__name__)
@@ -37,12 +37,9 @@ def create_app():
     api = Api(app)
     initialise_jwt(app)
 
-    def demo(Exception):
-        logger.error(Exception)
     app.register_error_handler(
         Exception,
-        # lambda _: CustomError(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR).jsonify_data
-        demo(Exception)
+        lambda _: CustomError(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR).jsonify_data
     )
 
    # setting req Id for logging

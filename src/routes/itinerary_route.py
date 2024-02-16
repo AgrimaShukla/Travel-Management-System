@@ -13,6 +13,7 @@ from utils.role_mapping import Role
 
 logger = logging.getLogger(__name__)
 
+
 blp_itinerary = Blueprint("Itinerary", __name__, description = "Admin methods on itinerary")
 
 @blp_itinerary.route("/itineraries")
@@ -24,8 +25,8 @@ class Itineraries(MethodView):
     '''
 
     @blp_itinerary.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
-    @role_based_access([Role.ADMIN, Role.CUSTOMER])
     @blp_itinerary.response(200, ItinerarySchema(many=True))
+    @role_based_access([Role.ADMIN, Role.CUSTOMER])
     def get(self):
         '''Getting all packages'''
         logger.info(f"{get_request_id()} -  route for getting itineraries")

@@ -39,7 +39,6 @@ class DateSchema(Schema):
 class CreateBookingSchema(Schema):
     package_id = fields.Str(required = True, validate=validate.Regexp(RegularExp.UUID))
     days_night = fields.Str(required=True, validate=validate.Regexp(RegularExp.DURATION))
-    price = fields.Int(required=True)
     name = fields.String(required=True, validate=validate.Regexp(RegularExp.NAME))
     mobile_number = fields.Str(required=True, validate=validate.Regexp(RegularExp.MOBILE_NUMBER))
     start_date = fields.Str(required=True)

@@ -11,7 +11,7 @@ class PrintPrompts:
       MESSAGE = "message"
       LOGGED_IN = "You are logged in"
       ACTIVE = 'active'
-
+      ACTIVATED = 'activated'
       ADDED = 'ADDED'
 
       ADMIN_MENU = '''
@@ -121,6 +121,8 @@ class PrintPrompts:
             3) UPDATE ITINERARY
             4) EXIT
       '''
+
+      ITINERARY_FETCHED = "Itinerary fetched"
 
       LOGIN_ATTEMPTS = "YOU HAVE 3 LOGIN ATTEMPTS"
 

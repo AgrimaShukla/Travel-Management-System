@@ -1,4 +1,4 @@
-from shortuuid import ShortUUID
+from flask import request
 
 def get_request_id():
-    return ShortUUID().random(10)
+    return request.environ.get("X-Request-Id")

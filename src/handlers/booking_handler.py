@@ -28,7 +28,7 @@ class BookingHandler:
             jwt = get_jwt()
             user_id = jwt.get('sub')
             package_id = booking_data["package_id"]
-            price = booking_data["price"]
+            price = self.db_access.single_data_returning_query(Query.SELECT_ONLY_PRICE, (package_id,))
             name = booking_data["name"]
             mobile_number = booking_data["mobile_number"]
             start_date = booking_data["start_date"]
@@ -37,12 +37,12 @@ class BookingHandler:
             email = booking_data["email"]
             booking_id = "B_" + ShortUUID().random(length = 10)
             booking_date = str(datetime.now().date())
-            total_price = number_of_people * price
+            total_price = number_of_people * price['price']
             user_details = (booking_id, booking_date, name, mobile_number, start_date, end_date, number_of_people, email) 
             trip_details = (booking_id, total_price, package_id, user_id, PrintPrompts.ACTIVE)
             self.db_access.insert_table(Query.INSERT_BOOKING, user_details, Query.INSERT_BOOKING_PACKAGE, trip_details)
             logger.info(f'{get_request_id} - Added new booking')
-            return total_price
+            return booking_id, total_price
         except connector.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
        

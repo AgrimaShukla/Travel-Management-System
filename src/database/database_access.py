@@ -44,7 +44,7 @@ class QueryExecutor:
             with DatabaseConnection() as connection:
                 cursor = connection.cursor()
                 cursor.execute(query_update, params)
-        except mysql.connector.Error:
+        except mysql.connector.Error as e:
             raise mysql.connector.Error
 
     def single_data_returning_query(self, query_to_check: str, params: tuple) -> tuple:

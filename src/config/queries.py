@@ -37,7 +37,7 @@ class Query:
     '''
     INSERT_USER = 'INSERT INTO customer VALUES(%s, %s, %s, %s, %s, %s)'
 
-    SELECT_CUSTOMER = 'SELECT customer_id, name, mobile_number, gender, age, email from customer WHERE customer_id = %s'
+    SELECT_CUSTOMER = 'SELECT name, mobile_number, gender, age, email from customer WHERE customer_id = %s'
    
     UPDATE_CUSTOMER = 'UPDATE customer SET name = %s, mobile_number = %s, gender = %s, age = %s, email = %s WHERE customer_id = %s'
 
@@ -61,6 +61,8 @@ class Query:
     SELECT_ADMIN = 'SELECT * FROM credentials WHERE role = %s'
     
     SELECT_PRICE = 'SELECT package_id, price, duration FROM package WHERE package_name = %s AND category = %s AND duration = %s AND status = %s'
+
+    SELECT_ONLY_PRICE = 'SELECT price FROM package WHERE package_id = %s'
 
     CHECK_PACKAGE_QUERY = 'SELECT * FROM package WHERE package_id = %s'
 
@@ -103,7 +105,7 @@ class Query:
                 AND package.status = %s
     '''
 
-    SHOW_ITINERARY_QUERY = 'SELECT * FROM itinerary'
+    SHOW_ITINERARY_QUERY = 'SELECT day, city, description FROM itinerary'
 
     CHECK_ITINERARY_QUERY = 'SELECT * FROM itinerary WHERE itinerary_id = %s'
 

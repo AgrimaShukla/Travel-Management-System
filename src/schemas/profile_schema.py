@@ -2,7 +2,6 @@ from marshmallow import Schema, fields, validate
 from config.regex_value import RegularExp
 
 class GetProfileSchema(Schema):
-    user_id = fields.Str(dump_only=True)
     name = fields.Str(dump_only=True)
     mobile_number = fields.Str(dump_only=True)
     gender = fields.Str(dump_only=True)

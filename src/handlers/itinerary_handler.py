@@ -17,13 +17,13 @@ class ItineraryHandler:
     def __init__(self):
         self.db_access = QueryExecutor()
     
-    def add_itinerary(self, itinerary_data, package_id):
+    def add_itinerary(self, itinerary_data):
         '''Method for adding new itinerary'''
 
         try:
             logger.info(f'{get_request_id()} - Adding itinerary')
             itinerary_id = "I_" + shortuuid.ShortUUID().random(length = 8)
-            package_data = self.db_access.returning_query(Query.CHECK_PACKAGE_QUERY, (package_id, ))
+            package_data = self.db_access.returning_query(Query.CHECK_PACKAGE_QUERY, (itinerary_data["package_id"], ))
             if package_data:
                 data = (itinerary_id, itinerary_data["package_id"], itinerary_data["day"], itinerary_data["city"], itinerary_data["description"])
                 inserted = self.db_access.non_returning_query(Query.INSERT_ITINERARY_QUERY, data)
@@ -51,15 +51,15 @@ class ItineraryHandler:
         try:
             logger.info(f'{get_request_id()} - Fetching a particular itinerary')
             obj_query_executor = QueryExecutor()
-            data = (destination, category, days_night, PrintPrompts.ACTIVE)
+            data = (destination, category, days_night, PrintPrompts.ACTIVATED)
             itinerary = obj_query_executor.returning_query(Query.SELECT_ITINERARY, data)
             if not itinerary:
                 logger.error(f"{get_request_id()} - No itinerary found")
                 raise ApplicationException(StatusCodes.NOT_FOUND, PrintPrompts.NO_ITINERARY_FOUND)
             package_data = obj_query_executor.single_data_returning_query(Query.SELECT_PRICE, data)
             price = {'price': package_data['price']}
-            itinerary[0].update(price)
-            return itinerary[0]
+            itinerary = {'itinerary_details': itinerary}
+            return itinerary, price
         except connector.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
     
