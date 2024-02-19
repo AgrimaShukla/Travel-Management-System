@@ -18,7 +18,7 @@ from routes.review_route import blp_review
 from routes.booking_route import blp_booking
 from config.status_code import StatusCodes
 from config.flask_config import app_config, initialise_jwt
-from blocklist import BLOCKLIST
+
 
 
 logging.basicConfig(format = '%(asctime)s - %(message)s', 
@@ -61,6 +61,5 @@ def create_app():
 
     return app
 
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+flask_app = create_app()
+
