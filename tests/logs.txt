@@ -1,0 +1,154 @@
+28-11-2023 10:08:59 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 43, in create_tables
+    with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:08:59 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:08:59 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 20, in insert_table
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:09:26 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:09:26 - Invalid login attempt
+28-11-2023 10:09:42 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:09:42 - Invalid login attempt
+28-11-2023 10:12:01 - not validated
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\validation.py", line 17, in wrapper
+    raise Exception
+Exception
+28-11-2023 10:12:06 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 43, in create_tables
+    with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:12:06 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:12:06 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 20, in insert_table
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:12:17 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:12:17 - Invalid login attempt
+28-11-2023 10:17:23 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 43, in create_tables
+    with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:17:23 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:17:23 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 20, in insert_table
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:17:38 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:17:38 - Invalid login attempt
+28-11-2023 10:17:52 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:17:52 - Invalid login attempt
+28-11-2023 10:21:44 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 43, in create_tables
+    with DatabaseConnection(DatabaseConfig.DB_PATH) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:21:44 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 74, in single_data_returning_query
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:21:44 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 20, in insert_table
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+28-11-2023 10:22:36 - unable to open database file
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\database_access.py", line 20, in insert_table
+    with DatabaseConnection(self.path) as connection:
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\database\context_manager.py", line 17, in __enter__
+    self.connection = sqlite3.connect(self.host)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
