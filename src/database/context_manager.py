@@ -43,7 +43,6 @@ class DatabaseConnection:
             self.connection =self.connection
             self.cursor = self.cursor
         except pymysql.Error as e:
-            print(e)
             raise pymysql.Error from e
         
     def __enter__(self):

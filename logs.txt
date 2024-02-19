@@ -6542,3 +6542,1034 @@ Traceback (most recent call last):
 pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
 19-02-2024 12:12:55 -  * Debugger is active!
 19-02-2024 12:12:55 -  * Debugger PIN: 897-868-015
+19-02-2024 14:48:39 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 14:48:40 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 14:48:40 - [33mPress CTRL+C to quit[0m
+19-02-2024 14:48:40 -  * Restarting with stat
+19-02-2024 14:48:41 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 14:48:42 -  * Debugger is active!
+19-02-2024 14:48:42 -  * Debugger PIN: 897-868-015
+19-02-2024 14:48:49 - 127.0.0.1 - - [19/Feb/2024 14:48:49] "[33mPOST /travelmanagementsystem/signin HTTP/1.1[0m" 404 -
+19-02-2024 14:49:01 - 127.0.0.1 - - [19/Feb/2024 14:49:01] "[33mPOST /travelmanagementsystem/signin HTTP/1.1[0m" 404 -
+19-02-2024 14:49:32 - 77Ro7w7JUv -  route for login
+19-02-2024 14:49:32 - 77Ro7w7JUv - User trying to login
+19-02-2024 14:49:32 - 77Ro7w7JUv - User is trying to login with username admin123
+19-02-2024 14:49:33 - New access and refresh token issued
+19-02-2024 14:49:33 - 127.0.0.1 - - [19/Feb/2024 14:49:33] "[35m[1mPOST /travelmanagementsystem/v1/signin HTTP/1.1[0m" 500 -
+19-02-2024 14:53:17 - HRGmnG5QFP -  route for login
+19-02-2024 14:53:17 - HRGmnG5QFP - User trying to login
+19-02-2024 14:53:17 - HRGmnG5QFP - User is trying to login with username admin123
+19-02-2024 14:53:18 - New access and refresh token issued
+19-02-2024 14:53:19 - 127.0.0.1 - - [19/Feb/2024 14:53:19] "POST /travelmanagementsystem/v1/signin HTTP/1.1" 200 -
+19-02-2024 14:58:02 - 127.0.0.1 - - [19/Feb/2024 14:58:02] "[33mGET /travelmanagementsystem/packages HTTP/1.1[0m" 404 -
+19-02-2024 14:58:14 - Checking if token is revoked or not
+19-02-2024 14:58:15 - 127.0.0.1 - - [19/Feb/2024 14:58:15] "GET /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 14:58:56 - Checking if token is revoked or not
+19-02-2024 14:58:56 - 127.0.0.1 - - [19/Feb/2024 14:58:56] "POST /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:00:13 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\config\\queries.py', reloading
+19-02-2024 15:00:13 -  * Restarting with stat
+19-02-2024 15:00:15 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:00:16 -  * Debugger is active!
+19-02-2024 15:00:16 -  * Debugger PIN: 897-868-015
+19-02-2024 15:00:16 - Checking if token is revoked or not
+19-02-2024 15:00:16 - 127.0.0.1 - - [19/Feb/2024 15:00:16] "POST /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:00:26 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:00:26 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:00:26 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:00:26 -  * Restarting with stat
+19-02-2024 15:00:28 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:00:29 -  * Debugger is active!
+19-02-2024 15:00:29 -  * Debugger PIN: 897-868-015
+19-02-2024 15:01:39 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\database\\context_manager.py', reloading
+19-02-2024 15:01:39 -  * Restarting with stat
+19-02-2024 15:01:41 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:01:42 -  * Debugger is active!
+19-02-2024 15:01:42 -  * Debugger PIN: 897-868-015
+19-02-2024 15:01:43 - 6bbHXRn262 -  route for login
+19-02-2024 15:01:43 - 6bbHXRn262 - User trying to login
+19-02-2024 15:01:43 - 6bbHXRn262 - User is trying to login with username admin123
+19-02-2024 15:01:44 - New access and refresh token issued
+19-02-2024 15:01:45 - 127.0.0.1 - - [19/Feb/2024 15:01:45] "POST /travelmanagementsystem/v1/signin HTTP/1.1" 200 -
+19-02-2024 15:01:48 - 127.0.0.1 - - [19/Feb/2024 15:01:48] "[33mPOST /travelmanagementsystem/logout HTTP/1.1[0m" 404 -
+19-02-2024 15:01:58 - Checking if token is revoked or not
+19-02-2024 15:01:58 - 127.0.0.1 - - [19/Feb/2024 15:01:58] "POST /travelmanagementsystem/v1/logout HTTP/1.1" 200 -
+19-02-2024 15:02:12 - BKBGKgEsbi -  route for login
+19-02-2024 15:02:12 - BKBGKgEsbi - User trying to login
+19-02-2024 15:02:12 - BKBGKgEsbi - User is trying to login with username admin123
+19-02-2024 15:02:12 - New access and refresh token issued
+19-02-2024 15:02:13 - 127.0.0.1 - - [19/Feb/2024 15:02:13] "POST /travelmanagementsystem/v1/signin HTTP/1.1" 200 -
+19-02-2024 15:02:25 - FDPmUMkF67 -  route for signup
+19-02-2024 15:02:25 - 127.0.0.1 - - [19/Feb/2024 15:02:25] "POST /travelmanagementsystem/v1/signup HTTP/1.1" 200 -
+19-02-2024 15:02:51 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\utils\\error_handler.py', reloading
+19-02-2024 15:02:51 -  * Restarting with stat
+19-02-2024 15:02:54 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:02:55 -  * Debugger is active!
+19-02-2024 15:02:55 -  * Debugger PIN: 897-868-015
+19-02-2024 15:02:56 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\utils\\error_handler.py', reloading
+19-02-2024 15:02:56 -  * Restarting with stat
+19-02-2024 15:03:02 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:03:03 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:03:03 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:03:03 -  * Restarting with stat
+19-02-2024 15:03:06 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:03:06 -  * Debugger is active!
+19-02-2024 15:03:06 -  * Debugger PIN: 897-868-015
+19-02-2024 15:03:13 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\utils\\error_handler.py', reloading
+19-02-2024 15:03:13 -  * Restarting with stat
+19-02-2024 15:03:15 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:03:16 -  * Debugger is active!
+19-02-2024 15:03:16 -  * Debugger PIN: 897-868-015
+19-02-2024 15:03:17 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\utils\\error_handler.py', reloading
+19-02-2024 15:03:17 -  * Restarting with stat
+19-02-2024 15:03:19 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:03:20 -  * Debugger is active!
+19-02-2024 15:03:20 -  * Debugger PIN: 897-868-015
+19-02-2024 15:03:35 - EMZipDRQ7e -  route for signup
+19-02-2024 15:03:35 - 127.0.0.1 - - [19/Feb/2024 15:03:35] "POST /travelmanagementsystem/v1/signup HTTP/1.1" 200 -
+19-02-2024 15:03:36 - 8E6uHQ5cNX -  route for signup
+19-02-2024 15:03:36 - 127.0.0.1 - - [19/Feb/2024 15:03:36] "POST /travelmanagementsystem/v1/signup HTTP/1.1" 200 -
+19-02-2024 15:04:30 - 8YorwPev8S -  route for signup
+19-02-2024 15:04:30 - 127.0.0.1 - - [19/Feb/2024 15:04:30] "POST /travelmanagementsystem/v1/signup HTTP/1.1" 200 -
+19-02-2024 15:04:31 - 7hunSB3G7V -  route for signup
+19-02-2024 15:04:31 - 127.0.0.1 - - [19/Feb/2024 15:04:31] "POST /travelmanagementsystem/v1/signup HTTP/1.1" 200 -
+19-02-2024 15:04:40 - 88TapHe3b7 -  route for login
+19-02-2024 15:04:40 - 88TapHe3b7 - User trying to login
+19-02-2024 15:04:40 - 88TapHe3b7 - User is trying to login with username admin123
+19-02-2024 15:04:41 - New access and refresh token issued
+19-02-2024 15:04:41 - 127.0.0.1 - - [19/Feb/2024 15:04:41] "POST /travelmanagementsystem/v1/signin HTTP/1.1" 200 -
+19-02-2024 15:04:47 - Checking if token is revoked or not
+19-02-2024 15:04:47 - 127.0.0.1 - - [19/Feb/2024 15:04:47] "GET /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:04:53 - Checking if token is revoked or not
+19-02-2024 15:04:54 - 127.0.0.1 - - [19/Feb/2024 15:04:54] "POST /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:04:59 - 127.0.0.1 - - [19/Feb/2024 15:04:59] "[33mPOST /travelmanagementsystem/itineraries HTTP/1.1[0m" 404 -
+19-02-2024 15:05:08 - Checking if token is revoked or not
+19-02-2024 15:05:08 - 127.0.0.1 - - [19/Feb/2024 15:05:08] "POST /travelmanagementsystem/v1/itineraries HTTP/1.1" 200 -
+19-02-2024 15:05:44 - 4ejrEFGGPc -  route for login
+19-02-2024 15:05:44 - 4ejrEFGGPc - User trying to login
+19-02-2024 15:05:44 - 4ejrEFGGPc - User is trying to login with username admin123
+19-02-2024 15:05:45 - New access and refresh token issued
+19-02-2024 15:05:46 - 127.0.0.1 - - [19/Feb/2024 15:05:46] "POST /travelmanagementsystem/v1/signin HTTP/1.1" 200 -
+19-02-2024 15:05:51 - Checking if token is revoked or not
+19-02-2024 15:05:52 - 127.0.0.1 - - [19/Feb/2024 15:05:52] "POST /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:06:14 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\package_route.py', reloading
+19-02-2024 15:06:14 -  * Restarting with stat
+19-02-2024 15:06:17 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:06:18 -  * Debugger is active!
+19-02-2024 15:06:18 -  * Debugger PIN: 897-868-015
+19-02-2024 15:06:18 - Checking if token is revoked or not
+19-02-2024 15:06:19 - 127.0.0.1 - - [19/Feb/2024 15:06:19] "POST /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:06:43 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:06:44 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:06:44 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:06:44 -  * Restarting with stat
+19-02-2024 15:06:47 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:06:48 -  * Debugger is active!
+19-02-2024 15:06:48 -  * Debugger PIN: 897-868-015
+19-02-2024 15:07:27 - Checking if token is revoked or not
+19-02-2024 15:07:28 - 127.0.0.1 - - [19/Feb/2024 15:07:28] "GET /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:08:49 - Checking if token is revoked or not
+19-02-2024 15:08:50 - 127.0.0.1 - - [19/Feb/2024 15:08:50] "GET /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:08:51 - Checking if token is revoked or not
+19-02-2024 15:08:52 - 127.0.0.1 - - [19/Feb/2024 15:08:52] "GET /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:09:19 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\package_route.py', reloading
+19-02-2024 15:09:19 -  * Restarting with stat
+19-02-2024 15:09:23 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:09:24 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:09:24 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:09:24 -  * Restarting with stat
+19-02-2024 15:09:27 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:09:27 -  * Debugger is active!
+19-02-2024 15:09:27 -  * Debugger PIN: 897-868-015
+19-02-2024 15:10:07 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\app.py', reloading
+19-02-2024 15:10:07 -  * Restarting with stat
+19-02-2024 15:10:09 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:10:10 -  * Debugger is active!
+19-02-2024 15:10:10 -  * Debugger PIN: 897-868-015
+19-02-2024 15:10:11 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\app.py', reloading
+19-02-2024 15:10:11 -  * Restarting with stat
+19-02-2024 15:10:39 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:10:40 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:10:40 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:10:40 -  * Restarting with stat
+19-02-2024 15:10:41 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:10:42 -  * Debugger is active!
+19-02-2024 15:10:42 -  * Debugger PIN: 897-868-015
+19-02-2024 15:11:07 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\user_route.py', reloading
+19-02-2024 15:11:07 -  * Restarting with stat
+19-02-2024 15:11:11 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:11:12 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:11:12 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:11:12 -  * Restarting with stat
+19-02-2024 15:11:14 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:11:15 -  * Debugger is active!
+19-02-2024 15:11:15 -  * Debugger PIN: 897-868-015
+19-02-2024 15:11:15 - Checking if token is revoked or not
+19-02-2024 15:11:16 - 127.0.0.1 - - [19/Feb/2024 15:11:16] "[35m[1mPOST /travelmanagementsystem/v1/packages HTTP/1.1[0m" 500 -
+19-02-2024 15:11:45 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\utils\\token.py', reloading
+19-02-2024 15:11:45 -  * Restarting with stat
+19-02-2024 15:11:47 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:11:48 -  * Debugger is active!
+19-02-2024 15:11:48 -  * Debugger PIN: 897-868-015
+19-02-2024 15:11:56 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\utils\\token.py', reloading
+19-02-2024 15:11:56 -  * Restarting with stat
+19-02-2024 15:12:20 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:12:20 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:12:20 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:12:20 -  * Restarting with stat
+19-02-2024 15:12:22 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:12:23 -  * Debugger is active!
+19-02-2024 15:12:23 -  * Debugger PIN: 897-868-015
+19-02-2024 15:12:23 - Checking if token is revoked or not
+19-02-2024 15:12:23 - Checking if token is revoked or not
+19-02-2024 15:12:24 - 127.0.0.1 - - [19/Feb/2024 15:12:24] "[35m[1mPOST /travelmanagementsystem/v1/packages HTTP/1.1[0m" 500 -
+19-02-2024 15:14:07 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\config\\flask_config.py', reloading
+19-02-2024 15:14:07 -  * Restarting with stat
+19-02-2024 15:14:09 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:14:10 -  * Debugger is active!
+19-02-2024 15:14:10 -  * Debugger PIN: 897-868-015
+19-02-2024 15:14:16 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\config\\flask_config.py', reloading
+19-02-2024 15:14:16 -  * Restarting with stat
+19-02-2024 15:14:28 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:14:29 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:14:29 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:14:29 -  * Restarting with stat
+19-02-2024 15:14:31 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:14:32 -  * Debugger is active!
+19-02-2024 15:14:32 -  * Debugger PIN: 897-868-015
+19-02-2024 15:15:05 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:15:06 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+19-02-2024 15:15:06 - [33mPress CTRL+C to quit[0m
+19-02-2024 15:15:06 -  * Restarting with stat
+19-02-2024 15:15:07 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:15:08 -  * Debugger is active!
+19-02-2024 15:15:08 -  * Debugger PIN: 897-868-015
+19-02-2024 15:15:53 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\app.py', reloading
+19-02-2024 15:15:53 -  * Restarting with stat
+19-02-2024 15:15:55 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:15:56 -  * Debugger is active!
+19-02-2024 15:15:56 -  * Debugger PIN: 897-868-015
+19-02-2024 15:20:12 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\config\\flask_config.py', reloading
+19-02-2024 15:20:12 -  * Restarting with stat
+19-02-2024 15:20:14 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:20:15 -  * Debugger is active!
+19-02-2024 15:20:15 -  * Debugger PIN: 897-868-015
+19-02-2024 15:20:15 - Checking if token is revoked or not
+19-02-2024 15:20:15 - 127.0.0.1 - - [19/Feb/2024 15:20:15] "POST /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:20:27 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\config\\flask_config.py', reloading
+19-02-2024 15:20:27 -  * Restarting with stat
+19-02-2024 15:20:29 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:20:29 -  * Debugger is active!
+19-02-2024 15:20:29 -  * Debugger PIN: 897-868-015
+19-02-2024 15:20:29 - Checking if token is revoked or not
+19-02-2024 15:20:30 - 7NYbdXahq8 -  route for posting packages
+19-02-2024 15:20:30 - 7NYbdXahq8 - Creating new package
+19-02-2024 15:20:30 - 7NYbdXahq8 - Adding new package
+19-02-2024 15:20:31 - Added new package
+19-02-2024 15:20:31 - 127.0.0.1 - - [19/Feb/2024 15:20:31] "POST /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:20:35 - Checking if token is revoked or not
+19-02-2024 15:20:36 - FWhvVfS54a -  route for getting packages
+19-02-2024 15:20:36 - FWhvVfS54a - Getting all packages
+19-02-2024 15:20:36 - <function get_request_id at 0x000001DCC8CBA7A0> - Fetching all packages
+19-02-2024 15:20:36 - 127.0.0.1 - - [19/Feb/2024 15:20:36] "GET /travelmanagementsystem/v1/packages HTTP/1.1" 200 -
+19-02-2024 15:40:47 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\app.py', reloading
+19-02-2024 15:40:47 -  * Restarting with stat
+19-02-2024 15:40:49 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:40:50 -  * Debugger is active!
+19-02-2024 15:40:50 -  * Debugger PIN: 897-868-015
+19-02-2024 15:40:51 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\app.py', reloading
+19-02-2024 15:40:51 -  * Restarting with stat
+19-02-2024 15:40:53 - (1824, "Failed to open the referenced table 'PACKAGE'")
+Traceback (most recent call last):
+  File "c:\Users\ashukla\OneDrive - WatchGuard Technologies Inc\Desktop\Minor project\Tours and Travel\src\utils\initialize_app.py", line 50, in create_tables
+    cursor.execute(Query.CREATE_BOOKING_PACKAGE)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\ashukla\.virtualenvs\Tours_and_Travel-ejH2dMQI\Lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1824, "Failed to open the referenced table 'PACKAGE'")
+19-02-2024 15:40:53 -  * Debugger is active!
+19-02-2024 15:40:53 -  * Debugger PIN: 897-868-015

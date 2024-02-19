@@ -27,6 +27,7 @@ class Packages(MethodView):
     @role_based_access(Role.ADMIN)
     @blp_package.response(200, PackageSchema(many=True))
     def get(self):
+        print("hey")
         '''Getting all packages'''
         logger.info(f"{get_request_id()} -  route for getting packages")
         return GetPackageController().get_package_details()
@@ -36,6 +37,7 @@ class Packages(MethodView):
     @blp_package.arguments(PackageSchema)
     def post(self, package_data): 
         '''Creating new package'''
+        print("hyhy")
         logger.info(f"{get_request_id()} -  route for posting packages") 
         return CreatePackageController().create_package(package_data)
 

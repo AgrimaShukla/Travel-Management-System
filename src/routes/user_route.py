@@ -40,7 +40,7 @@ class ChangeUser(MethodView):
     '''
 
     @blp_profile.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
-    @role_based_access(Role.CUSTOMER)
+    # @role_based_access(Role.CUSTOMER)
     @blp_profile.arguments(UpdateProfileSchema)
     def put(self, user_data, user_id):
         '''Updating user detail'''

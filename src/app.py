@@ -44,6 +44,7 @@ def create_app():
         Exception,
         lambda _: CustomError(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR).jsonify_data
     )
+ 
 
    # setting req Id for logging
     @app.before_request
@@ -61,5 +62,4 @@ def create_app():
 
     return app
 
-flask_app = create_app()
-
+app = create_app()

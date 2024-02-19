@@ -208,7 +208,7 @@ class Query:
     '''
     SELECT_TOKEN_IF_REVOKED = """
         SELECT token_status
-        FROM token_table
+        FROM token_mapping
         WHERE {} = %s
     """
 class DatabaseConfig:
