@@ -58,8 +58,6 @@ def create_app():
     api.register_blueprint(blp_profile, url_prefix = BASE_URL)
     api.register_blueprint(blp_review, url_prefix = BASE_URL)
     api.register_blueprint(blp_booking, url_prefix = BASE_URL)
-    app.run(debug=True)
-
     return app
 
 app = create_app()
