@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 blp_booking = Blueprint("Booking", __name__, description="Customer Booking")
 
-@blp_booking.route("v1/booking")
+@blp_booking.route("/v1/booking")
 class Booking(MethodView):
     '''
     Route for:-  
@@ -41,7 +41,7 @@ class Booking(MethodView):
         logger.info(f"{get_request_id()} -  route for posting bookings")
         return AddBookingController().create_booking(booking_data)
 
-@blp_booking.route("v1/booking/active")
+@blp_booking.route("/v1/booking/active")
 class Booking(MethodView):
     '''
     Route for:-
@@ -57,7 +57,7 @@ class Booking(MethodView):
         return GetActiveBookingController().get_active_booking()
     
 
-@blp_booking.route("v1/booking/<string:booking_id>")
+@blp_booking.route("/v1/booking/<string:booking_id>")
 class UpdateBooking(MethodView):
     '''
     Route for:-
@@ -72,7 +72,7 @@ class UpdateBooking(MethodView):
         logger.info(f"{get_request_id()} -  route for changing booking details")
         return UpdateBookingController().update_bookings(booking_data, booking_id)
     
-@blp_booking.route("v1/booking/cancel/<string:booking_id>")
+@blp_booking.route("/v1/booking/cancel/<string:booking_id>")
 class CancelBooking(MethodView):
     '''
     Route for:-

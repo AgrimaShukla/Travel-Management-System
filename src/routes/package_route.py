@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 blp_package = Blueprint("Package", __name__, description = "Admin methods on package")
 
-@blp_package.route("v1/packages")
+@blp_package.route("/v1/packages")
 class Packages(MethodView):
     '''
     Route for:-
@@ -27,7 +27,6 @@ class Packages(MethodView):
     @role_based_access(Role.ADMIN)
     @blp_package.response(200, PackageSchema(many=True))
     def get(self):
-        print("hey")
         '''Getting all packages'''
         logger.info(f"{get_request_id()} -  route for getting packages")
         return GetPackageController().get_package_details()
@@ -41,7 +40,7 @@ class Packages(MethodView):
         logger.info(f"{get_request_id()} -  route for posting packages") 
         return CreatePackageController().create_package(package_data)
 
-@blp_package.route("v1/packages/<string:package_id>")
+@blp_package.route("/v1/packages/<string:package_id>")
 class Package(MethodView):
     '''
     Route for:-

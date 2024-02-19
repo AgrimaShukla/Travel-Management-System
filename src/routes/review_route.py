@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 blp_review = Blueprint("Review", __name__, description = "Customer Review")
 
-@blp_review.route("v1/package/<string:package_id>/reviews")
+@blp_review.route("/v1/package/<string:package_id>/reviews")
 class Review(MethodView):
     '''
     Route for:-

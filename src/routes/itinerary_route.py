@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 blp_itinerary = Blueprint("Itinerary", __name__, description = "Admin methods on itinerary")
 
-@blp_itinerary.route("v1/itineraries")
+@blp_itinerary.route("/v1/itineraries")
 class Itineraries(MethodView):
     '''
     Route for:-
@@ -40,7 +40,7 @@ class Itineraries(MethodView):
         logger.info(f"{get_request_id()} -  route for creating itineraries")
         return CreateItineraryController().create_new_itinerary(user_data)
 
-@blp_itinerary.route("v1/itineraries/<string:itinerary_id>")
+@blp_itinerary.route("/v1/itineraries/<string:itinerary_id>")
 class Itinerary(MethodView):
     '''
     Route for:-

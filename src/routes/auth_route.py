@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 blp_auth = Blueprint("Authentication", "authentication", description = "Authentication of users")
 
-@blp_auth.route("v1/signin")
+@blp_auth.route("/v1/signin")
 class Login(MethodView):
     '''
     Route for:- 
@@ -29,7 +29,7 @@ class Login(MethodView):
         return LoginController().login(user_data)
 
 
-@blp_auth.route("v1/signup")
+@blp_auth.route("/v1/signup")
 class registration(MethodView):
     '''
     Route for:-
@@ -43,7 +43,7 @@ class registration(MethodView):
         return RegistrationController.register(user_data)
         
 
-@blp_auth.route("v1/logout")
+@blp_auth.route("/v1/logout")
 class UserLogout(MethodView):
    '''
    Route for:-
@@ -59,7 +59,7 @@ class UserLogout(MethodView):
        print("heyyy")
        return LogoutController().logout()
    
-@blp_auth.route("v1/refresh")
+@blp_auth.route("/v1/refresh")
 class Refresh(MethodView):
     '''
     Route for:-
