@@ -4,7 +4,7 @@ class PrintPrompts:
       '''One liner and multi liner prompts for displaying to user'''
 
       ACCESS_TOKEN = "access_token"
-      REFRESH_TOKEN = "refresh_token"
+      REFRESH_TOKEN_NEW = "refresh_token"
       ACCOUNT_DELETED = 'Account deleted'
       BAD_REQUEST = 'Invalid request'
       SERVER_ERROR = 'Internal Server Error'
@@ -160,6 +160,8 @@ class PrintPrompts:
       
       REVIEW = 'REVIEW ADDED'
       
+      REFRESH_TOKEN = 'Access token created'
+
       SUCCESFULLY = "Successfully registered"
 
       SUCCESS = 'Successful response'

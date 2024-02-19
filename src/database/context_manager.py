@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 import mysql.connector
+import pymysql
 from dotenv import load_dotenv
 from config.queries import InitializeDatabase
 
@@ -20,18 +21,25 @@ class DatabaseConnection:
         self.setup_connection()
 
     def setup_connection(self):
-        try: 
-            self.connection = mysql.connector.connect(
+
+        try:
+            timeout = 10
+            self.connection = pymysql.connect(
+                charset = 'utf8mb4',
+                connect_timeout=timeout,
+                cursorclass=pymysql.cursors.DictCursor,
                 user = DatabaseConnection.MYSQL_USER,
                 password = DatabaseConnection.MYSQL_PASSWORD,
                 host = DatabaseConnection.MYSQL_HOST,
+                read_timeout=timeout,
+                write_timeout=timeout
             )
             self.cursor = self.connection.cursor()
             self.cursor.execute(InitializeDatabase.CREATE_DATABASE.format(DatabaseConnection.MYSQL_DB))
             self.cursor.execute(InitializeDatabase.USE_DATABASE.format(DatabaseConnection.MYSQL_DB))
             
-        except mysql.connector.Error as e:
-            raise mysql.connector.Error from e
+        except pymysql.Error as e:
+            raise pymysql.Error from e
         
     def __enter__(self) -> mysql.connector.connection.MySQLConnection:
         return self.connection

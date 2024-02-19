@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify
+from flask import jsonify
 from flask_jwt_extended import JWTManager
 from utils.token import Token
 

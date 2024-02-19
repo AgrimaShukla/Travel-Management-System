@@ -4,7 +4,7 @@ import logging
 import mysql.connector
 from database.database_access import QueryExecutor
 from config.queries import Query
-from mysql import connector
+import pymysql
 from utils.custom_error_response import ApplicationException, DBException
 from config.prompt import PrintPrompts
 from utils.logging_request_id import get_request_id
@@ -25,7 +25,7 @@ class ProfileHandler:
             logger.info(f"{get_request_id()} Getting user details")
             customer_details = self.db_access.single_data_returning_query(Query.SELECT_CUSTOMER, customer_id)
             return customer_details 
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
 
     def update_details(self, user_data) -> None:
@@ -37,7 +37,7 @@ class ProfileHandler:
         except mysql.connector.IntegrityError:
             logger.error(f"{get_request_id()} - User already exists")
             raise ApplicationException(StatusCodes.UNAUTHORIZED, PrintPrompts.USER_EXISTS)
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
         
     def delete_user(self, customer_id):
@@ -45,6 +45,6 @@ class ProfileHandler:
         try:
             logger.info(f"{get_request_id()} - Deleting user account")
             self.db_access.non_returning_query(Query.DELETE_CUSTOMER, customer_id)
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
  

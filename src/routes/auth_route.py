@@ -6,6 +6,7 @@ from schemas.auth_schema import LoginSchema, LoginSuccessSchema, RegisterSchema
 from controllers.auth.signin_controller import LoginController
 from controllers.auth.signup_controller import RegistrationController
 from controllers.auth.logout_controller import LogoutController
+from controllers.auth.refresh_controller import RefreshController
 from utils.logging_request_id import get_request_id
 from flask_jwt_extended import jwt_required
 
@@ -49,10 +50,24 @@ class UserLogout(MethodView):
    - Logout for user
    '''
    
-   @jwt_required()
+#    @jwt_required()
    @blp_auth.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+   @jwt_required()
    def post(self):
        '''Logout user'''
        logger.info(f"{get_request_id()} -  route for logout")
+       print("heyyy")
        return LogoutController().logout()
-         
+   
+@blp_auth.route("/refresh")
+class Refresh(MethodView):
+    '''
+    Route for:-
+    - Refresh token
+    '''
+    @jwt_required(refresh=True)
+    @blp_auth.response(200, LoginSuccessSchema)
+    @blp_auth.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    def post(self):  
+        '''Refresh token'''
+        return RefreshController().refresh()

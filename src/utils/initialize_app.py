@@ -49,6 +49,6 @@ def create_tables() -> None:
                 cursor.execute(Query.CREATE_BOOKING)
                 cursor.execute(Query.CREATE_BOOKING_PACKAGE)
                 cursor.execute(Query.CREATE_REVIEW)
-        except mysql.connector.Error as er:
+        except pymysql.Error as er:
             logger.exception(er)
         

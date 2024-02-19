@@ -3,7 +3,7 @@
 import logging
 import shortuuid
 import hashlib
-from mysql import connector
+import pymysql
 from config.queries import Query
 from database.database_access import QueryExecutor
 from utils.custom_error_response import ApplicationException, DBException
@@ -28,8 +28,8 @@ class RegistrationHandler:
             customer_data = (user_id, name, mobile_no, gender, age, email)
             self.db_access.insert_table(Query.INSERT_CREDENTIALS, customer_credentials, Query.INSERT_USER, customer_data)
             
-        except connector.IntegrityError as err:
+        except pymysql.IntegrityError as err:
             logger.error(get_request_id(), err)
             raise ApplicationException(StatusCodes.CONFLICT, PrintPrompts.USER_EXISTS)
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)

@@ -7,7 +7,7 @@ from config.queries import Query
 from utils.custom_error_response import ApplicationException, DBException
 from config.prompt import PrintPrompts
 from utils.token import Token
-from mysql import connector
+import pymysql
 from utils.logging_request_id import get_request_id
 from config.status_code import StatusCodes
 
@@ -36,7 +36,7 @@ class LoginHandler:
             else:
                 logger.error(f"{get_request_id()} - Username does not exist {user_data['username']}") 
                 raise ApplicationException(StatusCodes.UNAUTHORIZED, PrintPrompts.INVALID_CREDENTIALS)
-        except connector.Error:
+        except pymysql.Error as e:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
        
                

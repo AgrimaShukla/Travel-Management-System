@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from flask_jwt_extended import get_jwt
 from database.database_access import QueryExecutor
 from config.queries import Query 
-from mysql import connector
+import pymysql
 from utils.custom_error_response import ApplicationException, DBException
 from handlers.package_handler import PackageHandler
 from config.prompt import PrintPrompts
@@ -43,7 +43,7 @@ class BookingHandler:
             self.db_access.insert_table(Query.INSERT_BOOKING, user_details, Query.INSERT_BOOKING_PACKAGE, trip_details)
             logger.info(f'{get_request_id} - Added new booking')
             return booking_id, total_price
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
        
     def get_booking_details(self, user_id) -> str:
@@ -57,7 +57,7 @@ class BookingHandler:
                 raise ApplicationException(StatusCodes.NOT_FOUND, PrintPrompts.NO_BOOKINGS)
             logger.info(f"{get_request_id()} - Fetched booking data for user")
             return booking_data
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
     
     def get_active_booking(self, user_id):
@@ -73,7 +73,7 @@ class BookingHandler:
             else:
                 logger.error(f'{get_request_id()} - No bookings found for that user')
                 raise ApplicationException(StatusCodes.NOT_FOUND, PrintPrompts.NO_BOOKINGS)
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
 
     def  update_booking(self, booking_data, booking_id):
@@ -93,7 +93,7 @@ class BookingHandler:
             price = package_obj.get_price_of_package((package_data["package_id"],))
             new_price = price["price"] * number_of_people
             self.db_access.insert_table(Query.UPDATE_BOOKING, booking_details, Query.UPDATE_BOOKING_PACKAGE, (new_price, booking_id))
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
 
     def cancel_booking(self, booking_id: str) -> None:
@@ -101,6 +101,6 @@ class BookingHandler:
         try:
             logger.info(f"{get_request_id()} - Cancelling booking with booking id {booking_id}")
             self.db_access.non_returning_query(Query.UPDATE_BOOKING_STATUS, (PrintPrompts.CANCELLED, booking_id))
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
         

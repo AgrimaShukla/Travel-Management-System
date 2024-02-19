@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 blp_profile = Blueprint("Profile", __name__, description="View profile for Customer")
 
-@blp_profile.route("/profile")
+@blp_profile.route("/user")
 class Profile(MethodView):
     '''
     Route for:- 

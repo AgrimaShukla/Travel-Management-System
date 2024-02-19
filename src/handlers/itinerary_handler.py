@@ -4,7 +4,7 @@ import logging
 from config.queries import Query 
 import shortuuid
 from database.database_access import QueryExecutor
-from mysql import connector
+import pymysql
 from utils.custom_error_response import ApplicationException, DBException
 from config.prompt import PrintPrompts
 from utils.logging_request_id import get_request_id
@@ -31,7 +31,7 @@ class ItineraryHandler:
             else:
                 logger.error(f'{get_request_id()} - Package does not exist')
                 raise ApplicationException(StatusCodes.NOT_FOUND,PrintPrompts.NO_PACKAGE_FOUND)
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
 
     def fetch_itinerary(self):
@@ -41,7 +41,7 @@ class ItineraryHandler:
             logger.info(f'{get_request_id()} - fetching itinerary')
             data = self.db_access.returning_query(Query.SHOW_ITINERARY_QUERY)
             return data
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
        
         
@@ -60,7 +60,7 @@ class ItineraryHandler:
             price = {'price': package_data['price']}
             itinerary = {'itinerary_details': itinerary}
             return itinerary, price
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
     
     def check_itinerary(self, itinerary_id: str) -> tuple:
@@ -70,7 +70,7 @@ class ItineraryHandler:
             logger.info(f"{get_request_id()} - Checking if itinerary exist for id {itinerary_id}")
             data = self.db_access.single_data_returning_query(Query.CHECK_ITINERARY_QUERY, itinerary_id)
             return data
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
     
     def update_in_itinerary(self, itinerary_data, itinerary_id) -> None:
@@ -85,5 +85,5 @@ class ItineraryHandler:
             itinerary_tuple = (itinerary_data['day'], itinerary_data['city'], itinerary_data['description'], itinerary_id)
             self.db_access.non_returning_query(Query.UPDATE_ITINERARY_QUERY, itinerary_tuple)    
             logger.info(f"{get_request_id()} - Updated itinerary")
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)

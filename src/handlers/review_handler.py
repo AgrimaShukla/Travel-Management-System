@@ -5,7 +5,7 @@ import shortuuid
 from datetime import datetime
 from database.database_access import QueryExecutor
 from config.queries import Query
-from mysql import connector
+import pymysql
 from utils.custom_error_response import ApplicationException, DBException
 from config.prompt import PrintPrompts
 from utils.logging_request_id import get_request_id
@@ -29,7 +29,7 @@ class ReviewHandler:
             review_id = 'R_' + shortuuid.ShortUUID().random(length = 8)
             review_tuple = (review_id, review_data["booking_id"], package_id, review_data["name"], review_data["comment"], date)
             self.db_access.non_returning_query(Query.INSERT_REVIEW, review_tuple)
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
       
 
@@ -44,7 +44,7 @@ class ReviewHandler:
             else:
                 logger.error(f"{get_request_id()} - No reviews found")
                 raise ApplicationException(StatusCodes.NOT_FOUND, PrintPrompts.NO_REVIEWS)
-        except connector.Error:
+        except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
 
     def get_bookings_for_review(self, customer_id):
@@ -54,6 +54,6 @@ class ReviewHandler:
             logger.info(f"{get_request_id()} - Fetching booking details for adding review for them")
             data = self.db_access.returning_query(Query.SELECT_FOR_REVIEW, (customer_id, PrintPrompts.ACTIVE, datetime.now().date()))
             return data
-        except connector.Error:
+        except pymysql.Error:
             raise(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
       

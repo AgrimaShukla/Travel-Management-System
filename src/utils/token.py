@@ -28,8 +28,8 @@ class Token:
         logger.info("Revoking token")
 
         jti_access_token = jwt_payload["jti"]
-
-        self.db_object.non_returning_query(Query.UPDATE_TOKEN_STATUS,('revoked',jti_access_token,))
+        print(jti_access_token)
+        self.db_object.non_returning_query(Query.UPDATE_TOKEN_STATUS,('revoked',jti_access_token))
 
     def generate_token(self,role: str,user_id: str, fresh_value) -> tuple :
         '''Method to generate new access and refresh token and saving token in database'''

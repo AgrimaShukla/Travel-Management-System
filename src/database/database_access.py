@@ -1,10 +1,8 @@
 ''' This module exceute queries to add, delete, fetch and update the tables'''
 
 import logging
-import mysql.connector
-
-from config.prompt import PrintPrompts
-from config.queries import Query, DatabaseConfig
+import pymysql
+from config.queries import DatabaseConfig
 from database.context_manager import DatabaseConnection
 
 logger = logging.getLogger(__name__)
@@ -26,7 +24,7 @@ class QueryExecutor:
         '''This function will execute returning queries and return multiple rows'''
         try:
             with DatabaseConnection() as connection:
-                cursor = connection.cursor(dictionary=True)
+                cursor = connection.cursor()
                 if params:
                     cursor.execute(query_to_show, params)
                     data = cursor.fetchall()
@@ -34,9 +32,8 @@ class QueryExecutor:
                 cursor.execute(query_to_show)
                 data = cursor.fetchall()
                 return data
-        except mysql.connector.Error as er:
-            print(er)
-            raise mysql.connector.Error
+        except pymysql.Error:
+            raise pymysql.Error
 
     def non_returning_query(self, query_update: str, params: tuple) -> None:
         '''This function will execute non returning queries'''
@@ -44,17 +41,17 @@ class QueryExecutor:
             with DatabaseConnection() as connection:
                 cursor = connection.cursor()
                 cursor.execute(query_update, params)
-        except mysql.connector.Error as e:
-            raise mysql.connector.Error
+        except pymysql.Error:
+            raise pymysql.Error
 
     def single_data_returning_query(self, query_to_check: str, params: tuple) -> tuple:
         '''This function will returning queries and return single row'''
         try:
             with DatabaseConnection() as connection:
-                cursor = connection.cursor(dictionary=True)
+                cursor = connection.cursor()
                 cursor.execute(query_to_check, params)
                 data = cursor.fetchone()
                 return data
-        except mysql.connector.Error:
-            raise mysql.connector.Error
+        except pymysql.Error:
+            raise pymysql.Error
                 
