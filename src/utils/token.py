@@ -11,14 +11,15 @@ class Token:
     def __init__(self):
         self.db_object = QueryExecutor()
 
-    def check_token_revoked(self, jwt_payload) -> bool:
+    def check_token_revoked(self, jwt_payload, token_name) -> bool:
         '''Method to check if token is revoked'''
 
         logger.info('Checking if token is revoked or not')
 
         jti_access_token = jwt_payload["jti"]
-
-        result = self.db_object.single_data_returning_query(Query.SELECT_TOKEN_IF_REVOKED,(jti_access_token,))
+        query = Query.SELECT_TOKEN_IF_REVOKED.format(token_name)
+        
+        result = self.db_object.single_data_returning_query(query, (jti_access_token,))
         if result[0]['token_status'] == "revoked":
             return True
         return False

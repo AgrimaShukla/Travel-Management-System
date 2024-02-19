@@ -206,7 +206,11 @@ class Query:
     UPDATE_TOKEN_STATUS = '''UPDATE token_mapping SET token_status = %s
                             WHERE access_token = %s
     '''
-    SELECT_TOKEN_IF_REVOKED = '''SELECT token_status FROM token_mapping WHERE access_token = %s'''
+    SELECT_TOKEN_IF_REVOKED = """
+        SELECT token_status
+        FROM token_table
+        WHERE {} = %s
+    """
 class DatabaseConfig:
     '''Database path'''
 

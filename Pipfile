@@ -22,6 +22,7 @@ mysql-connector-python = "*"
 flask-parameter-validation = "*"
 pymysql = "*"
 cryptography = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
 
 [dev-packages]
 
