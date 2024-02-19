@@ -1,10 +1,9 @@
 import os
 from pathlib import Path
 
-import mysql.connector
 import pymysql
 from dotenv import load_dotenv
-from config.queries import InitializeDatabase
+
 
 # dotenv_path = Path('.env')
 # load_dotenv(dotenv_path=dotenv_path)
@@ -23,7 +22,6 @@ class DatabaseConnection:
         self.setup_connection()
 
     def setup_connection(self):
-        print("------------------------------", DatabaseConnection.MYSQL_HOST)
         try:
             timeout = 10
             self.connection = pymysql.connect(
