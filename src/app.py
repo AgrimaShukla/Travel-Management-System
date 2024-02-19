@@ -28,7 +28,6 @@ logging.basicConfig(format = '%(asctime)s - %(message)s',
 
 logger = logging.getLogger(__name__)
 
-BASE_URL = '/travelmanagementsystem'
 
 def create_app():
     app = Flask(__name__)
@@ -52,12 +51,12 @@ def create_app():
         request_id = ShortUUID().random(length=10)
         request.environ["X-Request-Id"] = request_id
 
-    api.register_blueprint(blp_auth, url_prefix = BASE_URL)
-    api.register_blueprint(blp_package, url_prefix = BASE_URL)
-    api.register_blueprint(blp_itinerary, url_prefix = BASE_URL)
-    api.register_blueprint(blp_profile, url_prefix = BASE_URL)
-    api.register_blueprint(blp_review, url_prefix = BASE_URL)
-    api.register_blueprint(blp_booking, url_prefix = BASE_URL)
+    api.register_blueprint(blp_auth)
+    api.register_blueprint(blp_package)
+    api.register_blueprint(blp_itinerary)
+    api.register_blueprint(blp_profile)
+    api.register_blueprint(blp_review)
+    api.register_blueprint(blp_booking)
     return app
 
 app = create_app()

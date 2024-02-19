@@ -9,7 +9,22 @@
             "get packages",
             "post itineraries",
             "get itineraries",
-            "logout"
+            "update itineraries",
+            "logout",
+            "signup",
+            "signin",
+            "post booking",
+            "get booking",
+            "update booking",
+            "get active booking",
+            "post reviews",
+            "get reviews",
+            "cancel booking",
+            "get user",
+            "update user", 
+            "delete user",
+            "logout",
+            "update packages"
         ]
     }
 ]
