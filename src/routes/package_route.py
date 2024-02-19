@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 blp_package = Blueprint("Package", __name__, description = "Admin methods on package")
 
-@blp_package.route("/packages")
+@blp_package.route("v1/packages")
 class Packages(MethodView):
     '''
     Route for:-
@@ -39,7 +39,7 @@ class Packages(MethodView):
         logger.info(f"{get_request_id()} -  route for posting packages") 
         return CreatePackageController().create_package(package_data)
 
-@blp_package.route("/packages/<string:package_id>")
+@blp_package.route("v1/packages/<string:package_id>")
 class Package(MethodView):
     '''
     Route for:-

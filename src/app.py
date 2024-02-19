@@ -6,6 +6,7 @@ import logging
 from dotenv import load_dotenv
 from flask import Flask, request
 from shortuuid import ShortUUID
+from utils.initialize_app import create_tables, create_admin
 from flask_smorest import Api
 from utils.custom_error_response import CustomError
 from routes.auth_route import blp_auth
@@ -31,6 +32,8 @@ BASE_URL = '/travelmanagementsystem'
 
 def create_app():
     app = Flask(__name__)
+    create_tables()
+    create_admin()
     load_dotenv()
     
     app_config(app)

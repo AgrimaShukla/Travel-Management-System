@@ -41,7 +41,8 @@ class QueryExecutor:
             with DatabaseConnection() as connection:
                 cursor = connection.cursor()
                 cursor.execute(query_update, params)
-        except pymysql.Error:
+        except pymysql.Error as e:
+            print(e)
             raise pymysql.Error
 
     def single_data_returning_query(self, query_to_check: str, params: tuple) -> tuple:
@@ -52,6 +53,7 @@ class QueryExecutor:
                 cursor.execute(query_to_check, params)
                 data = cursor.fetchone()
                 return data
-        except pymysql.Error:
+        except pymysql.Error as e:
+            print(e)
             raise pymysql.Error
                 

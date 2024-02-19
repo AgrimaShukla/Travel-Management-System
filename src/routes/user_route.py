@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 blp_profile = Blueprint("Profile", __name__, description="View profile for Customer")
 
-@blp_profile.route("/user")
+@blp_profile.route("v1/user")
 class Profile(MethodView):
     '''
     Route for:- 
@@ -31,7 +31,7 @@ class Profile(MethodView):
         return GetProfileController().get_profile_details()
 
 
-@blp_profile.route("/user/<string:user_id>")
+@blp_profile.route("v1/user/<string:user_id>")
 class ChangeUser(MethodView):
     '''
     Route for:-

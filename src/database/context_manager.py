@@ -6,14 +6,16 @@ import pymysql
 from dotenv import load_dotenv
 from config.queries import InitializeDatabase
 
-dotenv_path = Path('.env')
-load_dotenv(dotenv_path=dotenv_path)
+# dotenv_path = Path('.env')
+# load_dotenv(dotenv_path=dotenv_path)
+load_dotenv()
 class DatabaseConnection:
 
-    MYSQL_USER = os.getenv('MYSQL_USER')
-    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
-    MYSQL_HOST = os.getenv('MYSQL_HOST')
-    MYSQL_DB = os.getenv('MYSQL_DB')
+    MYSQL_USER = "avnadmin"
+    MYSQL_PASSWORD = "AVNS_qBnt5Jrh8c06ES1eh7X"
+    MYSQL_HOST = "mysql-8b6dd5e-shuklafeb02-24c1.a.aivencloud.com"
+    MYSQL_DB = "TravelManagementSystem"
+    MYSQL_PORT = 23195
 
     def __init__(self) -> None:
         self.connection = None
@@ -21,33 +23,37 @@ class DatabaseConnection:
         self.setup_connection()
 
     def setup_connection(self):
-
+        print("------------------------------", DatabaseConnection.MYSQL_HOST)
         try:
             timeout = 10
             self.connection = pymysql.connect(
-                charset = 'utf8mb4',
+                charset="utf8mb4",
                 connect_timeout=timeout,
                 cursorclass=pymysql.cursors.DictCursor,
-                user = DatabaseConnection.MYSQL_USER,
-                password = DatabaseConnection.MYSQL_PASSWORD,
-                host = DatabaseConnection.MYSQL_HOST,
+                db="TravelManagementSystem",
+                host=DatabaseConnection.MYSQL_HOST,
+                password=DatabaseConnection.MYSQL_PASSWORD,
                 read_timeout=timeout,
+                port=DatabaseConnection.MYSQL_PORT,
+                user=DatabaseConnection.MYSQL_USER,
                 write_timeout=timeout
             )
-            self.cursor = self.connection.cursor()
-            self.cursor.execute(InitializeDatabase.CREATE_DATABASE.format(DatabaseConnection.MYSQL_DB))
-            self.cursor.execute(InitializeDatabase.USE_DATABASE.format(DatabaseConnection.MYSQL_DB))
             
+            self.cursor = self.connection.cursor()
+            # self.cursor.execute(InitializeDatabase.CREATE_DATABASE.format(DatabaseConnection.MYSQL_DB))
+            # self.cursor.execute(InitializeDatabase.USE_DATABASE.format(DatabaseConnection.MYSQL_DB))
+            self.connection =self.connection
+            self.cursor = self.cursor
         except pymysql.Error as e:
+            print(e)
             raise pymysql.Error from e
         
-    def __enter__(self) -> mysql.connector.connection.MySQLConnection:
+    def __enter__(self):
         return self.connection
 
-    def __exit__(self, exc_type: str, exc_val: str, exc_tb: str) -> None:
+    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
         if exc_type or exc_tb or exc_val:
             self.connection.close()
         else:
             self.connection.commit()
             self.connection.close()
-            

@@ -21,6 +21,7 @@ mysqlx-connector = "*"
 mysql-connector-python = "*"
 flask-parameter-validation = "*"
 pymysql = "*"
+cryptography = "*"
 
 [dev-packages]
 

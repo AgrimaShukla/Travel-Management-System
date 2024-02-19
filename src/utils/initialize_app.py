@@ -2,7 +2,7 @@
 
 import shortuuid
 import hashlib
-import mysql.connector
+import pymysql
 import logging
 import os 
 from os.path import join, dirname
