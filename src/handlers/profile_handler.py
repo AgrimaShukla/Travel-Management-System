@@ -1,7 +1,6 @@
 '''Business for handling User related operations'''
 
 import logging
-import mysql.connector
 from database.database_access import QueryExecutor
 from config.queries import Query
 import pymysql
