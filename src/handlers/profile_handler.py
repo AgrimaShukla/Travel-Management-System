@@ -33,7 +33,7 @@ class ProfileHandler:
         logger.info(f"{get_request_id()} - Updating user details")
         try:
             self.db_access.non_returning_query(Query.UPDATE_CUSTOMER,user_data)
-        except mysql.connector.IntegrityError:
+        except pymysql.IntegrityError:
             logger.error(f"{get_request_id()} - User already exists")
             raise ApplicationException(StatusCodes.UNAUTHORIZED, PrintPrompts.USER_EXISTS)
         except pymysql.Error:
