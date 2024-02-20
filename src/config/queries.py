@@ -105,7 +105,7 @@ class Query:
                 AND package.status = %s
     '''
 
-    SHOW_ITINERARY_QUERY = 'SELECT day, city, description FROM itinerary'
+    SHOW_ITINERARY_QUERY = 'SELECT itinerary_id, package_id, day, city, description FROM itinerary'
 
     CHECK_ITINERARY_QUERY = 'SELECT * FROM itinerary WHERE itinerary_id = %s'
 
@@ -145,7 +145,7 @@ class Query:
 
     INSERT_BOOKING_PACKAGE = ''' INSERT INTO booking_package VALUES (%s, %s, %s, %s, %s)'''
 
-    UPDATE_BOOKING_STATUS = 'UPDATE BOOKING_PACKAGE SET trip_status = %s WHERE booking_id = %s'
+    UPDATE_BOOKING_STATUS = 'UPDATE booking_package SET trip_status = %s WHERE booking_id = %s'
 
     SELECT_BOOKING = '''SELECT booking.booking_id, booking.name, booking.mobile_number, booking.start_date, booking.end_date, 
                     booking.no_of_people, booking.email, booking.booking_date, booking_package.trip_status 

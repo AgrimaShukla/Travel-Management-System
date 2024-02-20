@@ -29,7 +29,8 @@ class Packages(MethodView):
     def get(self):
         '''Getting all packages'''
         logger.info(f"{get_request_id()} -  route for getting packages")
-        return GetPackageController().get_package_details()
+        value = GetPackageController().get_package_details()
+        return value
 
     @blp_package.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
     @role_based_access(Role.ADMIN)

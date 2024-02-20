@@ -27,6 +27,7 @@ class PackageHandler:
             data = (package_id, package_data["package_name"], package_data["duration"], package_data["category"], package_data["price"], package_data["status"])
             self.db_access.non_returning_query(Query.INSERT_PACKAGE_QUERY, data)
             logger.info("Added new package")
+            return package_id
         except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
         

@@ -40,7 +40,7 @@ class registration(MethodView):
     def post(self, user_data):
         '''Signup for user'''
         logger.info(f"{get_request_id()} -  route for signup")
-        return RegistrationController.register(user_data)
+        return RegistrationController().register(user_data)
         
 
 @blp_auth.route("/v1/logout")

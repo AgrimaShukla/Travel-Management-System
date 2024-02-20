@@ -29,6 +29,7 @@ class BookingHandler:
             user_id = jwt.get('sub')
             package_id = booking_data["package_id"]
             price = self.db_access.single_data_returning_query(Query.SELECT_ONLY_PRICE, (package_id,))
+            print(price)
             name = booking_data["name"]
             mobile_number = booking_data["mobile_number"]
             start_date = booking_data["start_date"]
@@ -43,7 +44,7 @@ class BookingHandler:
             self.db_access.insert_table(Query.INSERT_BOOKING, user_details, Query.INSERT_BOOKING_PACKAGE, trip_details)
             logger.info(f'{get_request_id} - Added new booking')
             return booking_id, total_price
-        except pymysql.Error:
+        except pymysql.Error as e:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
        
     def get_booking_details(self, user_id) -> str:
@@ -57,7 +58,7 @@ class BookingHandler:
                 raise ApplicationException(StatusCodes.NOT_FOUND, PrintPrompts.NO_BOOKINGS)
             logger.info(f"{get_request_id()} - Fetched booking data for user")
             return booking_data
-        except pymysql.Error:
+        except pymysql.Error as e:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
     
     def get_active_booking(self, user_id):
@@ -101,6 +102,6 @@ class BookingHandler:
         try:
             logger.info(f"{get_request_id()} - Cancelling booking with booking id {booking_id}")
             self.db_access.non_returning_query(Query.UPDATE_BOOKING_STATUS, (PrintPrompts.CANCELLED, booking_id))
-        except pymysql.Error:
+        except pymysql.Error as e:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
         

@@ -36,7 +36,6 @@ class GetItineraryController:
         logger.info(f'{get_request_id()} - Getting itineraries')
         query_parameter = request.args
         role = get_jwt()['game']
-        print(role)
         if role == ADMIN and not query_parameter:
             logger.debug(f'{get_request_id()} - Fetching itinerary for admin')
             result = self.iti_handler.fetch_itinerary()

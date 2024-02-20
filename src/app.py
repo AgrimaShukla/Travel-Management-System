@@ -31,18 +31,18 @@ logger = logging.getLogger(__name__)
 
 def create_app():
     app = Flask(__name__)
-    create_tables()
-    create_admin()
+    # create_tables()
+    # create_admin()
     load_dotenv()
     
     app_config(app)
     api = Api(app)
     initialise_jwt(app)
 
-    app.register_error_handler(
-        Exception,
-        lambda _: CustomError(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR).jsonify_data
-    )
+    # app.register_error_handler(
+    #     Exception,
+    #     lambda _: CustomError(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR).jsonify_data
+    # )
  
 
    # setting req Id for logging
@@ -57,6 +57,9 @@ def create_app():
     api.register_blueprint(blp_profile)
     api.register_blueprint(blp_review)
     api.register_blueprint(blp_booking)
+    app.run(debug=True)
+    
     return app
 
-app = create_app()
+# if __name__ == '__main__':
+create_app()

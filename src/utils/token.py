@@ -20,7 +20,6 @@ class Token:
         query = Query.SELECT_TOKEN_IF_REVOKED.format(token_name)
         
         result = self.db_object.single_data_returning_query(query, (jti_access_token,))
-        print(result)
         if result['token_status'] == "revoked":
             return True
         return False

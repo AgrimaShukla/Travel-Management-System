@@ -23,7 +23,7 @@ class DatabaseConnection:
 
     def setup_connection(self):
         try:
-            timeout = 10
+            timeout = 40
             self.connection = pymysql.connect(
                 charset="utf8mb4",
                 connect_timeout=timeout,
@@ -43,6 +43,7 @@ class DatabaseConnection:
             self.connection =self.connection
             self.cursor = self.cursor
         except pymysql.Error as e:
+            print(e)
             raise pymysql.Error from e
         
     def __enter__(self):

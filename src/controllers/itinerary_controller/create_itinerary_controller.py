@@ -19,6 +19,6 @@ class CreateItineraryController:
     def create_new_itinerary(self, itinerary_data):
         '''Method to add new itinerary'''
         logger.info(f'{get_request_id()} - Adding new itinerary')
-        self.iti_handler.add_itinerary(itinerary_data)
-        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ITINERARY_ADDED).jsonify_data
+        itinerary_id = self.iti_handler.add_itinerary(itinerary_data)
+        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ITINERARY_ADDED, itinerary_id).jsonify_data, 201
         

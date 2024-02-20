@@ -20,10 +20,10 @@ class AddBookingController:
     def create_booking(self, booking_data):
         '''Adding new booking'''
         logger.info(f'{get_request_id()} - Creating new booking')
-        price, booking_id = self.booking_handler.add_booking(booking_data)
-        response = {
+        booking_id, price = self.booking_handler.add_booking(booking_data)
+        response = [{
             "price": price,
             "booking_id": booking_id
-        }
-        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.BOOKED_SUCCESSFULLY, response).jsonify_data
+        }]
+        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.BOOKED_SUCCESSFULLY, response).jsonify_data, 201
     

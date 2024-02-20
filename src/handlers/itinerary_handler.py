@@ -26,8 +26,8 @@ class ItineraryHandler:
             package_data = self.db_access.returning_query(Query.CHECK_PACKAGE_QUERY, (itinerary_data["package_id"], ))
             if package_data:
                 data = (itinerary_id, itinerary_data["package_id"], itinerary_data["day"], itinerary_data["city"], itinerary_data["description"])
-                inserted = self.db_access.non_returning_query(Query.INSERT_ITINERARY_QUERY, data)
-                return inserted
+                self.db_access.non_returning_query(Query.INSERT_ITINERARY_QUERY, data)
+                return itinerary_id
             else:
                 logger.error(f'{get_request_id()} - Package does not exist')
                 raise ApplicationException(StatusCodes.NOT_FOUND,PrintPrompts.NO_PACKAGE_FOUND)
