@@ -1,8 +1,6 @@
 [
     {
-        "iteration_no": 1,
         "iteration_name": "Happy path",
-        "description": "Test for happy path of Travel management system",
         "routes": [
             "signin admin",
             "post packages",
@@ -24,6 +22,69 @@
             "get user",
             "update user", 
             "delete user",
+            "logout"
+        ]
+    },
+    {
+        "iteration_name": "Bad path - unauthorized",
+        "routes": [
+            "signin admin",
+            "post booking admin",
+            "update booking admin",
+            "cancel booking admin",
+            "get active bookings admin",
+            "get user admin",
+            "update user admin",
+            "delete user admin",
+            "logout",
+            "signin customer",
+            "post itineraries cust",
+            "update itineraries cust",
+            "post packages cust",
+            "get packages cust",
+            "update packages cust"   
+        ]
+    },
+    {
+        "iteration_name": "Bad path - invalid token",
+        "routes": [
+            "signin admin",
+            "post packages cust",
+            "get packages cust",
+            "update packages cust",  
+            "post itineraries cust",
+            "get itineraries cust", 
+            "update itineraries cust",
+            "logout",
+            "signin customer",
+            "post booking admin",
+            "update booking admin",
+            "get active bookings admin",
+            "cancel booking admin",
+            "get user admin",
+            "update user admin",
+            "delete user admin",
+            "logout"
+        ]
+    },
+    {
+        "iteration_name": "Bad path - missing token",
+        "routes": [
+            "post packages cust",
+            "get packages cust",
+            "update packages cust",  
+            "post itineraries cust",
+            "get itineraries cust", 
+            "update itineraries cust",
+            "logout",
+            "signin customer",
+            "post booking admin",
+            "update booking admin",
+            "get active bookings admin",
+            "cancel booking admin",
+            "get user admin",
+            "update user admin",
+            "delete user admin",
             "logout"
         ]
     }
