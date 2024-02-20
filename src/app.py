@@ -59,4 +59,4 @@ def create_app():
     api.register_blueprint(blp_booking)
     return app
 
-create_app()
+app = create_app()
