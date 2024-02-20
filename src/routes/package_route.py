@@ -37,7 +37,6 @@ class Packages(MethodView):
     @blp_package.arguments(PackageSchema)
     def post(self, package_data): 
         '''Creating new package'''
-        print("hyhy")
         logger.info(f"{get_request_id()} -  route for posting packages") 
         return CreatePackageController().create_package(package_data)
 
