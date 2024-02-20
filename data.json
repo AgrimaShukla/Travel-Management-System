@@ -7,6 +7,7 @@
             "signin admin",
             "post packages",
             "get packages",
+            "update packages",
             "post itineraries",
             "get itineraries",
             "update itineraries",
@@ -23,8 +24,7 @@
             "get user",
             "update user", 
             "delete user",
-            "logout",
-            "update packages"
+            "logout"
         ]
     }
 ]
