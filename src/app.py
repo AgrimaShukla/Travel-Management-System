@@ -57,7 +57,7 @@ def create_app():
     api.register_blueprint(blp_profile)
     api.register_blueprint(blp_review)
     api.register_blueprint(blp_booking)
-    
+    app.run(debug=True)
     return app
 
-app = create_app()
+create_app()

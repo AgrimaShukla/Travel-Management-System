@@ -37,6 +37,7 @@ class LoginHandler:
                 logger.error(f"{get_request_id()} - Username does not exist {user_data['username']}") 
                 raise ApplicationException(StatusCodes.UNAUTHORIZED, PrintPrompts.INVALID_CREDENTIALS)
         except pymysql.Error as e:
+            print(e)
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
        
                
