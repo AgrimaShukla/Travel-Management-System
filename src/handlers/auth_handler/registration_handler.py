@@ -27,7 +27,8 @@ class RegistrationHandler:
             customer_credentials = (user_id, username, password, 'user')
             customer_data = (user_id, name, mobile_no, gender, age, email)
             self.db_access.insert_table(Query.INSERT_CREDENTIALS, customer_credentials, Query.INSERT_USER, customer_data)
-            
+            return user_id
+        
         except pymysql.IntegrityError as err:
             logger.error(get_request_id(), err)
             raise ApplicationException(StatusCodes.CONFLICT, PrintPrompts.USER_EXISTS)

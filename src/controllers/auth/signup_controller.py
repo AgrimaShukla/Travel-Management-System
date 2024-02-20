@@ -21,6 +21,9 @@ class RegistrationController:
         '''Registering new user'''
         
         logger.info(f'{get_request_id()} - New user registering') 
-        self.reg_handler.save_customer(user_data["username"], user_data["password"], user_data["name"], user_data["mobile_number"], user_data["gender"], user_data["age"], user_data["email"])
-        return CustomSuccessResponse(StatusCodes.OK, PrintPrompts.REGISTERED).jsonify_data
+        user_id = self.reg_handler.save_customer(user_data["username"], user_data["password"], user_data["name"], user_data["mobile_number"], user_data["gender"], user_data["age"], user_data["email"])
+        user_data = [{
+            "user_id": user_id
+        }]
+        return CustomSuccessResponse(StatusCodes.OK, PrintPrompts.REGISTERED, user_data).jsonify_data
        

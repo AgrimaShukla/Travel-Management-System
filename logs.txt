@@ -9293,3 +9293,103 @@ pymysql.err.Error
 20-02-2024 12:12:02 - 127.0.0.1 - - [20/Feb/2024 12:12:02] "POST /v1/signin HTTP/1.1" 200 -
 20-02-2024 12:12:07 - Checking if token is revoked or not
 20-02-2024 12:12:08 - 127.0.0.1 - - [20/Feb/2024 12:12:08] "[31m[1mPOST /v1/itineraries HTTP/1.1[0m" 401 -
+20-02-2024 13:29:47 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+20-02-2024 13:29:47 - [33mPress CTRL+C to quit[0m
+20-02-2024 13:29:47 -  * Restarting with stat
+20-02-2024 13:29:50 -  * Debugger is active!
+20-02-2024 13:29:50 -  * Debugger PIN: 897-868-015
+20-02-2024 13:34:02 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\controllers\\booking_controller\\add_booking_controller.py', reloading
+20-02-2024 13:34:02 -  * Restarting with stat
+20-02-2024 13:34:04 -  * Debugger is active!
+20-02-2024 13:34:04 -  * Debugger PIN: 897-868-015
+20-02-2024 13:34:06 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\controllers\\booking_controller\\add_booking_controller.py', reloading
+20-02-2024 13:34:06 -  * Restarting with stat
+20-02-2024 13:34:08 -  * Debugger is active!
+20-02-2024 13:34:08 -  * Debugger PIN: 897-868-015
+20-02-2024 13:34:26 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\booking_route.py', reloading
+20-02-2024 13:34:26 -  * Restarting with stat
+20-02-2024 13:34:28 -  * Debugger is active!
+20-02-2024 13:34:28 -  * Debugger PIN: 897-868-015
+20-02-2024 13:34:34 - HmhuVTyfEq -  route for login
+20-02-2024 13:34:34 - HmhuVTyfEq - User trying to login
+20-02-2024 13:34:34 - HmhuVTyfEq - User is trying to login with username babita_17
+20-02-2024 13:34:35 - New access and refresh token issued
+20-02-2024 13:34:35 - 127.0.0.1 - - [20/Feb/2024 13:34:35] "POST /v1/signin HTTP/1.1" 200 -
+20-02-2024 13:34:42 - Revoking token
+20-02-2024 13:34:43 - 127.0.0.1 - - [20/Feb/2024 13:34:43] "[35m[1mPOST /v1/booking HTTP/1.1[0m" 500 -
+20-02-2024 13:35:37 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\booking_route.py', reloading
+20-02-2024 13:35:37 -  * Restarting with stat
+20-02-2024 13:35:39 -  * Debugger is active!
+20-02-2024 13:35:39 -  * Debugger PIN: 897-868-015
+20-02-2024 13:36:19 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+20-02-2024 13:36:19 - [33mPress CTRL+C to quit[0m
+20-02-2024 13:36:19 -  * Restarting with stat
+20-02-2024 13:36:21 -  * Debugger is active!
+20-02-2024 13:36:21 -  * Debugger PIN: 897-868-015
+20-02-2024 13:36:23 - Revoking token
+20-02-2024 13:36:24 - 127.0.0.1 - - [20/Feb/2024 13:36:24] "[35m[1mPOST /v1/booking HTTP/1.1[0m" 500 -
+20-02-2024 13:38:03 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+20-02-2024 13:38:03 - [33mPress CTRL+C to quit[0m
+20-02-2024 13:38:03 -  * Restarting with stat
+20-02-2024 13:38:05 -  * Debugger is active!
+20-02-2024 13:38:05 -  * Debugger PIN: 897-868-015
+20-02-2024 13:40:44 - BgiY4tS3z2 -  route for login
+20-02-2024 13:40:44 - BgiY4tS3z2 - User trying to login
+20-02-2024 13:40:44 - BgiY4tS3z2 - User is trying to login with username babita_17
+20-02-2024 13:40:44 - New access and refresh token issued
+20-02-2024 13:40:45 - 127.0.0.1 - - [20/Feb/2024 13:40:45] "POST /v1/signin HTTP/1.1" 200 -
+20-02-2024 13:40:45 - Checking if token is revoked or not
+20-02-2024 13:40:46 - 127.0.0.1 - - [20/Feb/2024 13:40:46] "[31m[1mPOST /v1/booking HTTP/1.1[0m" 401 -
+20-02-2024 13:42:34 - HvZ2LADn3Z -  route for login
+20-02-2024 13:42:34 - HvZ2LADn3Z - User trying to login
+20-02-2024 13:42:34 - HvZ2LADn3Z - User is trying to login with username babita_17
+20-02-2024 13:42:35 - New access and refresh token issued
+20-02-2024 13:42:35 - 127.0.0.1 - - [20/Feb/2024 13:42:35] "POST /v1/signin HTTP/1.1" 200 -
+20-02-2024 13:42:54 - Revoking token
+20-02-2024 13:42:55 - 127.0.0.1 - - [20/Feb/2024 13:42:55] "[35m[1mPOST /v1/booking HTTP/1.1[0m" 500 -
+20-02-2024 13:44:07 - JEcRP4cxiw -  route for login
+20-02-2024 13:44:07 - JEcRP4cxiw - User trying to login
+20-02-2024 13:44:07 - JEcRP4cxiw - User is trying to login with username admin123
+20-02-2024 13:44:08 - New access and refresh token issued
+20-02-2024 13:44:09 - 127.0.0.1 - - [20/Feb/2024 13:44:09] "POST /v1/signin HTTP/1.1" 200 -
+20-02-2024 13:44:13 - Revoking token
+20-02-2024 13:44:13 - 127.0.0.1 - - [20/Feb/2024 13:44:13] "[35m[1mPOST /v1/itineraries HTTP/1.1[0m" 500 -
+20-02-2024 13:46:27 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\itinerary_route.py', reloading
+20-02-2024 13:46:27 -  * Restarting with stat
+20-02-2024 13:46:28 -  * Debugger is active!
+20-02-2024 13:46:28 -  * Debugger PIN: 897-868-015
+20-02-2024 13:46:29 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\itinerary_route.py', reloading
+20-02-2024 13:46:30 -  * Restarting with stat
+20-02-2024 13:46:31 -  * Debugger is active!
+20-02-2024 13:46:31 -  * Debugger PIN: 897-868-015
+20-02-2024 13:46:41 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+20-02-2024 13:46:41 - [33mPress CTRL+C to quit[0m
+20-02-2024 13:46:41 -  * Restarting with stat
+20-02-2024 13:46:42 -  * Debugger is active!
+20-02-2024 13:46:42 -  * Debugger PIN: 897-868-015
+20-02-2024 13:47:33 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\controllers\\itinerary_controller\\get_itinerary_controller.py', reloading
+20-02-2024 13:47:33 -  * Restarting with stat
+20-02-2024 13:47:34 -  * Debugger is active!
+20-02-2024 13:47:34 -  * Debugger PIN: 897-868-015
+20-02-2024 13:47:35 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\controllers\\itinerary_controller\\get_itinerary_controller.py', reloading
+20-02-2024 13:47:35 -  * Restarting with stat
+20-02-2024 13:47:37 -  * Debugger is active!
+20-02-2024 13:47:37 -  * Debugger PIN: 897-868-015
+20-02-2024 13:49:06 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\itinerary_route.py', reloading
+20-02-2024 13:49:06 -  * Restarting with stat
+20-02-2024 13:49:07 -  * Debugger is active!
+20-02-2024 13:49:07 -  * Debugger PIN: 897-868-015
+20-02-2024 13:49:14 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\itinerary_route.py', reloading
+20-02-2024 13:49:14 -  * Restarting with stat
+20-02-2024 13:49:16 -  * Debugger is active!
+20-02-2024 13:49:16 -  * Debugger PIN: 897-868-015
+20-02-2024 13:49:17 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\itinerary_route.py', reloading
+20-02-2024 13:49:17 -  * Restarting with stat
+20-02-2024 13:49:18 -  * Debugger is active!
+20-02-2024 13:49:18 -  * Debugger PIN: 897-868-015
+20-02-2024 13:49:27 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\routes\\itinerary_route.py', reloading
+20-02-2024 13:49:27 -  * Restarting with stat

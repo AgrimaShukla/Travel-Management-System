@@ -21,6 +21,7 @@ class AddBookingController:
         '''Adding new booking'''
         logger.info(f'{get_request_id()} - Creating new booking')
         booking_id, price = self.booking_handler.add_booking(booking_data)
+        print(booking_id, price)
         response = [{
             "price": price,
             "booking_id": booking_id

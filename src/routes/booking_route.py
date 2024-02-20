@@ -39,10 +39,11 @@ class Booking(MethodView):
     def post(self, booking_data):
         '''Posting new booking'''
         logger.info(f"{get_request_id()} -  route for posting bookings")
+        print('heyeug')
         return AddBookingController().create_booking(booking_data)
 
 @blp_booking.route("/v1/booking/active")
-class Booking(MethodView):
+class Booking2(MethodView):
     '''
     Route for:-
     - Getting active bookings

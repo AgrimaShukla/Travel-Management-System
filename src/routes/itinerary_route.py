@@ -14,7 +14,7 @@ from utils.role_mapping import Role
 logger = logging.getLogger(__name__)
 
 
-blp_itinerary = Blueprint("Itinerary", __name__, description = "Admin methods on itinerary")
+blp_itinerary = Blueprint("Itinerary2", __name__, description = "Admin methods on itinerary")
 
 @blp_itinerary.route("/v1/itineraries")
 class Itineraries(MethodView):
@@ -38,7 +38,9 @@ class Itineraries(MethodView):
     def post(self, user_data):
         '''Creating new package'''
         logger.info(f"{get_request_id()} -  route for creating itineraries")
-        return CreateItineraryController().create_new_itinerary(user_data)
+        obj = CreateItineraryController()
+        response = obj.create_new_itinerary(user_data)
+        return response
 
 @blp_itinerary.route("/v1/itineraries/<string:itinerary_id>")
 class Itinerary(MethodView):
