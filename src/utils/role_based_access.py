@@ -12,7 +12,7 @@ def role_based_access(role):
             verify_jwt_in_request()
             claims = get_jwt()
             if claims["game"] not in role:
-                return CustomError(StatusCodes.FORBIDDEN, "You don't have permission to access this functionality").jsonify_data
+                return CustomError(StatusCodes.FORBIDDEN, "You don't have permission to access this functionality").jsonify_data, 403
             else:
                 return func(*args, **kwargs)
         return inner
