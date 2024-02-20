@@ -20,6 +20,9 @@ class CreatePackageController:
         '''Method for creating new package'''
         logger.info(f'{get_request_id()} - Creating new package')
         package_id = self.pack_handler.add_package(package_data)
-        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.PACKAGE_ADDED, package_id).jsonify_data, 201
+        package = [{
+            "package_id": package_id
+        }]
+        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.PACKAGE_ADDED, package).jsonify_data, 201
 
     
