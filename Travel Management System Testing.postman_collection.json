@@ -1,0 +1,5541 @@
+{
+	"info": {
+		"_postman_id": "014df3aa-b3c6-439c-9e25-0dbce31344e6",
+		"name": "Travel Management System Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32148337",
+		"_collection_link": "https://solar-meteor-249577.postman.co/workspace/Minor-Project~4d026dfd-b28b-4c01-b1aa-3475bad160a5/collection/32148337-014df3aa-b3c6-439c-9e25-0dbce31344e6?action=share&source=collection_link&creator=32148337"
+	},
+	"item": [
+		{
+			"name": "Happy Path",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Conftest",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "google.com",
+									"host": [
+										"google",
+										"com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signin admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"pm.collectionVariables.set(\"access_token\", pm.response.json().data[0].access_token)\r",
+											"\r",
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"var signin_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"access_token\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"refresh_token\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"access_token\",\r",
+											"            \"refresh_token\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (signin_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin123\",\r\n    \"password\":\"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/signin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signup",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"signup_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"user_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"user_id\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (signup_schema);\r",
+											"});\r",
+											"\r",
+											"pm.collectionVariables.set(\"user_id\", pm.response.json().data[0].user_id)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"mobile_number\", _.random(\"6000000000\", \"9999999999\"))\r",
+											"\r",
+											"gender = [\"female\", \"male\", \"other\"]\r",
+											"index = _.random(0,2)\r",
+											"pm.variables.set(\"gender\", gender[index])"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"{{$randomUserName}}\",\r\n    \"password\": \"Babita@17\", \r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"mobile_number\": \"{{mobile_number}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"age\": \"23\",\r\n    \"email\": \"{{$randomEmail}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/signup",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"logout_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (logout_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signin customer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"access_token\", pm.response.json().data[0][\"access_token\"])\r",
+											"\r",
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Access and refresh token\", () => {\r",
+											"    response = pm.response.json()\r",
+											"    pm.expect(response.data[0]).to.haveOwnProperty(\"access_token\").to.be.a(\"string\")\r",
+											"    pm.expect(response.data[0]).to.haveOwnProperty(\"refresh_token\").to.be.a(\"string\")\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"babita_17\",\r\n    \"password\":\"Babita@17\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/signin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Booking",
+					"item": [
+						{
+							"name": "get booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"get_booking_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (get_booking_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/booking",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"booking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 201\", () => {\r",
+											"    pm.response.to.have.status(201)\r",
+											"})\r",
+											"\r",
+											"post_booking_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_id\",\r",
+											"            \"price\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (post_booking_schema);\r",
+											"});\r",
+											"\r",
+											"response = pm.response.json()\r",
+											"pm.collectionVariables.set(\"booking_id\", response.data[0].booking_id)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"package_id\": \"P_Tn2DFu6V\",\r\n    \"days_night\": \"2 days 1 nights\",\r\n    \"name\": \"Babita\",\r\n    \"mobile_number\": \"7487389383\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 3,\r\n    \"email\": \"babita34@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/booking",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"booking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"update_booking_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (update_booking_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"name\": \"babita sudhir\",\r\n    \"mobile_number\": \"9922992299\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 5,\r\n    \"email\": \"babita21@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/booking/:booking_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"booking",
+										":booking_id"
+									],
+									"variable": [
+										{
+											"key": "booking_id",
+											"value": "{{booking_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cancel booking",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"cancel_booking_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (cancel_booking_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/booking/cancel/:booking_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"booking",
+										"cancel",
+										":booking_id"
+									],
+									"variable": [
+										{
+											"key": "booking_id",
+											"value": "{{booking_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get active bookings",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"get_active_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"booking_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"booking_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"email\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"end_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"mobile_number\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"no_of_people\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"start_date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"trip_status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"booking_date\",\r",
+											"            \"booking_id\",\r",
+											"            \"email\",\r",
+											"            \"end_date\",\r",
+											"            \"mobile_number\",\r",
+											"            \"name\",\r",
+											"            \"no_of_people\",\r",
+											"            \"start_date\",\r",
+											"            \"trip_status\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (get_active_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/booking/active",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"booking",
+										"active"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Review",
+					"item": [
+						{
+							"name": "post reviews",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(201)\r",
+											"})\r",
+											"\r",
+											"review_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (review_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"booking_id\": \"B_54nkkondc\",\r\n    \"name\": \"on one\",\r\n    \"comment\": \"very enriching experience\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/package/:package_id/reviews",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"package",
+										":package_id",
+										"reviews"
+									],
+									"variable": [
+										{
+											"key": "package_id",
+											"value": "P_Tn2DFu6V"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get reviews",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"review_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"comment\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"comment\",\r",
+											"            \"date\",\r",
+											"            \"name\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"comment\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"date\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"comment\",\r",
+											"            \"date\",\r",
+											"            \"name\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (review_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/package/:package_id/reviews",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"package",
+										":package_id",
+										"reviews"
+									],
+									"variable": [
+										{
+											"key": "package_id",
+											"value": "P_Tn2DFu6V"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "get user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"get_user_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"age\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"email\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"gender\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"mobile_number\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"name\": {\r",
+											"          \"type\": \"string\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"age\",\r",
+											"        \"email\",\r",
+											"        \"gender\",\r",
+											"        \"mobile_number\",\r",
+											"        \"name\"\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (get_user_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/user",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"user_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (user_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"name\": \"babita\",\r\n    \"mobile_number\": \"9283939393\",\r\n    \"age\": \"23\",\r\n    \"email\": \"babita@outlook.com\",\r\n    \"gender\": \"female\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/user/:user_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "U6xr2SFxqQG"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Itinerary",
+					"item": [
+						{
+							"name": "post itineraries",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 201\", () => {\r",
+											"    pm.response.to.have.status(201)\r",
+											"})\r",
+											"\r",
+											"post_itinerary_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"itinerary_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"itinerary_id\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (post_itinerary_schema);\r",
+											"});\r",
+											"\r",
+											"response = pm.response.json()\r",
+											"pm.collectionVariables.set(\"itinerary_id\", response.data[0].itinerary_id)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"package_id\": \"{{package_id}}\",\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\", \r\n    \"description\": \"juhu beach\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/itineraries",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"itineraries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get itineraries",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"get_itineraries_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"city\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"day\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"description\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"city\",\r",
+											"            \"day\",\r",
+											"            \"description\",\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"city\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"day\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"description\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"city\",\r",
+											"            \"day\",\r",
+											"            \"description\",\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"city\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"day\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"description\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"city\",\r",
+											"            \"day\",\r",
+											"            \"description\",\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"city\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"day\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"description\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"city\",\r",
+											"            \"day\",\r",
+											"            \"description\",\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"city\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"day\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"description\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"city\",\r",
+											"            \"day\",\r",
+											"            \"description\",\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"city\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"day\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"description\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"city\",\r",
+											"            \"day\",\r",
+											"            \"description\",\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"city\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"day\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"description\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"city\",\r",
+											"            \"day\",\r",
+											"            \"description\",\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (get_itineraries_schema);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/itineraries",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"itineraries"
+									],
+									"query": [
+										{
+											"key": "destination",
+											"value": "beaches",
+											"disabled": true
+										},
+										{
+											"key": "days_night",
+											"value": "2-days-1-nights",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "budget",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update itineraries",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"put_itinerary_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (put_itinerary_schema);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\",\r\n    \"description\": \"Juhu\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/itineraries/:itinerary_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"itineraries",
+										":itinerary_id"
+									],
+									"variable": [
+										{
+											"key": "itinerary_id",
+											"value": "{{itinerary_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Package",
+					"item": [
+						{
+							"name": "post packages",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 201\", () => {\r",
+											"    pm.response.to.have.status(201)\r",
+											"})\r",
+											"\r",
+											"post_package_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"package_id\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (post_package_schema);\r",
+											"});\r",
+											"\r",
+											"response = pm.response.json()\r",
+											"pm.collectionVariables.set(\"package_id\", response.data[0].package_id)"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"3 days 2 nights\", \r\n    \"category\": \"budget\", \r\n    \"price\": \"16000\",\r\n    \"status\": \"activated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/packages",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"packages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get packages",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"get_package_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"array\",\r",
+											"      \"items\": [\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        },\r",
+											"        {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"category\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"duration\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_id\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"package_name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"price\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"status\": {\r",
+											"              \"type\": \"string\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"category\",\r",
+											"            \"duration\",\r",
+											"            \"package_id\",\r",
+											"            \"package_name\",\r",
+											"            \"price\",\r",
+											"            \"status\"\r",
+											"          ]\r",
+											"        }\r",
+											"      ]\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (get_package_schema);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/packages",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"packages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update packages",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"put_package_schema = {\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"data\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status_code\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"data\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"status_code\"\r",
+											"  ]\r",
+											"}\r",
+											"\r",
+											"pm.test('Schema validation', () => {\r",
+											"  pm.response.to.have.jsonSchema (put_package_schema);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"2 days 1 nights\",\r\n    \"category\": \"budget\",\r\n    \"price\": 16000,\r\n    \"status\": \"activated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/packages/:package_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"packages",
+										":package_id"
+									],
+									"variable": [
+										{
+											"key": "package_id",
+											"value": "{{package_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Bad Path",
+			"item": [
+				{
+					"name": "Forbidden",
+					"item": [
+						{
+							"name": "Admin",
+							"item": [
+								{
+									"name": "get booking admin",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/booking",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "post booking admin",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_id\": \"P_Tn2DFu6V\",\r\n    \"days_night\": \"2 days 1 nights\",\r\n    \"name\": \"Babita\",\r\n    \"mobile_number\": \"7487389383\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 3,\r\n    \"email\": \"babita34@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update booking admin",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{   \r\n    \"name\": \"babita sudhir\",\r\n    \"mobile_number\": \"9922992299\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 5,\r\n    \"email\": \"babita21@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking/:booking_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												":booking_id"
+											],
+											"variable": [
+												{
+													"key": "booking_id",
+													"value": "{{booking_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "cancel booking admin",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking/cancel/:booking_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												"cancel",
+												":booking_id"
+											],
+											"variable": [
+												{
+													"key": "booking_id",
+													"value": "{{booking_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get active bookings admin",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/booking/active",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												"active"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get user admin",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/user",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"user"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update user admin",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n    \"name\": \"babita\",\r\n    \"mobile_number\": \"9283939393\",\r\n    \"age\": \"23\",\r\n    \"email\": \"babita@outlook.com\",\r\n    \"gender\": \"female\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/user/:user_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												":user_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "U6xr2SFxqQG"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code 403\", () => {",
+											"    pm.response.to.have.status(403)",
+											"});",
+											"",
+											"forbidden_schema = {",
+											"  \"type\": \"object\",",
+											"  \"properties\": {",
+											"    \"description\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"status\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"status_code\": {",
+											"      \"type\": \"integer\"",
+											"    }",
+											"  },",
+											"  \"required\": [",
+											"    \"description\",",
+											"    \"status\",",
+											"    \"status_code\"",
+											"  ]",
+											"}",
+											"pm.test('Schema validation', () => {",
+											"  pm.response.to.have.jsonSchema (forbidden_schema);",
+											"});",
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Customer",
+							"item": [
+								{
+									"name": "post itineraries cust",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_id\": \"{{package_id}}\",\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\", \r\n    \"description\": \"juhu beach\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update itineraries cust",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\",\r\n    \"description\": \"Juhu\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries/:itinerary_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries",
+												":itinerary_id"
+											],
+											"variable": [
+												{
+													"key": "itinerary_id",
+													"value": "1233421"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "post packages cust",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"3 days 2 nights\", \r\n    \"category\": \"budget\", \r\n    \"price\": \"16000\",\r\n    \"status\": \"activated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/packages",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get packages cust",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/packages",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update packages cust",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"2 days 1 nights\",\r\n    \"category\": \"budget\",\r\n    \"price\": 16000,\r\n    \"status\": \"activated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/packages/:package_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages",
+												":package_id"
+											],
+											"variable": [
+												{
+													"key": "package_id",
+													"value": "{{package_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code 403\", () => {",
+											"    pm.response.to.have.status(403)",
+											"});",
+											"",
+											"forbidden_schema = {",
+											"  \"type\": \"object\",",
+											"  \"properties\": {",
+											"    \"description\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"status\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"status_code\": {",
+											"      \"type\": \"integer\"",
+											"    }",
+											"  },",
+											"  \"required\": [",
+											"    \"description\",",
+											"    \"status\",",
+											"    \"status_code\"",
+											"  ]",
+											"}",
+											"pm.test('Schema validation', () => {",
+											"  pm.response.to.have.jsonSchema (forbidden_schema);",
+											"});",
+											"",
+											""
+										]
+									}
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Invalid token",
+					"item": [
+						{
+							"name": "Admin",
+							"item": [
+								{
+									"name": "post itineraries invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_id\": \"{{package_id}}\",\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\", \r\n    \"description\": \"juhu beach\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update itineraries invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\",\r\n    \"description\": \"Juhu\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries/:itinerary_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries",
+												":itinerary_id"
+											],
+											"variable": [
+												{
+													"key": "itinerary_id",
+													"value": "1233421"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "post packages invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"3 days 2 nights\", \r\n    \"category\": \"budget\", \r\n    \"price\": \"16000\",\r\n    \"status\": \"activated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/packages",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get packages invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/packages",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update packages invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"2 days 1 nights\",\r\n    \"category\": \"budget\",\r\n    \"price\": 16000,\r\n    \"status\": \"activated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/packages/:package_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages",
+												":package_id"
+											],
+											"variable": [
+												{
+													"key": "package_id",
+													"value": "{{package_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get itineraries invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries"
+											],
+											"query": [
+												{
+													"key": "destination",
+													"value": "beaches",
+													"disabled": true
+												},
+												{
+													"key": "days_night",
+													"value": "2-days-1-nights",
+													"disabled": true
+												},
+												{
+													"key": "category",
+													"value": "budget",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code 401\", ()=>{",
+											"  pm.response.to.have.status(401)",
+											"",
+											"})",
+											"",
+											"unauthoeized_schema = {",
+											"  \"type\": \"object\",",
+											"  \"properties\": {",
+											"    \"error\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"message\": {",
+											"      \"type\": \"string\"",
+											"    }",
+											"  },",
+											"  \"required\": [",
+											"    \"error\",",
+											"    \"message\"",
+											"  ]",
+											"}",
+											"",
+											"pm.test('Schema validation', () => {",
+											"  pm.response.to.have.jsonSchema (unauthoeized_schema);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Customer",
+							"item": [
+								{
+									"name": "get booking invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/booking",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "post booking invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_id\": \"P_Tn2DFu6V\",\r\n    \"days_night\": \"2 days 1 nights\",\r\n    \"name\": \"Babita\",\r\n    \"mobile_number\": \"7487389383\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 3,\r\n    \"email\": \"babita34@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update booking invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{   \r\n    \"name\": \"babita sudhir\",\r\n    \"mobile_number\": \"9922992299\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 5,\r\n    \"email\": \"babita21@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking/:booking_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												":booking_id"
+											],
+											"variable": [
+												{
+													"key": "booking_id",
+													"value": "{{booking_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "cancel booking invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking/cancel/:booking_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												"cancel",
+												":booking_id"
+											],
+											"variable": [
+												{
+													"key": "booking_id",
+													"value": "{{booking_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get active bookings invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/booking/active",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												"active"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get user invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/user",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"user"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update user invalid token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n    \"name\": \"babita\",\r\n    \"mobile_number\": \"9283939393\",\r\n    \"age\": \"23\",\r\n    \"email\": \"babita@outlook.com\",\r\n    \"gender\": \"female\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/user/:user_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												":user_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "U6xr2SFxqQG"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code 401\", ()=>{",
+											"  pm.response.to.have.status(401)",
+											"",
+											"})",
+											"",
+											"unauthoeized_schema = {",
+											"  \"type\": \"object\",",
+											"  \"properties\": {",
+											"    \"error\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"message\": {",
+											"      \"type\": \"string\"",
+											"    }",
+											"  },",
+											"  \"required\": [",
+											"    \"error\",",
+											"    \"message\"",
+											"  ]",
+											"}",
+											"",
+											"pm.test('Schema validation', () => {",
+											"  pm.response.to.have.jsonSchema (unauthoeized_schema);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "signin admin invalid token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"access_token\", \"bshbjsbdj\")\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin123\",\r\n    \"password\":\"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/signin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signin customer invalid token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"access_token\", \"snjndajn\")\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"babita_17\",\r\n    \"password\":\"Babita@17\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/signin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Token missing",
+					"item": [
+						{
+							"name": "Admin",
+							"item": [
+								{
+									"name": "post itineraries token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}+\"NJNJRNF\"",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_id\": \"{{package_id}}\",\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\", \r\n    \"description\": \"juhu beach\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update itineraries token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"day\": 2,\r\n    \"city\": \"mumbai\",\r\n    \"description\": \"Juhu\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries/:itinerary_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries",
+												":itinerary_id"
+											],
+											"variable": [
+												{
+													"key": "itinerary_id",
+													"value": "1233421"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "post packages token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"3 days 2 nights\", \r\n    \"category\": \"budget\", \r\n    \"price\": \"16000\",\r\n    \"status\": \"activated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/packages",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get packages token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/packages",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update packages token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_name\": \"beaches\",\r\n    \"duration\": \"2 days 1 nights\",\r\n    \"category\": \"budget\",\r\n    \"price\": 16000,\r\n    \"status\": \"activated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/packages/:package_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"packages",
+												":package_id"
+											],
+											"variable": [
+												{
+													"key": "package_id",
+													"value": "{{package_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get itineraries token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/itineraries",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"itineraries"
+											],
+											"query": [
+												{
+													"key": "destination",
+													"value": "beaches",
+													"disabled": true
+												},
+												{
+													"key": "days_night",
+													"value": "2-days-1-nights",
+													"disabled": true
+												},
+												{
+													"key": "category",
+													"value": "budget",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code 401\", ()=>{",
+											"  pm.response.to.have.status(401)",
+											"",
+											"})",
+											"",
+											"unauthoeized_schema = {",
+											"  \"type\": \"object\",",
+											"  \"properties\": {",
+											"    \"error\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"message\": {",
+											"      \"type\": \"string\"",
+											"    }",
+											"  },",
+											"  \"required\": [",
+											"    \"error\",",
+											"    \"message\"",
+											"  ]",
+											"}",
+											"",
+											"pm.test('Schema validation', () => {",
+											"  pm.response.to.have.jsonSchema (unauthoeized_schema);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Customer",
+							"item": [
+								{
+									"name": "get booking token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/booking",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "post booking token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"package_id\": \"P_Tn2DFu6V\",\r\n    \"days_night\": \"2 days 1 nights\",\r\n    \"name\": \"Babita\",\r\n    \"mobile_number\": \"7487389383\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 3,\r\n    \"email\": \"babita34@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update booking token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{   \r\n    \"name\": \"babita sudhir\",\r\n    \"mobile_number\": \"9922992299\",\r\n    \"start_date\": \"2024/04/15\",\r\n    \"end_date\": \"2024/04/18\",\r\n    \"number_of_people\": 5,\r\n    \"email\": \"babita21@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking/:booking_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												":booking_id"
+											],
+											"variable": [
+												{
+													"key": "booking_id",
+													"value": "{{booking_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "cancel booking token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/booking/cancel/:booking_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												"cancel",
+												":booking_id"
+											],
+											"variable": [
+												{
+													"key": "booking_id",
+													"value": "{{booking_id}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get active bookings token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/booking/active",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"booking",
+												"active"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get user token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/v1/user",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"user"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update user token missing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n    \"name\": \"babita\",\r\n    \"mobile_number\": \"9283939393\",\r\n    \"age\": \"23\",\r\n    \"email\": \"babita@outlook.com\",\r\n    \"gender\": \"female\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/user/:user_id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												":user_id"
+											],
+											"variable": [
+												{
+													"key": "user_id",
+													"value": "U6xr2SFxqQG"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Status code 401\", ()=>{",
+											"  pm.response.to.have.status(401)",
+											"",
+											"})",
+											"",
+											"unauthoeized_schema = {",
+											"  \"type\": \"object\",",
+											"  \"properties\": {",
+											"    \"error\": {",
+											"      \"type\": \"string\"",
+											"    },",
+											"    \"message\": {",
+											"      \"type\": \"string\"",
+											"    }",
+											"  },",
+											"  \"required\": [",
+											"    \"error\",",
+											"    \"message\"",
+											"  ]",
+											"}",
+											"",
+											"pm.test('Schema validation', () => {",
+											"  pm.response.to.have.jsonSchema (unauthoeized_schema);",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "signin admin token missing",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin123\",\r\n    \"password\":\"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/signin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signin customer token missing",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"babita_17\",\r\n    \"password\":\"Babita@17\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/signin",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"if(pm.iterationData.get(\"iteration_name\")){",
+					"postman.setNextRequest(getNextRequest());",
+					"                   ",
+					"function getNextRequest() {",
+					"    let routes;",
+					"    if (Array.isArray(pm.collectionVariables.get(\"remainingRoutes\")) === true) {",
+					"        routes = pm.collectionVariables.get(\"remainingRoutes\");",
+					"    } else {",
+					"        routes = pm.iterationData.get(\"routes\");",
+					"    }",
+					"    const nextRequest = routes.shift();",
+					"    pm.collectionVariables.set(\"remainingRoutes\", routes);",
+					"    if (nextRequest === undefined) {",
+					"        pm.collectionVariables.unset(\"remainingRoutes\");",
+					"        return null;",
+					"    }",
+					" ",
+					"    return nextRequest;",
+					"}",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://travel-management-system-g1ly.onrender.com",
+			"type": "string"
+		},
+		{
+			"key": "package_id",
+			"value": null
+		},
+		{
+			"key": "itinerary_id",
+			"value": ""
+		},
+		{
+			"key": "booking_id",
+			"value": "B_4zqFRnW4a3"
+		},
+		{
+			"key": "access_token",
+			"value": "bshbjsbdj"
+		},
+		{
+			"key": "user_id",
+			"value": ""
+		}
+	]
+}

@@ -21,7 +21,6 @@
             "cancel booking",
             "get user",
             "update user", 
-            "delete user",
             "logout"
         ]
     },
@@ -35,7 +34,6 @@
             "get active bookings admin",
             "get user admin",
             "update user admin",
-            "delete user admin",
             "logout",
             "signin customer",
             "post itineraries cust",
@@ -55,19 +53,13 @@
             "post itineraries invalid token",
             "get itineraries invalid token", 
             "update itineraries invalid token",
-            "logout",
             "signin customer invalid token",
             "post booking invalid token",
             "update booking invalid token",
             "get active bookings invalid token",
             "cancel booking invalid token",
             "get user invalid token",
-            "update user invalid token",
-            "logout",
-            "signup",
-            "signin customer",
-            "delete user invalid token",
-            "logout"
+            "update user invalid token"
         ]
     },
     {
@@ -80,16 +72,13 @@
             "post itineraries token missing",
             "get itineraries token missing", 
             "update itineraries token missing",
-            "logout",
             "signin customer token missing",
             "post booking token missing",
             "update booking token missing",
             "get active bookings token missing",
             "cancel booking token missing",
             "get user token missing",
-            "update user token missing",
-            "delete user token missing",
-            "logout"
+            "update user token missing"
         ]
     }
 ]
