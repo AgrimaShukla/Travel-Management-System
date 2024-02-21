@@ -43,7 +43,7 @@ class ReviewHandler:
                 return comment
             else:
                 logger.error(f"{get_request_id()} - No reviews found")
-                raise ApplicationException(StatusCodes.NOT_FOUND, PrintPrompts.NO_REVIEWS)
+                raise ApplicationException(StatusCodes.OK, PrintPrompts.NO_REVIEWS, comment)
         except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
 
