@@ -23,6 +23,5 @@ class CreateItineraryController:
         itinerary = [{
             "itinerary_id": itinerary_id
         }]
-        response =CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ITINERARY_ADDED, itinerary)
-        return response.jsonify_data, 201
+        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ITINERARY_ADDED, itinerary).jsonify_data, 201
         

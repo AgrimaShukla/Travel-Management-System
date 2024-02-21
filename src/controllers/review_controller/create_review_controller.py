@@ -20,4 +20,4 @@ class CreateReviewController:
         '''Method for adding new review'''
         logger.info(f'{get_request_id()} - Adding new review') 
         self.review_handler.add_review( review_data, package_id)
-        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ADDED).jsonify_data
+        return CustomSuccessResponse(StatusCodes.CREATED, PrintPrompts.ADDED).jsonify_data, 201

@@ -40,10 +40,11 @@ class ReviewHandler:
             logger.info(f"{get_request_id()} - Fetching reviews for particular package")
             comment = self.db_access.returning_query(Query.SELECT_REVIEW, (package_id, ))
             if comment:
-                return comment
+                return comment, PrintPrompts.SUCCESS
             else:
                 logger.error(f"{get_request_id()} - No reviews found")
-                raise ApplicationException(StatusCodes.OK, PrintPrompts.NO_REVIEWS, comment)
+                return comment, PrintPrompts.NO_REVIEWS
+
         except pymysql.Error:
             raise DBException(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR)
 

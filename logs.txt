@@ -1,0 +1,126 @@
+21-02-2024 14:05:15 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+21-02-2024 14:05:15 - [33mPress CTRL+C to quit[0m
+21-02-2024 14:05:15 -  * Restarting with stat
+21-02-2024 14:05:16 -  * Debugger is active!
+21-02-2024 14:05:16 -  * Debugger PIN: 897-868-015
+21-02-2024 14:05:42 - EJdTWL5N4m -  route for login
+21-02-2024 14:05:42 - EJdTWL5N4m - User trying to login
+21-02-2024 14:05:42 - EJdTWL5N4m - User is trying to login with username babita_17
+21-02-2024 14:05:42 - New access and refresh token issued
+21-02-2024 14:05:43 - 127.0.0.1 - - [21/Feb/2024 14:05:43] "POST /v1/signin HTTP/1.1" 200 -
+21-02-2024 14:05:46 - Checking if token is revoked or not
+21-02-2024 14:05:47 - 3e45NcKvqu -  route for getting reviews for a particular package
+21-02-2024 14:05:47 - <function get_request_id at 0x000001A080DDE700> - Fetching reviews
+21-02-2024 14:05:47 - 3e45NcKvqu - Fetching reviews for particular package
+21-02-2024 14:05:47 - 3e45NcKvqu - No reviews found
+21-02-2024 14:05:47 - 127.0.0.1 - - [21/Feb/2024 14:05:47] "GET /v1/package/P_Tn2DFu6V/reviews HTTP/1.1" 200 -
+21-02-2024 14:06:18 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:06:18 -  * Restarting with stat
+21-02-2024 14:06:19 -  * Debugger is active!
+21-02-2024 14:06:19 -  * Debugger PIN: 897-868-015
+21-02-2024 14:06:23 - 3Nsw3HfpFZ -  route for login
+21-02-2024 14:06:23 - 3Nsw3HfpFZ - User trying to login
+21-02-2024 14:06:23 - 3Nsw3HfpFZ - User is trying to login with username babita_17
+21-02-2024 14:06:24 - New access and refresh token issued
+21-02-2024 14:06:24 - 127.0.0.1 - - [21/Feb/2024 14:06:24] "POST /v1/signin HTTP/1.1" 200 -
+21-02-2024 14:06:28 - Checking if token is revoked or not
+21-02-2024 14:06:28 - 78PumBYxDc -  route for getting reviews for a particular package
+21-02-2024 14:06:28 - <function get_request_id at 0x0000026E0CAFE700> - Fetching reviews
+21-02-2024 14:06:28 - 78PumBYxDc - Fetching reviews for particular package
+21-02-2024 14:06:29 - 78PumBYxDc - No reviews found
+21-02-2024 14:06:29 - 127.0.0.1 - - [21/Feb/2024 14:06:29] "GET /v1/package/P_Tn2DFu6V/reviews HTTP/1.1" 200 -
+21-02-2024 14:06:42 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:06:42 -  * Restarting with stat
+21-02-2024 14:06:43 -  * Debugger is active!
+21-02-2024 14:06:43 -  * Debugger PIN: 897-868-015
+21-02-2024 14:07:34 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:07:34 -  * Restarting with stat
+21-02-2024 14:07:35 -  * Debugger is active!
+21-02-2024 14:07:35 -  * Debugger PIN: 897-868-015
+21-02-2024 14:07:39 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:07:39 -  * Restarting with stat
+21-02-2024 14:07:40 -  * Debugger is active!
+21-02-2024 14:07:40 -  * Debugger PIN: 897-868-015
+21-02-2024 14:07:42 - Checking if token is revoked or not
+21-02-2024 14:07:42 - Drz93NCCBR -  route for getting reviews for a particular package
+21-02-2024 14:07:42 - <function get_request_id at 0x000001C15A15E700> - Fetching reviews
+21-02-2024 14:07:42 - Drz93NCCBR - Fetching reviews for particular package
+21-02-2024 14:07:43 - Drz93NCCBR - No reviews found
+21-02-2024 14:07:43 - 127.0.0.1 - - [21/Feb/2024 14:07:43] "GET /v1/package/P_Tn2DFu6V/reviews HTTP/1.1" 200 -
+21-02-2024 14:07:49 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:07:49 -  * Restarting with stat
+21-02-2024 14:07:50 -  * Debugger is active!
+21-02-2024 14:07:50 -  * Debugger PIN: 897-868-015
+21-02-2024 14:07:51 - Checking if token is revoked or not
+21-02-2024 14:07:51 - KbftXJjCw6 -  route for getting reviews for a particular package
+21-02-2024 14:07:51 - <function get_request_id at 0x000002D34351E700> - Fetching reviews
+21-02-2024 14:07:51 - KbftXJjCw6 - Fetching reviews for particular package
+21-02-2024 14:07:52 - KbftXJjCw6 - No reviews found
+21-02-2024 14:07:52 - 127.0.0.1 - - [21/Feb/2024 14:07:52] "GET /v1/package/P_Tn2DFu6V/reviews HTTP/1.1" 200 -
+21-02-2024 14:08:01 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:08:01 -  * Restarting with stat
+21-02-2024 14:08:02 -  * Debugger is active!
+21-02-2024 14:08:02 -  * Debugger PIN: 897-868-015
+21-02-2024 14:08:05 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:08:05 -  * Restarting with stat
+21-02-2024 14:08:06 -  * Debugger is active!
+21-02-2024 14:08:06 -  * Debugger PIN: 897-868-015
+21-02-2024 14:08:19 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:08:19 -  * Restarting with stat
+21-02-2024 14:08:20 -  * Debugger is active!
+21-02-2024 14:08:20 -  * Debugger PIN: 897-868-015
+21-02-2024 14:09:27 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:09:27 -  * Restarting with stat
+21-02-2024 14:09:28 -  * Debugger is active!
+21-02-2024 14:09:28 -  * Debugger PIN: 897-868-015
+21-02-2024 14:09:30 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:09:30 -  * Restarting with stat
+21-02-2024 14:10:26 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+21-02-2024 14:10:26 - [33mPress CTRL+C to quit[0m
+21-02-2024 14:10:26 -  * Restarting with stat
+21-02-2024 14:10:26 -  * Debugger is active!
+21-02-2024 14:10:26 -  * Debugger PIN: 897-868-015
+21-02-2024 14:10:29 - Checking if token is revoked or not
+21-02-2024 14:10:30 - 5UuTjGThdj -  route for getting reviews for a particular package
+21-02-2024 14:10:30 - <function get_request_id at 0x000001554F6EE700> - Fetching reviews
+21-02-2024 14:10:30 - 5UuTjGThdj - Fetching reviews for particular package
+21-02-2024 14:10:30 - 5UuTjGThdj - No reviews found
+21-02-2024 14:10:30 - 127.0.0.1 - - [21/Feb/2024 14:10:30] "GET /v1/package/P_Tn2DFu6V/reviews HTTP/1.1" 200 -
+21-02-2024 14:10:54 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\controllers\\review_controller\\get_review_controller.py', reloading
+21-02-2024 14:10:54 -  * Restarting with stat
+21-02-2024 14:10:55 -  * Debugger is active!
+21-02-2024 14:10:55 -  * Debugger PIN: 897-868-015
+21-02-2024 14:10:59 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\controllers\\review_controller\\get_review_controller.py', reloading
+21-02-2024 14:10:59 -  * Restarting with stat
+21-02-2024 14:11:00 -  * Debugger is active!
+21-02-2024 14:11:00 -  * Debugger PIN: 897-868-015
+21-02-2024 14:11:02 - Checking if token is revoked or not
+21-02-2024 14:11:03 - 9rTuFQFKCu -  route for getting reviews for a particular package
+21-02-2024 14:11:03 - <function get_request_id at 0x00000215A03BE700> - Fetching reviews
+21-02-2024 14:11:03 - 9rTuFQFKCu - Fetching reviews for particular package
+21-02-2024 14:11:03 - 9rTuFQFKCu - No reviews found
+21-02-2024 14:11:03 - 127.0.0.1 - - [21/Feb/2024 14:11:03] "GET /v1/package/P_Tn2DFu6V/reviews HTTP/1.1" 200 -
+21-02-2024 14:11:19 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:11:19 -  * Restarting with stat
+21-02-2024 14:11:20 -  * Debugger is active!
+21-02-2024 14:11:20 -  * Debugger PIN: 897-868-015
+21-02-2024 14:11:20 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:11:20 -  * Restarting with stat
+21-02-2024 14:11:21 -  * Debugger is active!
+21-02-2024 14:11:21 -  * Debugger PIN: 897-868-015
+21-02-2024 14:11:22 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:11:22 -  * Restarting with stat
+21-02-2024 14:11:23 -  * Debugger is active!
+21-02-2024 14:11:23 -  * Debugger PIN: 897-868-015
+21-02-2024 14:11:29 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\handlers\\review_handler.py', reloading
+21-02-2024 14:11:29 -  * Restarting with stat
+21-02-2024 14:12:08 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+21-02-2024 14:12:08 - [33mPress CTRL+C to quit[0m
+21-02-2024 14:12:08 -  * Restarting with stat
+21-02-2024 14:12:09 -  * Debugger is active!
+21-02-2024 14:12:09 -  * Debugger PIN: 897-868-015
+21-02-2024 14:12:22 -  * Detected change in 'c:\\Users\\ashukla\\OneDrive - WatchGuard Technologies Inc\\Desktop\\Minor project\\Tours and Travel\\src\\app.py', reloading
+21-02-2024 14:12:22 -  * Restarting with stat

@@ -20,6 +20,6 @@ class GetReviewController:
     def get_review(self, package_id):
         '''Method for getting reviews'''
         logger.info(f'{get_request_id} - Fetching reviews') 
-        reviews = self.review_handler.get_reviews(package_id)
-        return CustomSuccessResponse(StatusCodes.OK, PrintPrompts.SUCCESS, reviews).jsonify_data
+        reviews, message = self.review_handler.get_reviews(package_id)
+        return CustomSuccessResponse(StatusCodes.OK, message, reviews).jsonify_data
        

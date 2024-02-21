@@ -39,10 +39,10 @@ def create_app():
     api = Api(app)
     initialise_jwt(app)
 
-    # app.register_error_handler(
-    #     Exception,
-    #     lambda _: CustomError(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR).jsonify_data
-    # )
+    app.register_error_handler(
+        Exception,
+        lambda _: CustomError(StatusCodes.INTERNAL_SERVER_ERROR, PrintPrompts.INTERNAL_SERVER_ERROR).jsonify_data
+    )
  
 
    # setting req Id for logging
